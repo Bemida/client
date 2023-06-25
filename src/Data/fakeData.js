@@ -28,8 +28,7 @@ const fakeOrderData = {
 }
 
 
-export const fakeData = 
-{
+export default {
     items : fakeOrderData,
  
 }
