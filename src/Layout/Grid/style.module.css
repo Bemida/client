@@ -1,0 +1,73 @@
+/* Creator : didi */
+
+.containerGrid {
+    /* background-color: brown; */
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    height: 100vh;
+    width: 100vw;
+}
+
+.containerHeader {
+    border: 3px solid green;
+    height: 95px;
+    width: 100%;
+}
+
+.containerBody {
+    position: relative;
+    border: 3px solid purple;
+    display: flex;
+    height: 70%;
+    width: 100%;
+}
+
+.containerSidebar {
+    position: absolute;
+    border: 3px solid red;
+    display: flex;
+    height: 100%;
+    width: 15%;
+    right: 0;
+}
+
+.containerImg_Details_Bty {
+    position: relative;
+    border: 3px solid greenyellow;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 84.3%;
+}
+
+.containerImg_Details {
+    position: absolute;
+    border: 3px solid gray;
+    display: flex;
+    height: 80%;
+    width: 100%;
+}
+
+.containerDetails {
+    border: 3px solid rgb(26, 255, 0);
+    height: 100%;
+    width: 20%;
+
+}
+
+.containerImg {
+    border: 3px solid orange;
+    height: 100%;
+    width: 80%;
+}
+
+
+.containerBty {
+    position: absolute;
+    border: 3px solid black;
+    height: 18%;
+    width: 100%;
+    bottom: 0;
+}
