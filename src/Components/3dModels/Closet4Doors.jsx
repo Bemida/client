@@ -5,7 +5,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Closet4Doors(props) {
-  const { nodes, materials } = useGLTF("/Closet4Doors.glb");
+  const { nodes, materials } = useGLTF("assets/3dModels/Closet4Doors.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
