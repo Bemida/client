@@ -33,7 +33,7 @@
     right: 0;
 }
 
-.containerImg_Details_Bty {
+.containerMain_Section_Details_Bty {
     position: relative;
     border: 3px solid greenyellow;
     display: flex;
@@ -42,7 +42,7 @@
     width: 84.3%;
 }
 
-.containerImg_Details {
+.containerMain_Section_Details {
     position: absolute;
     border: 3px solid gray;
     display: flex;
@@ -57,7 +57,7 @@
 
 }
 
-.containerImg {
+.containerMain_Section {
     border: 3px solid orange;
     height: 100%;
     width: 80%;

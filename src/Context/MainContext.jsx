@@ -7,7 +7,7 @@ import { items } from '../Data/fakeData'
 const DataContext = createContext({})
 
 export const ContextProvider = ({ children }) => {
-    const [stage, setStage] = useState({})
+    const [stage, setStage] = useState(1)
 
     return (
         <DataContext.Provider value={{ stage, setStage, fakeData: { items } }}>
