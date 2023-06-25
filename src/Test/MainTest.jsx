@@ -1,5 +1,5 @@
 import React from 'react'
-import {Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import Aviad from './Aviad'
 import David from './David'
@@ -22,26 +22,26 @@ function MainTest() {
   return (
     <div>
 
-<Routes>
-  <Route path = "/aviad" element = {<Aviad/>}/>
-  <Route path = "/david" element = {<David/>}/>
-  <Route path = "/didi" element = {<Didi/>}/>
-  <Route path = "/efrat" element = {<Efrat/>}/>
-  <Route path = "/hadassah" element = {<Hadassah/>}/>
-  <Route path = "/michael" element = {<Michael/>}/>
-  <Route path = "/neri" element = {<Neri/>}/>
-  <Route path = "/netanel" element = {<Netanel/>}/>
-  <Route path = "/omri" element = {<Omri/>}/>
-  <Route path = "/rotem" element = {<Rotem/>}/>
-  <Route path = "/tzvi" element = {<Tzvi/>}/>
-  <Route path = "/yehuda" element = {<Yehuda/>}/>
-  <Route path = "/yonatan" element = {<Yonatan/>}/>
-  <Route path = "/yosef_si" element = {<Yosef_si/>}/>
-  <Route path = "/yosef_sh" element = {<Yosef_sh/>}/>
-</Routes>
+      <Routes>
+        <Route path="/didi" element={<Didi />} />
+        <Route path="/aviad" element={<Aviad />} />
+        <Route path="/david" element={<David />} />
+        <Route path="/efrat" element={<Efrat />} />
+        <Route path="/hadassah" element={<Hadassah />} />
+        <Route path="/michael" element={<Michael />} />
+        <Route path="/neri" element={<Neri />} />
+        <Route path="/netanel" element={<Netanel />} />
+        <Route path="/omri" element={<Omri />} />
+        <Route path="/rotem" element={<Rotem />} />
+        <Route path="/tzvi" element={<Tzvi />} />
+        <Route path="/yehuda" element={<Yehuda />} />
+        <Route path="/yonatan" element={<Yonatan />} />
+        <Route path="/yosef_si" element={<Yosef_si />} />
+        <Route path="/yosef_sh" element={<Yosef_sh />} />
+      </Routes>
 
 
-        
+
     </div>
   )
 }
