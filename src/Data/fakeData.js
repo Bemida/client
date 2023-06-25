@@ -1,5 +1,5 @@
 //Fake data 
-const fakeOrderData = {
+const fakeItemData = {
     name: "Product A",
     styling: [
         {
