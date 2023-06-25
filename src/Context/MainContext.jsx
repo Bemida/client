@@ -6,12 +6,12 @@ import { createContext, useState } from "react"
 const DataContext = createContext({})
 
 export const ContextProvider = ({ children }) => {
-    const [sample, setSample] = useState("")
+    const [stage, setStage] = useState({})
     const [sample2, setSample2] = useState("")
     const [sample3, setSample3] = useState("")
 
     return (
-        <DataContext.Provider value={{ sample, setSample }}>
+        <DataContext.Provider value={{ stage, setStage }}>
             {children}
         </DataContext.Provider>)
 
