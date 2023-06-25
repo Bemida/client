@@ -226,4 +226,3 @@ export function Closet4Doors(props) {
 }
 
 useGLTF.preload("assets/3dModels/Closet4Doors.glb");
-
