@@ -1,6 +1,6 @@
 import styles from './style.module.css'
 
-
+// props : 
 // creator:
 function Template({style = {} , ...props} ) {
 
