@@ -49,10 +49,22 @@ const fakeItemData = {
             }
         },
         {
-            exterior: {
-                material: "Wood",
-                size: { height: 180, width: 120, depth: 50 },
-                color: "Brown"
+            {exterior: {
+                material: {type: String, required: true},
+                doors: {amount: Number},
+                size: {height: Number, width: Number, depth: Number},
+                color: {type: String, required: true},
+                handles:  {
+                    itemNumber: Number,
+                    color: String,
+                    style: String,
+                    img: "🪵"
+                },
+                base: {
+                    default: "legs",
+                    enum:["legs", "tzokel"]
+                }
+    
             }
         }
     ]
@@ -64,4 +76,6 @@ export default {
     orders: fakeOrderData
  
 }
+
+
 
