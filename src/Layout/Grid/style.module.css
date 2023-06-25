@@ -12,7 +12,7 @@
 
 .containerHeader {
     border: 3px solid green;
-    height: 95px;
+    height: 10%;
     width: 100%;
 }
 
@@ -20,7 +20,7 @@
     position: relative;
     border: 3px solid purple;
     display: flex;
-    height: 70%;
+    height: 90%;
     width: 100%;
 }
 
@@ -70,4 +70,5 @@
     height: 18%;
     width: 100%;
     bottom: 0;
+
 }
