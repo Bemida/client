@@ -3,6 +3,6 @@ import SideBar from '../Components/Sidebar'
 
 export default function Yonatan() {
   return (
-    <div><SideBar /></div>
+    <div><SideBar title={"בחירת הסגנון האהוב עליך"} /></div>
   )
 }

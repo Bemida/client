@@ -1,0 +1,34 @@
+.collapseContainer {
+    max-height: 30%;
+    position: relative;
+    overflow-y: auto;
+    min-height: 13%;
+}
+.heading{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    gap:1px;
+    align-items: center;
+    color: grey;
+    cursor: pointer;
+    margin-bottom: 30px;
+    min-width: 30px;
+    user-select: none;
+    /* background-color: rgba(0, 0, 255, 0.094); */
+}
+
+.heading svg{
+    right:  0;
+    top: 4px;
+    position: absolute;
+    margin-top: 1.3px;    
+}
+.name {
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
+.collapseContainer > div:last-child {
+    padding-right: 15px;
+}

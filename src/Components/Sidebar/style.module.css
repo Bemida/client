@@ -1,0 +1,39 @@
+.outerContainer {
+    width: 250px;
+    height: 100vh;
+}
+.sidebarContainer {
+    position: relative;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #EEEEEE;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    /* gap:45px; */
+    padding: 30px 30px 0;
+    text-align: right;
+    max-height: 100%;
+    overflow-y: auto;
+    user-select: none;
+}
+.sidebarContainer > span:first-child {
+    position: relative;
+    text-align: center;
+    margin-bottom: 13%;
+}
+.sidebarContainer > span:first-child::after {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.175);
+}
+.tabsContainer {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
