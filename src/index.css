@@ -2,6 +2,9 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --main-color:#223333;
+  --pay-button:#C2A39A;
+
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -16,7 +19,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--main-colornp);
   text-decoration: inherit;
 }
 a:hover {
