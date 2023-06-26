@@ -125,6 +125,7 @@ const dataForExample = {
 
 const order = {
   stageNo: 1,
+  readyToNext: false,
   order: {
 
   }
