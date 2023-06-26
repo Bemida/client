@@ -1,0 +1,8 @@
+/* Creator : didi */
+
+.containerSize {
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    box-sizing: content-box;
+}

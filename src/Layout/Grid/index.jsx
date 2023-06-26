@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './style.module.css'
 import { useContext } from 'react'
 import { DataContext } from '../../Context/MainContext';
+import Size from '../../Components/Size';
 // import Header from '../Header';
 
 
@@ -11,21 +12,18 @@ import { DataContext } from '../../Context/MainContext';
 
 function Grid() {
   const context = useContext(DataContext)
-  const s1 = "componnent_Main_Section";
-  const s2 = "s2";
-  const s3 = "s3";
-  const s4 = "s4";
-  const s5 = "s5";
+  const comp_step_3 = "comp_step_3";
+  const comp_step_4 = "comp_step_4";
+  const comp_step_5 = "comp_step_5";
   const To_Main_Section = {
-    1: s1,
-    2: s2,
-    3: s3,
-    4: s4,
-    5: s5
+    // 1: "componnent_Main_Section",
+    1: <Size />,
+    2: <Size />,
+    3: comp_step_3,
+    4: comp_step_4,
+    5: comp_step_5
   }
-  const Main_Section = To_Main_Section[context.stage]
-  // console.log(Main_Section);
-  console.log(context.fakeData.items);
+  const Main_Section = To_Main_Section[context.order.stageNo]
   return (
     <div className={styles.containerGrid}>
       <div className={styles.containerHeader}>
