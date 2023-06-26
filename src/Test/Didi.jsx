@@ -1,7 +1,12 @@
-import React from 'react'
+import Layout from "../Layout"
 
-export default function Didi() {
-  return (
-    <div>Didi</div>
-  )
+function Didi() {
+    return (
+        <div >
+            {/* Didi */}
+            <Layout />
+        </div>
+    )
 }
+
+export default Didi

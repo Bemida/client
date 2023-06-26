@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Aviad from "./Aviad";
 import David from "./David";
 import Didi from "./Didi";
@@ -21,9 +20,9 @@ function MainTest() {
   return (
     <div>
       <Routes>
+        <Route path="/didi" element={<Didi />} />
         <Route path="/aviad" element={<Aviad />} />
         <Route path="/david" element={<David />} />
-        <Route path="/didi" element={<Didi />} />
         <Route path="/efrat" element={<Efrat />} />
         <Route path="/hadassah" element={<Hadassah />} />
         <Route path="/michael" element={<Michael />} />
