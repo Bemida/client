@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './style.module.css'
-import Header from '../Header';
+// import Header from '../Header';
 
 
 //Creator : didi - add div to className
@@ -12,13 +12,13 @@ const s5 = "s5";
 
 const To_Main_Section = {
   // 1: s1,
-  1: <Header />,
+  // 1: <Header />,
   2: s2,
   3: s3,
   4: s4,
   5: s5
 }
-const Main_Section = To_Main_Section[Stage]
+// const Main_Section = To_Main_Section[Stage]
 // console.log(Stage,"Stage");
 function Grid() {
   return (
@@ -37,7 +37,7 @@ function Grid() {
 
             </div>
             <div className={styles.containerMain_Section}>
-              {Main_Section}
+              {/* {Main_Section} */}
             </div>
           </div>
           <div className={styles.containerBty}>
