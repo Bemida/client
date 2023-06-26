@@ -2,7 +2,7 @@
     max-height: 30%;
     position: relative;
     overflow-y: auto;
-    /* min-height: 20%; */
+    min-height: 13%;
 }
 .heading{
     position: relative;
@@ -12,23 +12,23 @@
     align-items: center;
     color: grey;
     cursor: pointer;
-    margin-bottom: 10px;
-    min-width: 100%;
+    margin-bottom: 30px;
+    min-width: 30px;
     user-select: none;
     /* background-color: rgba(0, 0, 255, 0.094); */
 }
 
 .heading svg{
     right:  0;
-    top: 5px;
+    top: 4px;
     position: absolute;
     margin-top: 1.3px;    
 }
 .name {
-    margin-right: 15px;
+    position: absolute;
+    top: 0;
+    right: 15px;
 }
-
-/* .collapseContainer > span:first-child{
-    position: relative;
-    right: 80px;
-} */
+.collapseContainer > div:last-child {
+    padding-right: 15px;
+}
