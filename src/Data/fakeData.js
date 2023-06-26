@@ -1,32 +1,6 @@
 //Fake data 
-const fakeOrderData = {
-    user: "John Doe",
-    status: "in_progress",
-    date: "2023-06-25T12:34:56.789Z",
-    shipping: "regular",
-    stages: [
-        {
-            stage: [
-                {
-                    stageNo: 1,
-                    furniture: "Closet",
-                    items: [
-                        {
-                            item: {
-                                name: "Table",
-                                itemId: "67890",
-                                amount: 1,
-                                img: "🪑",
-                                price: 100
-                            }
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    total: 150
-}
+
+
 
 const fakeItemData = {
     categories: [
@@ -92,7 +66,7 @@ interior:{
     }
 }}
 
-const dataForExample = {
+const fakeOrderData = {
   user: "John Doe",
   status: "in_progress",
   shipping: "regular",
