@@ -2,16 +2,18 @@ import React from 'react'
 import styles from './style.module.css'
 import Header from './Header'
 import Sidebar from './Sidebar'
-import Body from './Body'
+import Grid from './Grid'
+
+//Creator : didi - change Body to Grid
 
 
 function Layout() {
   return (
-    <div>
+    <div className={styles.containerLayout}>
 
-<Header/>
-<Sidebar/>
-<Body/>
+      <Header />
+      <Sidebar />
+      <Grid />
     </div>
   )
 }
