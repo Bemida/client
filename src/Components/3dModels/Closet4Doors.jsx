@@ -8,7 +8,7 @@ import { useGLTF } from "@react-three/drei";
 import Handles from "../../Functions/3dCalc/Handles"; // david component - handles
 
 export function Closet4Doors(props) {
-  const width = 1.60, height = 2.40, depth = .30, doorsNumber = 4, woodWidth = 1
+  const width = 1.60, height = 2.40, depth = .30, doorsNumber = 4, woodWidth = 0.1
 
   const defaultDimensions = [161, 230, 59]
   const { nodes, materials } = useGLTF("/assets/3dModels/Closet4Doors.glb");
