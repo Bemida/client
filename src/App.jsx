@@ -1,11 +1,13 @@
 import './App.css'
-import MainTest from './Test/MainTest'
-
+import TestRoutes from './Test/MainTest'
+import MainContext from './Context/MainContext'
 function App() {
   return (
     
       <div>
-<MainTest/>
+<MainContext>
+<TestRoutes/>
+</MainContext>
    
       </div>
   ) 

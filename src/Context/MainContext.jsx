@@ -1,19 +1,22 @@
 import { createContext, useState } from "react"
+import data from '../Data/fakeData'
+import Layout from "../Layout"
 
 //This is where we'll manager any context that needs to be used across our applications. 
 //Below we've created a component that contains multiple states. We can later wrap a component with this one to give it access to all our different contexts
 
-const DataContext = createContext({})
+export const DataContext = createContext({})
 
-export const ContextProvider = ({ children }) => {
-    const [sample, setSample] = useState("")
-    const [sample2, setSample2] = useState("")
-    const [sample3, setSample3] = useState("")
+const ContextProvider = ({ children }) => {
+    const [stage, setStage] = useState({})
 
     return (
-        <DataContext.Provider value={{ sample, setSample }}>
+        <DataContext.Provider value={{ stage, setStage, fakeData: { items: data.items } }}>
             {children}
+        
         </DataContext.Provider>)
 
 }
+
+export default ContextProvider
 
