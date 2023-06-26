@@ -7,7 +7,6 @@
     position: relative;
     display: flex;
     justify-content: end;
-
 }
 
 .title_size {
@@ -20,9 +19,8 @@
     color: black;
     width: 50%;
     height: 80%;
-    background-color: gray;
     margin-right: 0.5%;
     text-align: right;
-    /* background-color: brown; */
     margin-right: 2%;
 }
+
