@@ -1,8 +1,9 @@
 import styles from "./style.module.css";
 import data from "../../Data/fakeData";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext} from "react";
 import SidebarCollapse from "../SidebarCollapse";
 import SidebarTab from "../SidebarTab";
+import { DataContext } from "../../Context/MainContext";
 
 function SideBar({ title }) {
   const tabs = Object.entries(data.items.exterior);
@@ -10,15 +11,18 @@ function SideBar({ title }) {
   // useEffect(() => {
   // },[openTab])
   console.log(tabs);
-  const handleClick = (tab) => {
+const  {order,setOrder} = useContext(DataContext)  
+
+  console.log(order.exteriorStyle);
+  const handleClick = (tab, description) => {
+    if(description){
+      const key = tab
+      setOrder({...order, exteriorStyle: {
+      ...order.exteriorStyle, [key]: description}})
+      return
+    }
     setOpenTab((prev) => (prev === tab ? null : tab));
   };
-  {
-    tabs.map((tab, i) => {
-      console.log(tab[1].name);
-    });
-  }
-
   return (
     <>
       <div className={styles.outerContainer}>
@@ -27,24 +31,27 @@ function SideBar({ title }) {
           {/* if(tab[0] === openTab){ */}
           {tabs.map((tab, i) => {
             // if (openTab) {
+              if(openTab === tab[1].name){
               return (
                 <SidebarCollapse
                     name={tab[1].name}
+                    englishName={tab[0]}
                     openTab={openTab}
                     handleClick={handleClick}
                     key={i}
                     >
-                  { openTab === tab[1].name &&
-                      tab[1].list.map((tab, index) => {
-                        return <SidebarTab key={index} description={tab.description}/>;
-                      })
+                      {tab[1].list.map((childTab, index) => {
+                        return <SidebarTab handlClick={handleClick} parentName={tab[0]} key={index} description={childTab.description}/>;
+                      })}
+                  </SidebarCollapse>)
                   }
-                  </SidebarCollapse>
-                );
-              // }
-            })}
-
-        
+                  return (<SidebarCollapse
+                  name={tab[1].name}
+                  openTab={openTab}
+                  handleClick={handleClick}
+                  key={i}
+                  />)
+})}
         </div>
       </div>
     </>

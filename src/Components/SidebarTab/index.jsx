@@ -1,10 +1,11 @@
 import styles from './style.module.css'
 
-function SidebarTab({description}) {
+function SidebarTab({handlClick,parentName, description}) {
   return (
-    <li className={styles.ilCollapse}>
-      {/* <img src='' alt=''/> */}
+    
+    <li onClick={() => handlClick(parentName, description)} className={styles.ilCollapse}>
       {description}
+      {/* <img src='' alt=''/> */}
     </li>
   )
 }

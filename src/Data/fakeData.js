@@ -121,11 +121,10 @@ const fakeOrderData = {
 const order = {
   stageNo: 1,
   readyToNext: false,
-  order: {},
 };
 
 export default {
   items: fakeItemData,
   orders: fakeOrderData,
-  order,
+  order:order,
 };
