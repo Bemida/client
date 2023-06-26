@@ -145,6 +145,61 @@ export function Closet4Doors({
           position={calcPosition([1.208, 1.23, 0.297], [scale.X, scale.Y, scale.Z])}
           scale={calcScale(1, [scale.X, 1, scale.Z])}
         />
+        {withDoors &&
+          <group>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.door1.geometry}
+              material={materials.wood_1}
+              position={calcPosition([0.2, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
+              scale={calcScale(-1, [scale.X, scale.Y, 1])}
+              rotation={[-Math.PI, 0, 0]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.door2.geometry}
+              material={materials.wood_1}
+              position={calcPosition([0.602, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
+              scale={calcScale(1, [scale.X, scale.Y, 1])}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.door3.geometry}
+              material={materials.wood_1}
+              rotation={[-Math.PI, 0, 0]}
+              position={calcPosition([1.015, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
+              scale={calcScale(-1, [scale.X, scale.Y, 1])}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.door4.geometry}
+              material={materials.wood_1}
+              position={calcPosition([1.415, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
+              rotation={[-Math.PI, 0, 0]}
+              scale={calcScale(-1, [scale.X, scale.Y, 1])}
+            />
+          </group>
+        }
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.shelfLeft.geometry}
+          material={materials.wood_1}
+          position={calcPosition([0.408, 1.23, 0.297], [scale.X, scale.Y, scale.Z])}
+          scale={calcScale(1, [scale.X, 1, scale.Z])}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.shelfRight.geometry}
+          material={materials.wood_1}
+          position={calcPosition([1.208, 1.23, 0.297], [scale.X, scale.Y, scale.Z])}
+          scale={calcScale(1, [scale.X, 1, scale.Z])}
+        />
       </group>
 
       <mesh
@@ -218,3 +273,5 @@ export function Closet4Doors({
 }
 useGLTF.preload("assets/3dModels/Closet4Doors.glb");
 
+=======
+>>>>>>> 44bb901def6ab362a32ae41dd7686c202cd438a0
