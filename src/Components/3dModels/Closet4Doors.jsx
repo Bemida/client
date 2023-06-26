@@ -19,159 +19,103 @@ export function Closet4Doors({
   ...props
 }) {
   const defaultDimensions = [1.61, 2.30, 0.59]
-  const { nodes, materials } = useGLTF("assets/3dModels/Closet4Doors.glb");
+  const { nodes, materials } = useGLTF("assets/3dModels/closet4Doors.glb");
   console.log(nodes);
   return (
-    <group {...props} dispose={null} >
+    <group {...props} dispose={null}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.poleLeft.geometry}
+        material={materials.chrome}
+        position={[0.426, 2.295, 0.3]}
+        rotation={[0, 0, -Math.PI / 2]}
+      />
       <group
         scale={calcScale(defaultDimensions, [width, height, depth])}
+        position={[0,0,0]}
       >
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.leftPanel.geometry}
           material={materials.wood_1}
-          position={[0.2, 1.25, 0.3]}
+          position={[0.809, 0.1, 0.3]}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.backPanel.geometry}
           material={materials.wood_1}
-          position={[0.2, 1.25, 0.002]}
+          position={[0.809, 0.1, 0.3]}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.bottomPanel.geometry}
           material={materials.wood_1}
-          position={[0, 0.1, 0.3]}
+          position={[0.809, 0.1, 0.3]}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.rightPanel.geometry}
           material={materials.wood_1}
-          position={[1.616, 1.25, 0.005]}
+          position={[0.809, 0.1, 0.3]}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.topPanel.geometry}
           material={materials.wood_1}
-          position={[0, 2.4, 0.3]}
+          position={[0.809, 0.1, 0.3]}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.divider.geometry}
           material={materials.wood_1}
-          position={[1, 1.25, 0.3]}
+          position={[0.809, 0.1, 0.3]}
         />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.door1.geometry}
-          material={materials.wood_1}
-          position={[0.015, 1.25, 0.595]}
-          rotation={[-Math.PI, Math.PI / 2, 0]}
-          scale={-1}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.door2.geometry}
-          material={materials.wood_1}
-          position={[0.8, 1.25, 0.595]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.door3.geometry}
-          material={materials.wood_1}
-          position={[0.817, 1.25, 0.595]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={-1}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.door4.geometry}
-          material={materials.wood_1}
-          position={[1.613, 1.25, 0.595]}
-        />
+        {false && <group>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.door2.geometry}
+            material={materials.wood_1}
+            position={[0.809, 0.1, 0.3]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.door3.geometry}
+            material={materials.wood_1}
+            position={[0.808, 0.1, 0.3]}
+            rotation={[-Math.PI, 0, 0]}
+            scale={-1}
+          />
+
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.door1.geometry}
+            material={materials.wood_1}
+            position={[0.809, 0.1, 0.3]}
+            rotation={[-Math.PI, 0, 0]}
+            scale={-1}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.door4.geometry}
+            material={materials.wood_1}
+            position={[0.809, 0.1, 0.3]}
+            rotation={[-Math.PI, 0, 0]}
+            scale={-1}
+          />
+        </group>}
       </group>
 
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.poleLeft.geometry}
-        material={materials.chrome}
-        position={[0.016, 2.294, 0.299]}
-        rotation={[0, 0, -Math.PI / 2]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.hinge1.geometry}
-        material={materials.chrome}
-        position={[0.016, 2.222, 0.558]}
-        rotation={[Math.PI, 0, -Math.PI / 2]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.hinge2.geometry}
-        material={materials.chrome}
-        position={[0.016, 1.665, 0.558]}
-        rotation={[Math.PI, 0, -Math.PI / 2]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.hinge3.geometry}
-        material={materials.chrome}
-        position={[0.016, 1.07, 0.558]}
-        rotation={[Math.PI, 0, -Math.PI / 2]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.hinge4.geometry}
-        material={materials.chrome}
-        position={[0.016, 0.297, 0.558]}
-        rotation={[Math.PI, 0, -Math.PI / 2]}
-      />
-
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.handle1.geometry}
-        material={materials.chrome}
-        position={[-0.001, 0.9, 0.946]}
-        rotation={[0, -1.571, 0]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.handle2.geometry}
-        material={materials.chrome}
-        position={[0.44, 0.9, 0.611]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.handle3.geometry}
-        material={materials.chrome}
-        position={[1.177, 0.9, 0.611]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.handle4.geometry}
-        material={materials.chrome}
-        position={[1.253, 0.9, 0.611]}
-      />
       <mesh
         castShadow
         receiveShadow
@@ -205,14 +149,14 @@ export function Closet4Doors({
         receiveShadow
         geometry={nodes.shelfLeft.geometry}
         material={materials.wood_1}
-        position={[0.2, 1.222, 0.3]}
+        position={[0.408, 1.23, 0.297]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.shelfRight.geometry}
         material={materials.wood_1}
-        position={[1, 1.222, 0.3]}
+        position={[1.208, 1.23, 0.297]}
       />
       <group scale={calcScale([defaultDimensions[0], 1, defaultDimensions[2]], [width, 1, depth])}>
         <mesh
@@ -220,28 +164,28 @@ export function Closet4Doors({
           receiveShadow
           geometry={nodes.sokolBack.geometry}
           material={materials.wood_1}
-          position={[0.2, 0.05, 0.287]}
+          position={[0.806, 0.05, 0.008]}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.sokolFront.geometry}
           material={materials.wood_1}
-          position={[0.2, 0.05, 0.287]}
+          position={[0.806, 0.05, 0.585]}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.sokolLeft.geometry}
           material={materials.wood_1}
-          position={[0.2, 0.05, 0.287]}
+          position={[0.01, 0.05, 0.296]}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.sokolRight.geometry}
           material={materials.wood_1}
-          position={[0.2, 0.05, 0.287]}
+          position={[1.601, 0.05, 0.296]}
         />
       </group>
       <mesh
@@ -249,12 +193,11 @@ export function Closet4Doors({
         receiveShadow
         geometry={nodes.poleRight.geometry}
         material={materials.chrome}
-        position={[0.817, 2.294, 0.299]}
+        position={[1.226, 2.295, 0.3]}
         rotation={[0, 0, -Math.PI / 2]}
       />
     </group>
   );
 }
-
-useGLTF.preload("assets/3dModels/Closet4Doors.glb");
+useGLTF.preload("assets/3dModels/closet4Doors.glb");
 
