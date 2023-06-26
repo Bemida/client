@@ -2,7 +2,27 @@
 
 .containerSize {
     width: 100%;
-    height: 100%;
+    height: 95%;
     background-color: gray;
-    box-sizing: content-box;
+    position: relative;
+    display: flex;
+    justify-content: end;
+
+}
+
+.title_size {
+    height: 5%;
+    color: black;
+    text-align: right;
+}
+
+.containerSize>div {
+    color: black;
+    width: 50%;
+    height: 80%;
+    background-color: gray;
+    margin-right: 0.5%;
+    text-align: right;
+    /* background-color: brown; */
+    margin-right: 2%;
 }

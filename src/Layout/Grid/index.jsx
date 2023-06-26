@@ -3,6 +3,7 @@ import styles from './style.module.css'
 import { useContext } from 'react'
 import { DataContext } from '../../Context/MainContext';
 import Size from '../../Components/Size';
+import Viewer3d from '../../Components/Viewer3d';
 // import Header from '../Header';
 
 
@@ -16,13 +17,14 @@ function Grid() {
   const comp_step_4 = "comp_step_4";
   const comp_step_5 = "comp_step_5";
   const To_Main_Section = {
-    // 1: "componnent_Main_Section",
-    1: <Size />,
+    1: "componnent_Main_Section",
     2: <Size />,
-    3: comp_step_3,
+    3:<Viewer3d /> ,
+    // 3: comp_step_3,
     4: comp_step_4,
     5: comp_step_5
   }
+  // const Main_Section = To_Main_Section[3]
   const Main_Section = To_Main_Section[context.order.stageNo]
   return (
     <div className={styles.containerGrid}>
