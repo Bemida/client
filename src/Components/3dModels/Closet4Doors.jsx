@@ -7,11 +7,11 @@ import { useGLTF } from "@react-three/drei";
 
 import Handles from "../../Functions/3dCalc/Handles"; // david component - handles
 
-export function Closet4Doors() {
-  const width = 160, height = 240, depth = 30, doorsNumber = 4, woodWidth = 1
+export function Closet4Doors(props) {
+  const width = 1.60, height = 2.40, depth = .30, doorsNumber = 4, woodWidth = 1
 
   const defaultDimensions = [161, 230, 59]
-  const { nodes, materials } = useGLTF("assets/3dModels/Closet4Doors.glb");
+  const { nodes, materials } = useGLTF("/assets/3dModels/Closet4Doors.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -206,7 +206,7 @@ export function Closet4Doors() {
         position={[0.037, 2.294, -0.026]}
         rotation={[0, 0, -Math.PI / 2]}
       />
-      <Handles width={width} height={height} depth={depth} doorsNumber={doorsNumber} woodWidth={woodWidth} />
+      <Handles {...{ nodes, materials }} width={width} height={height} depth={depth} doorsNumber={doorsNumber} woodWidth={woodWidth} />
     </group>
   );
 }
@@ -215,4 +215,4 @@ useGLTF.preload("assets/3dModels/Closet4Doors.glb");
 
 
 
-nodes.door2.position[2] // z position
+// nodes.door2.position[2] // z position
