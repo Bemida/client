@@ -10,6 +10,7 @@ const s3 = "s3";
 const s4 = "s4";
 const s5 = "s5";
 
+<<<<<<< HEAD
 const To_Main_Section = {
   // 1: s1,
   // 1: <Header />,
@@ -20,6 +21,11 @@ const To_Main_Section = {
 }
 // const Main_Section = To_Main_Section[Stage]
 // console.log(Stage,"Stage");
+=======
+
+
+
+>>>>>>> b0b51ee17d284c21e85f180ee9ed8c06c55385f8
 function Grid() {
   return (
     <div className={styles.containerGrid}>
