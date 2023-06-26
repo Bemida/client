@@ -1,4 +1,4 @@
-//Fake data 
+//Fake data
 const fakeOrderData = {
   user: "John Doe",
   status: "in_progress",
@@ -8,7 +8,7 @@ const fakeOrderData = {
     {
       stage: [
         {
-          stageNo: 1,
+          stageNumber: 1,
           furniture: "Closet",
           items: [
             {
@@ -17,16 +17,16 @@ const fakeOrderData = {
                 itemId: "67890",
                 amount: 1,
                 img: "🪑",
-                price: 100
-              }
-            }
-          ]
-        }
-      ]
-    }
+                price: 100,
+              },
+            },
+          ],
+        },
+      ],
+    },
   ],
-  total: 150
-}
+  total: 150,
+};
 
 const fakeItemData = {
   categories: [
@@ -35,50 +35,59 @@ const fakeItemData = {
     { id: 7893, category: "ספריה" },
     { id: 2768, category: "שולחן" },
     { id: 435, category: "קונסולה" },
-    { id: 123, category: "שידות מגירות" }],
+    { id: 123, category: "שידות מגירות" },
+  ],
   exterior: {
-    handles: [{
-      description: "ידית כפתור נרקיס",
-      img: "🎭",
-      id: 321
-    }, {
-      description: "ידית זהב מוברש",
-      img: "🥎",
-      id: 54
-    },
+    handles: [
+      {
+        description: "ידית כפתור נרקיס",
+        img: "🎭",
+        id: 321,
+      },
+      {
+        description: "ידית זהב מוברש",
+        img: "🥎",
+        id: 54,
+      },
     ],
-    base: [{
-      description: "רגליים",
-      img: "🦵",
-      id: 283
-    }, {
-      description: "צוקל",
-      img: "🧆",
-      id: 12
-    }],
-    color: [{
-      description: "אורן",
-      img: "🎋",
-      id: 45
-    }, {
-      description: "אלון",
-      img: "🎄",
-      id: 12
-    }, {
-      description: "לבן",
-      img: "🥚",
-      id: 54
-    }]
+    base: [
+      {
+        description: "רגליים",
+        img: "🦵",
+        id: 283,
+      },
+      {
+        description: "צוקל",
+        img: "🧆",
+        id: 12,
+      },
+    ],
+    color: [
+      {
+        description: "אורן",
+        img: "🎋",
+        id: 45,
+      },
+      {
+        description: "אלון",
+        img: "🎄",
+        id: 12,
+      },
+      {
+        description: "לבן",
+        img: "🥚",
+        id: 54,
+      },
+    ],
   },
   interior: {
     shelves: 1,
     drawers: 0,
-    isRod: true
-  }
-}
+    isRod: true,
+  },
+};
 
 export default {
   items: fakeItemData,
-  orders: fakeOrderData
-}
-
+  orders: fakeOrderData,
+};
