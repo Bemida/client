@@ -1,7 +1,7 @@
-import DataPresentation from "../Components/DataPresentation";
+import ProgressBar from "../Components/ProgressBar";
 
 function Neri() {
-  return <DataPresentation />;
+  return <ProgressBar />;
 }
 
 export default Neri;
