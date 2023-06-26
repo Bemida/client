@@ -36,8 +36,8 @@ const fakeItemData = {
     { id: 2768, category: "שולחן" },
     { id: 435, category: "קונסולה" },
     { id: 123, category: "שידות מגירות" }],
-  exterior: {
-    handles: [{
+  חיצוני: {
+    ידיות: [{
       description: "ידית כפתור נרקיס",
       img: "🎭",
       id: 321
@@ -47,7 +47,7 @@ const fakeItemData = {
       id: 54
     },
     ],
-    base: [{
+    בסיס: [{
       description: "רגליים",
       img: "🦵",
       id: 283
@@ -56,7 +56,7 @@ const fakeItemData = {
       img: "🧆",
       id: 12
     }],
-    color: [{
+    צבע: [{
       description: "אורן",
       img: "🎋",
       id: 45
@@ -70,10 +70,10 @@ const fakeItemData = {
       id: 54
     }]
   },
-  interior: {
-    shelves: 1,
-    drawers: 0,
-    isRod: true
+  פנימי: {
+   מדפים: 1,
+    מגירות: 0,
+    מוט: true
   }
 }
 
