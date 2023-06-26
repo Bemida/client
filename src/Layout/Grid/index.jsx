@@ -24,7 +24,7 @@ function Grid() {
     4: comp_step_4,
     5: comp_step_5
   }
-  // const Main_Section = To_Main_Section[3]
+  // const Main_Section = To_Main_Section[1]
   const Main_Section = To_Main_Section[context.order.stageNo]
   return (
     <div className={styles.containerGrid}>
