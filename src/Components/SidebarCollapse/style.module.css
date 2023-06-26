@@ -1,17 +1,33 @@
 .collapseContainer {
+    max-height: 30%;
+    position: relative;
+    overflow-y: auto;
+    /* min-height: 20%; */
+}
+.heading{
+    position: relative;
     display: flex;
     flex-direction: row-reverse;
-    gap:2px;
+    gap:1px;
     align-items: center;
     color: grey;
     cursor: pointer;
-    overflow: auto;
-    max-height: 20%;
-    position: relative;
+    margin-bottom: 10px;
+    min-width: 100%;
+    user-select: none;
+    /* background-color: rgba(0, 0, 255, 0.094); */
 }
-.arrow {
-    margin-top: 7px;    
+
+.heading svg{
+    right:  0;
+    top: 5px;
+    position: absolute;
+    margin-top: 1.3px;    
 }
+.name {
+    margin-right: 15px;
+}
+
 /* .collapseContainer > span:first-child{
     position: relative;
     right: 80px;

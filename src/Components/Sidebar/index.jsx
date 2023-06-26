@@ -11,12 +11,9 @@ function SideBar({title}) {
   // },[openTab])
   console.log(tabs);
   const handleClick = (tab) => {
-    if(tab === openTab){
-        setOpenTab("nothing")
-        return
-    }
-    setOpenTab(tab);
+        setOpenTab((prev) => prev === tab? null : tab)
   };
+  console.log(tabs);
   return (<>
     <div className={styles.outerContainer}>
       <div className={styles.sidebarContainer}>
@@ -24,18 +21,18 @@ function SideBar({title}) {
         {tabs.map((tab, i) => {
    if(openTab){
             if(tab[0] === openTab) {
-              return (<><SidebarCollapse name={tab[0]} openTab={openTab}  key={i} />
+              return (<><SidebarCollapse name={tab.name} openTab={openTab} handleClick={handleClick } key={i} >
               <div className={styles.tabsContainer}>
                   {tab[1].map((tab, index) => {
                     return <SidebarTab key={index} description={tab.description}/>;
                   })}
                   </div>
-                </>
+                </SidebarCollapse></>
               );
             }
         }
            return (
-            <SidebarCollapse handleClick={handleClick } name={tab[0]} key={i} />
+            <SidebarCollapse handleClick={handleClick} name={tab[0]} key={i} />
        );
         })}
       </div>
