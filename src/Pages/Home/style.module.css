@@ -1,0 +1,25 @@
+.body {
+    width: 750px;
+    background-color: #F2F2F2;
+    padding: 40px;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    box-sizing: border-box;
+    justify-content: center
+}
+
+/* 
+.group {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 90%;
+    width: 100px; 
+    height: 40%;
+    background-color: aqua;
+    text-align: center;
+    display: flex;
+}  */
