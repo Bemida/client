@@ -272,6 +272,3 @@ export function Closet4Doors({
   );
 }
 useGLTF.preload("assets/3dModels/Closet4Doors.glb");
-
-=======
->>>>>>> 44bb901def6ab362a32ae41dd7686c202cd438a0
