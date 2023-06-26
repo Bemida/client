@@ -1,9 +1,10 @@
+import DisplayCurrentSelection from "../Layout/DisplayCurrentSelection";
 
 
 export default function Michael(){
     return(
         <div>
-            Michael
+            <DisplayCurrentSelection/>
         </div>
     )
 }
