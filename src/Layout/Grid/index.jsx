@@ -1,32 +1,30 @@
 import React from 'react'
 import styles from './style.module.css'
+import { useContext } from 'react'
+import { DataContext } from '../../Context/MainContext';
 // import Header from '../Header';
 
 
 //Creator : didi - add div to className
-// const s1 = "s1";
-const s2 = "s2";
-const s3 = "s3";
-const s4 = "s4";
-const s5 = "s5";
-
-<<<<<<< HEAD
-const To_Main_Section = {
-  // 1: s1,
-  // 1: <Header />,
-  2: s2,
-  3: s3,
-  4: s4,
-  5: s5
-}
-// const Main_Section = To_Main_Section[Stage]
-// console.log(Stage,"Stage");
-=======
+//Creator : didi - add context
 
 
-
->>>>>>> b0b51ee17d284c21e85f180ee9ed8c06c55385f8
 function Grid() {
+  const context = useContext(DataContext)  
+  const s1 = "componnent_Main_Section";
+  const s2 = "s2";
+  const s3 = "s3";
+  const s4 = "s4";
+  const s5 = "s5";
+  const To_Main_Section = {
+    1: s1,
+    2: s2,
+    3: s3,
+    4: s4,
+    5: s5
+  }
+  const Main_Section = To_Main_Section[context.stage]
+  console.log(Main_Section);
   return (
     <div className={styles.containerGrid}>
       <div className={styles.containerHeader}>
@@ -43,7 +41,7 @@ function Grid() {
 
             </div>
             <div className={styles.containerMain_Section}>
-              {/* {Main_Section} */}
+              {Main_Section}
             </div>
           </div>
           <div className={styles.containerBty}>

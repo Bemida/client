@@ -1,8 +1,10 @@
-import React from 'react'
+import { useContext } from 'react'
 import Layout from '../Layout'
+import { DataContext } from '../Context/MainContext'
 
-// const x = useContext
 export default function Didi() {
+  const context = useContext(DataContext)
+  // console.log(context.stage);
   return (
     <div>
       <Layout />
