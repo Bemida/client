@@ -10,7 +10,7 @@ import { DataContext } from '../../Context/MainContext';
 
 
 function Grid() {
-  const context = useContext(DataContext)  
+  const context = useContext(DataContext)
   const s1 = "componnent_Main_Section";
   const s2 = "s2";
   const s3 = "s3";
@@ -24,7 +24,8 @@ function Grid() {
     5: s5
   }
   const Main_Section = To_Main_Section[context.stage]
-  console.log(Main_Section);
+  // console.log(Main_Section);
+  console.log(context.fakeData.items);
   return (
     <div className={styles.containerGrid}>
       <div className={styles.containerHeader}>
