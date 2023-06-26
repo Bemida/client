@@ -1,20 +1,17 @@
 import styles from "./style.module.css";
 
-// props: { content:[logoURL,logoStyle] }
+// props: { logoStyle }
 // creator: Neri
 
-function Header({ content }) {
-  const logoURL = content[0];
-  const logoStyle = content[1];
+function Header({ logoStyle }) {
   return (
     <div className={styles.header}>
       <img
-        src={logoURL}
+        src="\assets\logo-188 1.png"
         alt="logoURL"
         className={styles.logo}
-        style={{ logoStyle }}
+        style={logoStyle}
       />
-      <hr className={styles.hr} />
     </div>
   );
 }

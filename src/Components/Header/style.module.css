@@ -1,9 +1,14 @@
 .header {
-  display: flex;
-  justify-content: space-between;
+  border-bottom: solid 2px black;
+  width: 100%;
+  height: 95px;
+  padding: 2px;
+  position: relative;
 }
 
-/* .logo{
-    width: ;
-    height: ;
-} */
+.logo {
+  position: absolute;
+  right: 0;
+  width: 188px;
+  height: 69px;
+}
