@@ -1,0 +1,10 @@
+.button:hover{
+    opacity: 0.6;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    border-radius: 10px ;
+}
