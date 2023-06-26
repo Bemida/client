@@ -6,8 +6,8 @@ export default function Haya() {
     return (
         <div>
             <form action=''>
-                <Input type='text' isRequired={true} label='width in cm' id='width' />
-                <Input type='text' isRequired={true} />
+                <Input type='number' isRequired={true} label='width in cm' id='width' />
+                <Input type='number' isRequired={true} id='depth' />
                 <Input type='number' label='height in cm' id='height' />
                 <input type="submit" value="Submit" />
             </form>

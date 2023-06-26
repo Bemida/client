@@ -12,3 +12,7 @@
      display: block;
      text-align: left;
  }
+
+ :invalid {
+     border: solid 3px red;
+ }
