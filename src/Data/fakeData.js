@@ -113,8 +113,9 @@ const fakeOrderData = {
 }
 
 const order = {
-    stageNo: 1,
-    order: {
+  stageNo: 1,
+  readyToNext: false,
+  order: {
 
     }
 }
