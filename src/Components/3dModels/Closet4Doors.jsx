@@ -5,12 +5,103 @@ import React, { useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { calcScale } from '../../Functions/3dCalc/calcScale';
 
-export function Closet4Doors({ width, height, depth, isSokol, material, handleType, RightShelvesNumber, LeftShelvesNumber, isLeftPole, isRightPole, ...props }) {
-  const defaultDimensions = [161, 230, 59]
+export function Closet4Doors({
+  width = 1,
+  height = 1,
+  depth = 1,
+  isSokol,
+  material,
+  handleType,
+  RightShelvesNumber,
+  LeftShelvesNumber,
+  isLeftPole,
+  isRightPole,
+  ...props
+}) {
+  const defaultDimensions = [1.61, 2.30, 0.59]
   const { nodes, materials } = useGLTF("assets/3dModels/Closet4Doors.glb");
   console.log(nodes);
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} >
+      <group
+        scale={calcScale(defaultDimensions, [width, height, depth])}
+      >
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.leftPanel.geometry}
+          material={materials.wood_1}
+          position={[0.2, 1.25, 0.3]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.backPanel.geometry}
+          material={materials.wood_1}
+          position={[0.2, 1.25, 0.002]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.bottomPanel.geometry}
+          material={materials.wood_1}
+          position={[0, 0.1, 0.3]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.rightPanel.geometry}
+          material={materials.wood_1}
+          position={[1.616, 1.25, 0.005]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.topPanel.geometry}
+          material={materials.wood_1}
+          position={[0, 2.4, 0.3]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.divider.geometry}
+          material={materials.wood_1}
+          position={[1, 1.25, 0.3]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.door1.geometry}
+          material={materials.wood_1}
+          position={[0.015, 1.25, 0.595]}
+          rotation={[-Math.PI, Math.PI / 2, 0]}
+          scale={-1}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.door2.geometry}
+          material={materials.wood_1}
+          position={[0.8, 1.25, 0.595]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.door3.geometry}
+          material={materials.wood_1}
+          position={[0.817, 1.25, 0.595]}
+          rotation={[-Math.PI, 0, 0]}
+          scale={-1}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.door4.geometry}
+          material={materials.wood_1}
+          position={[1.613, 1.25, 0.595]}
+        />
+      </group>
+
       <mesh
         castShadow
         receiveShadow
@@ -18,48 +109,6 @@ export function Closet4Doors({ width, height, depth, isSokol, material, handleTy
         material={materials.chrome}
         position={[0.016, 2.294, 0.299]}
         rotation={[0, 0, -Math.PI / 2]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.leftPanel.geometry}
-        material={materials.wood_1}
-        position={[0.2, 1.25, 0.3]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.backPanel.geometry}
-        material={materials.wood_1}
-        position={[0.2, 1.25, 0.002]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.bottomPanel.geometry}
-        material={materials.wood_1}
-        position={[0, 0.1, 0.3]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.rightPanel.geometry}
-        material={materials.wood_1}
-        position={[1.616, 1.25, 0.005]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.topPanel.geometry}
-        material={materials.wood_1}
-        position={[0, 2.4, 0.3]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.divider.geometry}
-        material={materials.wood_1}
-        position={[1, 1.25, 0.3]}
       />
       <mesh
         castShadow
@@ -93,38 +142,7 @@ export function Closet4Doors({ width, height, depth, isSokol, material, handleTy
         position={[0.016, 0.297, 0.558]}
         rotation={[Math.PI, 0, -Math.PI / 2]}
       />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.door1.geometry}
-        material={materials.wood_1}
-        position={[0.015, 1.25, 0.595]}
-        rotation={[-Math.PI, Math.PI / 2, 0]}
-        scale={-1}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.door2.geometry}
-        material={materials.wood_1}
-        position={[0.8, 1.25, 0.595]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.door3.geometry}
-        material={materials.wood_1}
-        position={[0.817, 1.25, 0.595]}
-        rotation={[-Math.PI, 0, 0]}
-        scale={-1}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.door4.geometry}
-        material={materials.wood_1}
-        position={[1.613, 1.25, 0.595]}
-      />
+
       <mesh
         castShadow
         receiveShadow
@@ -196,34 +214,36 @@ export function Closet4Doors({ width, height, depth, isSokol, material, handleTy
         material={materials.wood_1}
         position={[1, 1.222, 0.3]}
       />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.sokolBack.geometry}
-        material={materials.wood_1}
-        position={[0.2, 0.05, 0.287]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.sokolFront.geometry}
-        material={materials.wood_1}
-        position={[0.2, 0.05, 0.287]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.sokolLeft.geometry}
-        material={materials.wood_1}
-        position={[0.2, 0.05, 0.287]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.sokolRight.geometry}
-        material={materials.wood_1}
-        position={[0.2, 0.05, 0.287]}
-      />
+      <group scale={calcScale([defaultDimensions[0], 1, defaultDimensions[2]], [width, 1, depth])}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.sokolBack.geometry}
+          material={materials.wood_1}
+          position={[0.2, 0.05, 0.287]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.sokolFront.geometry}
+          material={materials.wood_1}
+          position={[0.2, 0.05, 0.287]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.sokolLeft.geometry}
+          material={materials.wood_1}
+          position={[0.2, 0.05, 0.287]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.sokolRight.geometry}
+          material={materials.wood_1}
+          position={[0.2, 0.05, 0.287]}
+        />
+      </group>
       <mesh
         castShadow
         receiveShadow
