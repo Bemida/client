@@ -1,4 +1,5 @@
 import React from 'react'
+import Home from '../../Pages/Home'
 import styles from './style.module.css'
 
 //Creator : didi - add div to className
@@ -23,7 +24,6 @@ function Grid() {
 
             </div>
             <div className={styles.containerImg}>
-
             </div>
           </div>
           <div className={styles.containerBty}>
