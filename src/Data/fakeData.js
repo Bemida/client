@@ -37,7 +37,7 @@ const fakeItemData = {
     { id: 435, category: "קונסולה" },
     { id: 123, category: "שידות מגירות" }],
   exterior: {
-    handles: [{
+    ידיות: [{
       description: "ידית כפתור נרקיס",
       img: "🎭",
       id: 321
@@ -47,7 +47,7 @@ const fakeItemData = {
       id: 54
     },
     ],
-    base: [{
+    בסיס: [{
       description: "רגליים",
       img: "🦵",
       id: 283
@@ -56,7 +56,7 @@ const fakeItemData = {
       img: "🧆",
       id: 12
     }],
-    color: [{
+    צבע: [{
       description: "אורן",
       img: "🎋",
       id: 45

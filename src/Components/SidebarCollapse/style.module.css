@@ -1,0 +1,6 @@
+.collapseContainer {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    color: grey;
+}

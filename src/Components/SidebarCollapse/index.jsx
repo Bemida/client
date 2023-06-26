@@ -1,8 +1,8 @@
 import styles from './style.module.css'
 
-function SidebarCollapse({name}) {
+function SidebarCollapse({name, handleClick}) {
   return (
-    <ul>
+    <ul className={styles.collapseContainer} onClick={() => handleClick(name)}>
             {name}
     </ul>
   )
