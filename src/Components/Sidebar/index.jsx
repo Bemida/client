@@ -39,7 +39,6 @@ function SideBar({ title }) {
                         return <SidebarTab key={index} description={tab.description}/>;
                       })
                   }
-                                      {/* {tab[1]} */}
                   </SidebarCollapse>
                 );
               // }
