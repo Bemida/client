@@ -9,11 +9,12 @@ export const DataContext = createContext({})
 
 const ContextProvider = ({ children }) => {
     const [stage, setStage] = useState({})
+    const [order, setOrder] = useState(data.order)
 
     return (
-        <DataContext.Provider value={{  stage, setStage, fakeData:data }}>
+        <DataContext.Provider value={{ stage, setStage, fakeData: data, order,setOrder }}>
             {children}
-        
+
         </DataContext.Provider>)
 
 }

@@ -77,8 +77,16 @@ const fakeItemData = {
   }
 }
 
+const order = {
+  stageNo: 1,
+  order: {
+
+  }
+}
+
 export default {
   items: fakeItemData,
-  orders: fakeOrderData
+  orders: fakeOrderData,
+  order
 }
 
