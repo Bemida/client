@@ -1,10 +1,10 @@
 import styles from './style.module.css'
-
-function SidebarCollapse({name, handleClick}) {
-  return (
-    <ul className={styles.collapseContainer} onClick={() => handleClick(name)}>
-            {name}
-    </ul>
+import {IoIosArrowDown} from "react-icons/io"
+function SidebarCollapse({name, handleClick, openTab}) {
+  return ( <> 
+    <ul className={styles.collapseContainer} onClick={() => handleClick && handleClick(name)}>
+    {openTab && <div className={styles.arrow}><IoIosArrowDown /></div>}<span>{name}</span> 
+    </ul></>
   )
 }
 

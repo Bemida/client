@@ -1,6 +1,18 @@
 .collapseContainer {
     display: flex;
-    flex-direction: column;
-    gap:20px;
+    flex-direction: row-reverse;
+    gap:2px;
+    align-items: center;
     color: grey;
+    cursor: pointer;
+    overflow: auto;
+    max-height: 20%;
+    position: relative;
 }
+.arrow {
+    margin-top: 7px;    
+}
+/* .collapseContainer > span:first-child{
+    position: relative;
+    right: 80px;
+} */
