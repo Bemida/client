@@ -1,8 +1,16 @@
-import ProgressBar from "../Components/ProgressBar";
-import Header from "../Layout/Header";
+import Select from "../Components/Select";
 
 function Neri() {
-  return <Header />;
+  return (
+    <Select
+      options={[
+        { key: "ff", value: "kkjdkj" },
+        { key: "ff", value: "kkjdkj" },
+        { key: "ff", value: "kkjdkj" },
+        { key: "ff", value: "kkjdkj" },
+      ]}
+    />
+  );
 }
 
 export default Neri;
