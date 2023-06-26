@@ -24,7 +24,6 @@ function Shelf({ height, LeftShelvesNumber, depth }) {
   return (
     <>
       {array.map(value =>{
- 
       const y = (shelfHeightL * value)+ 0.08
       console.log(y);
       return(<mesh

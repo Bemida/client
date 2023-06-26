@@ -128,7 +128,7 @@ export function Closet4Doors({ width, height, depth, isSokol, material, handleTy
         material={materials.wood_1}
         position={[1.613, 1.25, 0.595]}
       /> */}
-      <mesh
+      {/* <mesh
         castShadow
         receiveShadow
         geometry={nodes.handle1.geometry}
@@ -156,7 +156,7 @@ export function Closet4Doors({ width, height, depth, isSokol, material, handleTy
         geometry={nodes.handle4.geometry}
         material={materials.chrome}
         position={[1.253, 0.9, 0.611]}
-      />
+      /> */}
       <mesh
         castShadow
         receiveShadow
