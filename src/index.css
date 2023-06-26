@@ -4,6 +4,9 @@
   font-weight: 400;
   --main-color:#223333;
   --pay-button:#C2A39A;
+  --text-color:#F5F5F5;
+  --shadow:#00000040;
+  --text:#000000DE;
 
 
   color-scheme: light dark;
