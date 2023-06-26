@@ -3,7 +3,9 @@ import Viewer3d from "../Components/Viewer3D"
 
 function Tzvi() {
     return (
-        <Viewer3d />
+        <>
+            <Viewer3d />
+        </>
     )
 }
 export default Tzvi

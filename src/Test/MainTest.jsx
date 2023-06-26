@@ -19,32 +19,32 @@ import Yosef_si from './Yosef_si'
 import Haya from './Haya'
 
 function MainTest() {
-  return (
-    <div>
+        return (
+                <div>
 
-      <Routes>
-        <Route path="/aviad" element={<Aviad />} />
-        <Route path="/david" element={<David />} />
-        <Route path="/didi" element={<Didi />} />
-        <Route path="/efrat" element={<Efrat />} />
-        <Route path="/hadassah" element={<Hadassah />} />
-        <Route path="/michael" element={<Michael />} />
-        <Route path="/neri" element={<Neri />} />
-        <Route path="/netanel" element={<Netanel />} />
-        <Route path="/omri" element={<Omri />} />
-        <Route path="/rotem" element={<Rotem />} />
-        <Route path="/tzvi" element={<Tzvi />} />
-        <Route path="/yehuda" element={<Yehuda />} />
-        <Route path="/yonatan" element={<Yonatan />} />
-        <Route path="/yosef_si" element={<Yosef_si />} />
-        <Route path="/yosef_sh" element={<Yosef_sh />} />
-        <Route path="/haya" element={<Haya />} />
-      </Routes>
+                        <Routes>
+                                <Route path="/didi" element={<Didi />} />
+                                <Route path="/aviad" element={<Aviad />} />
+                                <Route path="/david" element={<David />} />
+                                <Route path="/efrat" element={<Efrat />} />
+                                <Route path="/hadassah" element={<Hadassah />} />
+                                <Route path="/michael" element={<Michael />} />
+                                <Route path="/neri" element={<Neri />} />
+                                <Route path="/netanel" element={<Netanel />} />
+                                <Route path="/omri" element={<Omri />} />
+                                <Route path="/rotem" element={<Rotem />} />
+                                <Route path="/tzvi" element={<Tzvi />} />
+                                <Route path="/yehuda" element={<Yehuda />} />
+                                <Route path="/yonatan" element={<Yonatan />} />
+                                <Route path="/yosef_si" element={<Yosef_si />} />
+                                <Route path="/yosef_sh" element={<Yosef_sh />} />
+                                <Route path="/haya" element={<Haya />} />
+                        </Routes >
 
 
 
-    </div>
-  )
+                </div >
+        )
 }
 
 export default MainTest

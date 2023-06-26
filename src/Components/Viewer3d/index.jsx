@@ -4,8 +4,9 @@ import { OrbitControls } from "@react-three/drei"
 
 function Viewer3d() {
   return (
-    <Canvas>
-      <spotLight position={[-3,10,5]} />
+    <Canvas >
+      <spotLight position={[-3, 10, 5]} />
+      <ambientLight intensity={0.4}/>
       <OrbitControls />
       <Closet4Doors />
     </Canvas>
