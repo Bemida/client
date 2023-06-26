@@ -1,11 +1,13 @@
 import styles from "./style.module.css";
 import data from "../../Data/fakeData";
 import { useEffect, useState } from "react";
+import SidebarCollapse from "../SidebarCollapse";
+import SidebarTab from "../SidebarTab";
+
 function SideBar() {
   const tabs = Object.entries(data.items.exterior);
   const [openTab, setOpenTab] = useState();
   // useEffect(() => {
-
   // },[openTab])
   console.log(tabs);
   const handleClick = (tab) => {
@@ -17,9 +19,9 @@ function SideBar() {
         {tabs.map((tab, i) => {
    if(openTab){
             if(tab[0] === openTab) {
-              return (<><ul onClick={() => handleClick(tab[0])} key={i}>{tab[0]}</ul>
+              return (<><SidebarCollapse name={tab[0]} onClick={() => handleClick(tab[0])} key={i} />
                   {tab[1].map((tab) => {
-                    return <li>{tab.description}</li>;
+                    return <SidebarTab description={tab.description}/>;
                   })}
                 </>
               );
