@@ -2,7 +2,7 @@ import styles from './style.module.css'
 import {AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai"
 
 import React from 'react'
-
+// 
 export default function Button({onClick,text, color, width, height, icon }) {
   return (
    

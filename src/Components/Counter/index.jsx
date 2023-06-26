@@ -5,9 +5,9 @@ import  { useState } from 'react'
 export default function Counter({defaultNumber, min, max, ...props}) {
  const [count, setCount] = useState(defaultNumber)
   return (
-    <div className={Styles.count} >
+    <div  >
         <button onClick={()=>{setCount(count+1)}}>+</button>
-        <input type='number' min={min} max={max} value={count}/>
+        <input type='number' min={{min}} max={{max}} value={count}/>
         <button onClick={()=>{setCount(count-1)}}>-</button>
 
     </div>
