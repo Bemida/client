@@ -1,4 +1,5 @@
 import React from 'react'
+import Home from '../../Pages/Home'
 import styles from './style.module.css'
 import { useContext } from 'react'
 import { DataContext } from '../../Context/MainContext';

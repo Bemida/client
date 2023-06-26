@@ -1,6 +1,4 @@
-//Fake data 
-
-
+//Fake data
 
 const fakeItemData = {
   categories: [
@@ -9,52 +7,59 @@ const fakeItemData = {
     { id: 7893, category: "ספריה" },
     { id: 2768, category: "שולחן" },
     { id: 435, category: "קונסולה" },
-    { id: 123, category: "שידות מגירות" }],
+    { id: 123, category: "שידות מגירות" },
+  ],
   exterior: {
-
     handles: {
       name: "ידיות",
-      list: [{
-        description: "ידית כפתור נרקיס",
-        img: "🎭",
-        id: 321
-      }, {
-        description: "ידית זהב מוברש",
-        img: "🥎",
-        id: 54
-      }
-      ]
+      list: [
+        {
+          description: "ידית כפתור נרקיס",
+          img: "🎭",
+          id: 321,
+        },
+        {
+          description: "ידית זהב מוברש",
+          img: "🥎",
+          id: 54,
+        },
+      ],
     },
     base: {
-
       name: "בסיס",
-      list: [{
-
-        description: "רגליים",
-        img: "🦵",
-        id: 283
-      }, {
-        description: "צוקל",
-        img: "🧆",
-        id: 12
-      }]
+      list: [
+        {
+          description: "רגליים",
+          img: "🦵",
+          id: 283,
+        },
+        {
+          description: "צוקל",
+          img: "🧆",
+          id: 12,
+        },
+      ],
     },
     color: {
       name: "צבע",
-      list: [{
-        description: "אורן",
-        img: "🎋",
-        id: 45
-      }, {
-        description: "אלון",
-        img: "🎄",
-        id: 12
-      }, {
-        description: "לבן",
-        img: "🥚",
-        id: 54
-      }]
-    }
+      list: [
+        {
+          description: "אורן",
+          img: "🎋",
+          id: 45,
+        },
+        {
+          description: "אלון",
+          img: "🎄",
+          id: 12,
+        },
+        {
+          description: "לבן",
+          img: "🥚",
+          id: 54,
+        },
+      ],
+    },
   },
 
   interior: {
@@ -62,10 +67,10 @@ const fakeItemData = {
     list: {
       מדפים: 1,
       מגירות: 0,
-      מוט: true
-    }
-  }
-}
+      מוט: true,
+    },
+  },
+};
 
 const fakeOrderData = {
   user: "John Doe",
@@ -77,24 +82,24 @@ const fakeOrderData = {
     shelves: {
       amount: 3,
       section: 2,
-      positions: [1, 2, 3]
+      positions: [1, 2, 3],
     },
     hangingRod: {
       amount: 2,
       section: 1,
-      positions: [1, 2]
+      positions: [1, 2],
     },
     drawers: {
       amount: 4,
       section: 3,
-      positions: [1, 2, 3, 4]
+      positions: [1, 2, 3, 4],
     },
     drawerHandles: {
       itemNumber: 1234,
       color: "black",
       style: "modern",
-      img: "https://example.com/drawer-handle.jpg"
-    }
+      img: "https://example.com/drawer-handle.jpg",
+    },
   },
   exteriorStyle: {
     material: "wood",
@@ -105,25 +110,22 @@ const fakeOrderData = {
       itemNumber: 5678,
       color: "brown",
       style: "classic",
-      img: "https://example.com/handle.jpg"
+      img: "https://example.com/handle.jpg",
     },
-    base: "legs"
+    base: "legs",
   },
   total: 1000,
-  isActive: true
-}
+  isActive: true,
+};
 
 const order = {
   stageNo: 1,
   readyToNext: false,
-  order: {
-
-  }
-}
+  order: {},
+};
 
 export default {
   items: fakeItemData,
   orders: fakeOrderData,
-  order
-}
-
+  order,
+};
