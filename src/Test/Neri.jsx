@@ -1,6 +1,20 @@
-import React from 'react'
+<<<<<<<<< Temporary merge branch 1
+import Select from "../Components/Select";
 
 function Neri() {
+=========
+import React from 'react'
+import { DataContext } from '../Context/MainContext'
+
+export default function Neri() {
+
+
+  const context = useContext(DataContext)
+
+import Select from "../Components/Select";
+
+function Neri() {
+
   return (
     <Select
       options={[
