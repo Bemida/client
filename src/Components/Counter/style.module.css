@@ -1,0 +1,47 @@
+
+
+.counter{
+    display: flex;
+    align-items: center;
+    width: 73px;
+    height: 23px;
+     
+  
+   
+}
+
+.input{
+
+        width: 22px;
+       height: 22px;
+         
+        padding: 10px;
+        font-size: 18px;
+        border: 0px solid #ccc;
+        border-radius: 5px;
+        background-color: transparent;
+        color: #333;
+        border-radius: 0;
+      
+}
+
+.input::-webkit-inner-spin-button,
+.input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.button{
+   background-color: #C4C4C4; 
+   width: 25px;
+   height: 25px;
+    padding: 10px ; 
+    line-height: 0.1; 
+    font-size: 18px; 
+    border-radius: 0;
+    
+  }
+
+
+
+   
