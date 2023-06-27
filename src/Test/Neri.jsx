@@ -1,12 +1,16 @@
 import React from 'react'
-import { DataContext } from '../Context/MainContext'
 
 export default function Neri() {
-
-
-  const context = useContext(DataContext)
-  
   return (
-    <div>Neri</div>
-  )
+    <Select
+      options={[
+        { key: "ff", value: "kkjdkj" },
+        { key: "ff", value: "kkjdkj" },
+        { key: "ff", value: "kkjdkj" },
+        { key: "ff", value: "kkjdkj" },
+      ]}
+    />
+  );
 }
+
+export default Neri;
