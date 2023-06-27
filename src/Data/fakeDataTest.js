@@ -111,7 +111,6 @@ const fakeOrderData = {
     status: "in_progress",
     shipping: "regular",
     furniture: "Closet",
-    color: "red",
     section1: {
         shelves: 3,
         hangingRod: true,
