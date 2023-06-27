@@ -5,6 +5,8 @@ import { useContext } from "react";
 import { DataContext } from "../../Context/MainContext";
 import { BasicShadowMap } from "three";
 import Structure from "../3dModels/Closet/Structure";
+import Shelf from "../3dModels/Closet/Shelf";
+import Door from "../3dModels/Closet/Door";
 
 function Viewer3d() {
   const context = useContext(DataContext)
@@ -26,6 +28,7 @@ function Viewer3d() {
     Y: 2,
     Z: 0.6
   }
+  // const side = "right";
   return (
     <Canvas
       camera={{
@@ -46,8 +49,10 @@ function Viewer3d() {
       <ambientLight intensity={0.3} />
 
 
-      <Structure dimensions={dimensions} x={0} y={0} z={0} />
-      <Structure dimensions={dimensions} x={dimensions.X+0.02} y={0} z={0} />
+       <Structure dimensions={dimensions} x={0} y={0} z={0} />
+     {/* <Structure dimensions={dimensions} x={dimensions.X + 0.02} y={0} z={0} /> */}
+      <Shelf dimensions={dimensions} />
+      <Door dimensions={dimensions} />
 
 
       <OrbitControls />

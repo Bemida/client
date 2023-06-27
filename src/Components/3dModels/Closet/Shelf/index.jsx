@@ -1,14 +1,15 @@
-function Shelf() {
+//Creator : didi
+function Shelf({ dimensions, material }) {
   const thickness = 0.02
 
   return (
-    // <mesh
-    //   // material={material}
-    //   position={[(dimensions.X / 2) - (thickness / 2), -dimensions.Y / 2, 0]}
-    // >
-    //   <meshBasicMaterial color={0xff00ff} />
-    //   <boxGeometry args={[dimensions.X, thickness, dimensions.Z]} />
-    // </mesh >
-    <></>)
+
+    <mesh
+      position={[(dimensions.X / 2) - (thickness / 2), 0, 0]}
+    >
+      <meshBasicMaterial color={0xf0001f} />
+      <boxGeometry args={[dimensions.X-(thickness*2), thickness, dimensions.Z]} />
+    </mesh >
+  )
 }
 export default Shelf

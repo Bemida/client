@@ -1,5 +1,4 @@
-import { Color } from "three";
-import Shelf from "../Shelf";
+
 
 function Structure({dimensions, material,x,y,z}) {
     const thickness = 0.02;
@@ -50,7 +49,6 @@ function Structure({dimensions, material,x,y,z}) {
                 <meshBasicMaterial color={0x0000ff} />
                 <boxGeometry args={[dimensions.X, dimensions.Y, thicknessBack]} />
             </mesh >
-            <Shelf />
         </group>
     )
 }
