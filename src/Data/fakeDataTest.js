@@ -129,11 +129,12 @@ const fakeOrderData = {
     doors: 2,
     color: "brown",
     handleId: "5678",
+    stageNo: 5,
     base: "legs",
     total: 1000,
 };
 
-const emptyFakeOrderData = {
+ const emptyFakeOrderData = {
 
     userName: null,
     userPhone: null,
@@ -160,12 +161,12 @@ const emptyFakeOrderData = {
     doors: 0,
     color: null,
     handleId: null,
+    stageNo: 1,
     base: null,
     total: 0,
 };
 
 const order = {
-    stageNo: 1,
     readyToNext: false,
     order: {},
 };
