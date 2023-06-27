@@ -26,7 +26,7 @@ function Grid() {
 
   // creator(useEffect): Neri
   useEffect(() => {
-    hjkl;
+    // hjkl;
   }, []);
 
   return (
