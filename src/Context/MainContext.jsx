@@ -8,12 +8,13 @@ import newData from '../Data/fakeDataTest'
 export const DataContext = createContext({})
 
 const ContextProvider = ({ children }) => {
+    // const [stage, setStage] = useState({})
     const [order, setOrder] = useState(data.order)
     const [fullOrder,setFullOrder] = useState(newData.emptyOrderData)
     const [readyToNext,setReadyToNext] = useState(true)
 
     return (
-        <DataContext.Provider value={{fakeData: data, order,setOrder ,fullOrder,setFullOrder,readyToNext,setReadyToNext}}>
+        <DataContext.Provider value={{ fakeData: data, order,setOrder }}>
             {children}
 
         </DataContext.Provider>)
