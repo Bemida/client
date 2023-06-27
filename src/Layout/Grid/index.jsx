@@ -17,10 +17,11 @@ import Button from '../../Components/Button';
 function Grid() {
   const context = useContext(DataContext)
   const To_Main_Section = {
-    1: "componnent_Main_Section",
+    // 1: "componnent_Main_Section",
+    1: <Home /> ,
     2: <Size />,
     3: <Viewer3d />,
-    4:<Viewer3d />,
+    4: <Viewer3d />,
     5: <Viewer3d />
   }
   // const Main_Section = To_Main_Section[2]
@@ -44,12 +45,10 @@ function Grid() {
           </div>
           <div className={styles.containerBty_ProgressBar}>
             {/* need to add props to the Button */}
-            <Button onClick={()=> context.setOrder(prev=> ({...prev, stageNo: prev.stageNo+1}))}/> 
+            <Button onClick={() => context.setOrder(prev => ({ ...prev, stageNo: prev.stageNo + 1 }))} text={'המשך'} color={'#C2A39A'} width={'180px'} height={'40px'} />
             {console.log(context.Order)}
-            {/* <Button icon={'Continued'} text={'NEXT'} color={'#556643'} width={'250px'} onClick={(e=>console.log(e))}/>  */}
-            <ProgressBar />
+            <ProgressBar context={context}/>
           </div>
-
 
         </div>
 
