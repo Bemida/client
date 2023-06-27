@@ -1,11 +1,7 @@
 import React from 'react'
-import Home from '../../Pages/Home'
 import styles from './style.module.css'
 
 //Creator : didi - add div to className
-
-
-
 
 function Grid() {
   return (
@@ -15,7 +11,6 @@ function Grid() {
       </div>
       <div className={styles.containerBody}>
         <div className={styles.containerSidebar}>
-
         </div>
         <div className={styles.containerImg_Details_Bty}>
           <div className={styles.containerImg_Details}>
