@@ -8,11 +8,12 @@ import data from '../Data/fakeData'
 export const DataContext = createContext({})
 
 const ContextProvider = ({ children }) => {
-    // const [stage, setStage] = useState({})
+    const [stage, setStage] = useState(1)
     const [order, setOrder] = useState(data.order)
+    const [fullOrder,setFullOrder] = useState()
 
     return (
-        <DataContext.Provider value={{ fakeData: data, order,setOrder }}>
+        <DataContext.Provider value={{ stage,setStage,fakeData: data, order,setOrder }}>
             {children}
 
         </DataContext.Provider>)
