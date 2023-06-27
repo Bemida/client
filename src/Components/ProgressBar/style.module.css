@@ -1,0 +1,28 @@
+.ul {
+  width: 663px;
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.li {
+  direction: rtl;
+  line-height: 45px;
+  width: 119px;
+  height: 100%;
+  background-color: #eeeeee;
+  color: black;
+}
+
+.li:first-child {
+  border-radius: 26px 0px 0px 26px;
+}
+
+.li:last-child {
+  border-radius: 0px 26px 26px 0px;
+}
+
+.stepNow {
+  background-color: #ac9f9f;
+}
