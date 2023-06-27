@@ -1,7 +1,10 @@
-import React from 'react'
+import DisplayCurrentSelection from "../Layout/DisplayCurrentSelection";
 
-export default function Michael() {
-  return (
-    <div>Michael</div>
-  )
+
+export default function Michael(){
+    return(
+        <div>
+            <DisplayCurrentSelection/>
+        </div>
+    )
 }

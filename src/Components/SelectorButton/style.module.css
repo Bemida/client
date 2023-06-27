@@ -2,7 +2,6 @@
     background: #ffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 10px;
-    border-radius: 0px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
@@ -11,13 +10,13 @@
     text-align: center;
     width: 210px;
     height: 62px;
+    border: none;
 }
-
 .disabled {
+    border: none;
     background: #C5C5C5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 10px;
-    border-radius: 0px;
     font-family: 'Roboto';
     font-style: normal;
     color: darkgray;

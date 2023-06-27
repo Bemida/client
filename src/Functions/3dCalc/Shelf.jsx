@@ -9,9 +9,11 @@ import { useGLTF } from "@react-three/drei";
 //positian 2.4 ==== 2.4 מטר    
 
 import React from 'react'
+import { calcPosition, calcScale, initScale } from '../../Functions/';
 
 
-function Shelf({ height, LeftShelvesNumber, depth }) {
+
+function Shelf1({ height, LeftShelvesNumber, depth }) {
   const { nodes, materials } = useGLTF("assets/3dModels/Closet4Doors.glb");
   const shelfHeightL = (height/100) / (LeftShelvesNumber + 1)
 
@@ -45,7 +47,7 @@ function Shelf({ height, LeftShelvesNumber, depth }) {
   )
 }
 
-export default Shelf
+export default Shelf1
 
 
 
