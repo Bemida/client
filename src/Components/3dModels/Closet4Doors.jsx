@@ -6,9 +6,9 @@ import { useGLTF } from "@react-three/drei";
 import { calcPosition, snapGaps, calcScale, initScale } from '../../Functions/3dCalc/calcScale';
 
 export function Closet4Doors({
-  width = 2,
-  height = 1,
-  depth = 2,
+  width,
+  height,
+  depth,
   isSokol,
   material,
   handleType,
@@ -22,7 +22,6 @@ export function Closet4Doors({
   const defaultDimensions = [1.61, 2.4, 0.59]
   const { nodes, materials } = useGLTF("assets/3dModels/Closet4Doors.glb");
   const scale = initScale(defaultDimensions, [width, height, depth])
-  console.log(scale);
   return (
     <group {...props} dispose={null}>
       <group
@@ -86,9 +85,9 @@ export function Closet4Doors({
           geometry={nodes.topPanel.geometry}
           material={materials.wood_1}
           position={
-            snapGaps("+", 0.0165, scale, 
-            calcPosition([0.808, 2.392, 0.3], [scale.X, scale.Y, scale.Z])
-            , [0, 1, 0])
+            snapGaps("+", 0.0165, scale,
+              calcPosition([0.808, 2.392, 0.3], [scale.X, scale.Y, scale.Z])
+              , [0, 1, 0])
           }
           scale={calcScale(1, [scale.X, 1, scale.Z])}
         />
@@ -99,61 +98,6 @@ export function Closet4Doors({
           material={materials.wood_1}
           position={calcPosition([0.809, 1.242, 0.3], [scale.X, scale.Y, scale.Z])}
           scale={calcScale(1, [1, scale.Y, scale.Z])}
-        />
-        {withDoors &&
-          <group>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.door1.geometry}
-              material={materials.wood_1}
-              position={calcPosition([0.2, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
-              scale={calcScale(-1, [scale.X, scale.Y, 1])}
-              rotation={[-Math.PI, 0, 0]}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.door2.geometry}
-              material={materials.wood_1}
-              position={calcPosition([0.602, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
-              scale={calcScale(1, [scale.X, scale.Y, 1])}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.door3.geometry}
-              material={materials.wood_1}
-              rotation={[-Math.PI, 0, 0]}
-              position={calcPosition([1.015, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
-              scale={calcScale(-1, [scale.X, scale.Y, 1])}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.door4.geometry}
-              material={materials.wood_1}
-              position={calcPosition([1.415, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
-              rotation={[-Math.PI, 0, 0]}
-              scale={calcScale(-1, [scale.X, scale.Y, 1])}
-            />
-          </group>
-        }
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.shelfLeft.geometry}
-          material={materials.wood_1}
-          position={calcPosition([0.408, 1.23, 0.297], [scale.X, scale.Y, scale.Z])}
-          scale={calcScale(1, [scale.X, 1, scale.Z])}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.shelfRight.geometry}
-          material={materials.wood_1}
-          position={calcPosition([1.208, 1.23, 0.297], [scale.X, scale.Y, scale.Z])}
-          scale={calcScale(1, [scale.X, 1, scale.Z])}
         />
         {withDoors &&
           <group>
