@@ -1,7 +1,8 @@
 import React from 'react'
-import '../Functions/API_Calls/apiCalls'
+import api from '../Functions/API_Calls/apiCalls'
 
 function Yehuda() {
+    
 
   return (
     <div>Yehuda</div>
