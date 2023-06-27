@@ -8,7 +8,6 @@ export default function Neri() {
 
   const context = useContext(DataContext)
 
-import Select from "../Components/Select";
 
   return (
     <Select
