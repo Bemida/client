@@ -15,7 +15,7 @@ export const DataContext = createContext({})
 const ContextProvider = ({ children }) => {
     // const [stage, setStage] = useState({})
     const [order, setOrder] = useState(data.order)
-    const [fullOrder,setFullOrder] = useState(newData.emptyOrderData)
+    const [fullOrder,setFullOrder] = useState(newFakeData.emptyOrderData)
     const [readyToNext,setReadyToNext] = useState(true)
 
     return (
