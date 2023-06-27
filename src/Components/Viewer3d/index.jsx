@@ -4,6 +4,7 @@ import { FaceControls, FlyControls, MapControls, OrbitControls, PivotControls } 
 import { useContext } from "react";
 import { DataContext } from "../../Context/MainContext";
 import { BasicShadowMap } from "three";
+import Structure from "../3dModels/Closet/Structure";
 
 function Viewer3d() {
   const context = useContext(DataContext)
@@ -13,14 +14,18 @@ function Viewer3d() {
     context.fakeData.orders.exteriorStyle.size.height / 100,
     context.fakeData.orders.exteriorStyle.size.depth / 100
   ]
-  size = [
-    1, 2, 1
-  ]
+  // size = [
+  //   1, 1, 1
+  // ]
   const maxDimensions = Math.max(size[0], size[1], size[2])
   const angularSize = (fov * Math.PI) / 180;
   const cameraDistance = (maxDimensions * 1.5) + ((maxDimensions / 2) / Math.tan(angularSize / 2));
   console.log(cameraDistance);
-
+  const dimensions = {
+    X: 1,
+    Y: 2,
+    Z: 0.6
+  }
   return (
     <Canvas
       camera={{
@@ -38,11 +43,18 @@ function Viewer3d() {
       shadows={BasicShadowMap}
     >
       <spotLight color={0xffffff} scale={1} position={[-8, 4, 5]} />
-      <ambientLight intensity={0.1} />
-      <OrbitControls enableZoom={false} enablePan={false} target={[size[0] / 2, size[1] / 2, size[2] / 2]} />
-      <Closet4Doors width={size[0]} height={size[1]} depth={size[2]} position={[0, 0, 0]} />
+      <ambientLight intensity={0.3} />
+
+
+      <Structure dimensions={dimensions} x={0} y={0} z={0} />
+      <Structure dimensions={dimensions} x={dimensions.X+0.02} y={0} z={0} />
+
+
+      <OrbitControls />
+      {/* <Closet4Doors width={size[0]} height={size[1]} depth={size[2]} position={[0, 0, 0]} /> */}
 
     </Canvas>
   )
 }
+// )enableZoom={false} enablePan={false} target={[size[0] / 2, size[1] / 2, size[2] / 2]}
 export default Viewer3d
