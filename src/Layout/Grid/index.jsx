@@ -19,15 +19,10 @@ function Grid() {
     2: <Size />,
     3: <Viewer3d />,
     4: <Viewer3d />,
-    5: <Viewer3d />
-  }
+    5: <Viewer3d />,
+  };
   // const Main_Section = To_Main_Section[2]
   const Main_Section = To_Main_Section[context.order.stageNo];
-
-  // creator(useEffect): Neri
-  useEffect(() => {
-    // hjkl;
-  }, []);
 
   return (
     <div className={styles.containerGrid}>
@@ -41,7 +36,18 @@ function Grid() {
           </div>
           <div className={styles.containerBty_ProgressBar}>
             {/* need to add props to the Button */}
-            <Button onClick={() => context.setOrder(prev => ({ ...prev, stageNo: prev.stageNo + 1 }))} text={'המשך'} color={'#C2A39A'} width={'180px'} height={'40px'} />
+            <Button
+              onClick={() =>
+                context.setOrder((prev) => ({
+                  ...prev,
+                  stageNo: prev.stageNo + 1,
+                }))
+              }
+              text={"המשך"}
+              color={"#C2A39A"}
+              width={"180px"}
+              height={"40px"}
+            />
             {console.log(context.Order)}
             <ProgressBar context={context} />
           </div>
