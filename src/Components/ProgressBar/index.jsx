@@ -22,6 +22,7 @@ function ProgressBar({context}) {
 
   const reversArr = [...options].reverse();
   return (
+    <div className={styles.box}>
     <ul className={styles.ul}>
       {reversArr.map((op, i) => (
         <li
@@ -31,6 +32,7 @@ function ProgressBar({context}) {
         >{`${i + 1} ${op}`}</li>
       ))}
     </ul>
+    </div>
   );
 }
 
