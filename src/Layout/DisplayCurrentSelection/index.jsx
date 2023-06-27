@@ -1,8 +1,9 @@
 import { interpolate } from '@react-spring/core'
-// import styles from './style.module.css'
+import styles from './style.module.css'
 
 import { DataContext } from '../../Context/MainContext'
 import { useContext } from 'react'
+
 
 
 
@@ -18,7 +19,9 @@ function DisplayCurrentSelection({ ...props }) {
 
   // const selections ={} 
   // const selections = context.fakeData.order.order
-  const selections = context.fakeData.orders
+  const selections_ = context.fakeData.orders
+  const selections = context.newFakeData.orders
+  console.log (context.newFakeData.orders.color)
   console.log(selections)
   let currentStep = context.fakeData.order.stageNo
   let ListTitle = "הארון שלי"
