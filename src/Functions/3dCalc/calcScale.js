@@ -23,3 +23,11 @@ export function calcScale(initScale, scale) {
         initScale * scale[2]
     ]
 }
+
+export function snapGaps(direction, width, scale, initialPosition = [0, 0, 0], switcher = [0, 0, 0]) {
+    return [
+        initialPosition[0] + switcher[0] * ((((width * calcScale(1, [1, scale.X, 1])[1]) - width) * Number(`${direction}1`)) / 2),
+        initialPosition[1] + switcher[1] * ((((width * calcScale(1, [1, scale.Y, 1])[1]) - width) * Number(`${direction}1`)) / 2),
+        initialPosition[2] + switcher[2] * ((((width * calcScale(1, [1, scale.Z, 1])[1]) - width) * Number(`${direction}1`)) / 2),
+    ]
+}
