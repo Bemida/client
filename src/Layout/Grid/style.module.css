@@ -15,31 +15,53 @@
 
 .h {
     grid-area: h;
-    /* overflow: hidden; */
+    overflow: hidden;
+  
 }
 
 .sl {
     grid-area: sl;
     /* overflow: hidden; */
+   
 }
 
 .ms {
     grid-area: ms;
-    overflow: hidden;
+    /* overflow: hidden; */
+    height: 100%;
+    width: 100%;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center;  */
+
+}
+
+.ms H1{
+  display: flex;
+  justify-content: right;
+  font-size: 26px;
+  font-weight: 500;
+  
+
 }
 
 .sr {
     grid-area: sr;
     /* overflow: hidden; */
+   
 }
 
 .c {
     grid-area: c;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     justify-content: space-around;
+  
 }
 
 .sr {
     grid-area: sr;
+    
 }
