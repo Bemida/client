@@ -48,7 +48,6 @@ function Grid() {
               width={"180px"}
               height={"40px"}
             />
-            {console.log(context.Order)}
             <ProgressBar context={context} />
           </div>
         </div>

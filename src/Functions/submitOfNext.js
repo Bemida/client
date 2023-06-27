@@ -1,15 +1,11 @@
-import { useContext } from "react";
-import { DataContext } from "../Context/MainContext";
 
-export default function submitOfNext(context) {
-  const stageNow = context?.emptyOrderData?.stageNo;
-  console.log(context);
-
+function validationList(stageNow) {
   switch (stageNow) {
-    // depth : (v)=>{retrun v%2==0 ? msg : "" }
+    // value: null or function
     case 1:
       return {
         furniture: null,
+        example: () => alert("good")
       };
     case 2:
       return {
@@ -20,39 +16,53 @@ export default function submitOfNext(context) {
       };
     case 3:
       return {
-        // exterior
+        handleId: null,
+        color: null,
+        base: null,
       };
+    case 4:
+      return {
+        section1_drawers: null,
+        section1_hangingRod: null,
+        section1_shelves: null,
+        section2_drawers: null,
+        section2_hangingRod: null,
+        section2_shelves: null,
+      };
+    default:
+      return {};
   }
 }
 
-// const emptyFakeOrderData = {
+export default function submitOfNext(context) {
+  console.log(context); //
+  try {
+    const validation = validationList(context.stage);
 
-//   userName: null,
-//   userPhone: null,
-//   userEmail: null,
+    const keys = Object.keys(validation);
 
-//   status: null,
-//   shipping: null,
-//   furniture: null,
-//   color: null,
-//   section1: {
-//       shelves: 0,
-//       hangingRod: true,
-//       drawers: 0,
-//   },
-//   section2: {
-//       shelves: 0,
-//       hangingRod: true,
-//       drawers: 0,
-//   },
-//   material: null,
-//   height: 0,
-//   width: 0,
-//   depth: 0,
-//   doors: 0,
-//   color: null,
-//   handleId: null,
-//   stageNo: 1,
-//   base: null,
-//   total: 0,
-// };
+    keys.forEach((key) => {
+      const value = validation[key];
+      if (!value) {
+        // כאן רק לעשות throw אם יש שגיאה
+        // לבדוק אם הוא true בהזמנה
+        // context.order...[key] - תחזיר אם הוא
+
+        let valueFromContext = context.fullorder[key];
+        if (key.includes("_")) {
+          const [key1, key2] = key.split("_");
+          valueFromContext = context.fullorder[key1][key2];
+        }
+
+        // בדיקה על valueFromContext
+        // ואם הוא false להחזיר שגיאה
+      } else {
+        value();
+        // גם- עושה throw אם יש שגיאה
+      }
+    });
+    return true;
+  } catch (err) {
+    alert(err);
+  }
+}
