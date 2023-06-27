@@ -74,6 +74,9 @@ export default function Haya() {
         //     {/* <input type="submit" value="Submit" />  */}
         //     {/* </form> */}
         // </div>
-        <Payment />
+        // <Payment />
+        <div>
+
+        </div>
     )
 }

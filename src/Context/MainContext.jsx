@@ -12,7 +12,7 @@ const ContextProvider = ({ children }) => {
     const [order, setOrder] = useState(data.order)
 
     return (
-        <DataContext.Provider value={{ fakeData: data, order,setOrder }}>
+        <DataContext.Provider value={{ fakeData: data, order, setOrder }}>
             {children}
 
         </DataContext.Provider>)
