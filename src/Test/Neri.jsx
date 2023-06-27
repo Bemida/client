@@ -1,7 +1,16 @@
-import React from 'react'
+import Select from "../Components/Select";
 
-export default function Neri() {
+function Neri() {
   return (
-    <div>Neri</div>
-  )
+    <Select
+      options={[
+        { key: "ff", value: "kkjdkj" },
+        { key: "ff", value: "kkjdkj" },
+        { key: "ff", value: "kkjdkj" },
+        { key: "ff", value: "kkjdkj" },
+      ]}
+    />
+  );
 }
+
+export default Neri;
