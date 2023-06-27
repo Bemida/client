@@ -31,29 +31,9 @@ function Grid() {
   }, []);
 
   return (
- 
     <div className={styles.containerGrid}>
-<<<<<<< HEAD
-      <Header className={styles.containerHeader} />
-      <div className={styles.containerBody}>
-        <div className={styles.containerSidebar}></div>
-        <div className={styles.containerMain_Section_Details_Bty}>
-          <div className={styles.containerMain_Section_Details}>
-            <div className={styles.containerDetails}></div>
-            <div className={styles.containerMain_Section}>{Main_Section}</div>
-          </div>
-          <div className={styles.containerBty_ProgressBar}>
-            {/* need to add props to the Button */}
-            
-            <Button className = {styles.nextButton} onClick={() => context.setOrder(prev => ({ ...prev, stageNo: prev.stageNo + 1 }))} text={'המשך'} />
-            {console.log(context.Order)}
-            <ProgressBar context={context} />
-          </div>
-        </div>
-=======
       <div className={styles.h}>
         <Header />
->>>>>>> 24e3e4ddd32f04cb176b905af4d59ba9b86aa64c
       </div>
 
       <div className={styles.ms}>
@@ -62,7 +42,7 @@ function Grid() {
 
 
       <div className={styles.c}>
-        <Button onClick={() => context.setOrder(prev => ({ ...prev, stageNo: prev.stageNo + 1 }))} text={'המשך'} color={'#C2A39A'} width={'180px'} height={'40px'} />
+        <Button className = {styles.nextButton} onClick={() => context.setOrder(prev => ({ ...prev, stageNo: prev.stageNo + 1 }))} text={'המשך'} />
         <ProgressBar context={context} />
       </div>
 
@@ -79,3 +59,4 @@ function Grid() {
 }
 
 export default Grid;
+
