@@ -12,7 +12,6 @@ export default function Yehuda() {
     console.log (context.stage)
   }
   something ()
-
   
   console.log(context);
   return (
