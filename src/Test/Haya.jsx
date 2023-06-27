@@ -4,6 +4,8 @@ import Button from '../Components/Button'
 import { useContext } from 'react';
 import { DataContext } from '../Context/MainContext'
 import { useState } from 'react';
+import Payment from '../Components/Payment';
+
 
 export default function Haya() {
     const context = useContext(DataContext);
@@ -63,14 +65,15 @@ export default function Haya() {
         return x;
     }
     return (
-        <div>
-            {/* < Button onClick={handleOnClick} text='next' color='red' width='100px' height='30px' /> */}
-            {/* <form action=''> */}
-            <Input type='number' isRequired={true} label='width in cm' id='width' isValid={checkValue(widthValue, extremeWidth.min, extremeWidth.max)} min={100} max={150} onChange={handleChange} />
-            <Input type='number' isRequired={true} id='depth' isValid={checkValue(depthValue, extremeDepth.min, extremeDepth.max)} min={120} max={180} onChange={handleChange} />
-            <Input type='number' label='height in cm' id='height' isValid={checkValue(heightValue, extremeHeight.min, extremeHeight.max)} min={20} max={60} onChange={handleChange} />
-            {/* <input type="submit" value="Submit" />  */}
-            {/* </form> */}
-        </div>
+        // <div>
+        //     {/* < Button onClick={handleOnClick} text='next' color='red' width='100px' height='30px' /> */}
+        //     {/* <form action=''> */}
+        //     <Input type='number' isRequired={true} label='width in cm' id='width' isValid={checkValue(widthValue, extremeWidth.min, extremeWidth.max)} min={100} max={150} onChange={handleChange} />
+        //     <Input type='number' isRequired={true} id='depth' isValid={checkValue(depthValue, extremeDepth.min, extremeDepth.max)} min={120} max={180} onChange={handleChange} />
+        //     <Input type='number' label='height in cm' id='height' isValid={checkValue(heightValue, extremeHeight.min, extremeHeight.max)} min={20} max={60} onChange={handleChange} />
+        //     {/* <input type="submit" value="Submit" />  */}
+        //     {/* </form> */}
+        // </div>
+        <Payment />
     )
 }
