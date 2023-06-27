@@ -1,10 +1,10 @@
 import React from 'react'
-import SelectButton from '../Components/SelectorButton'
-import Home from '../Pages/Home'
-
+import SelectorMain from '../Components/Selector_main'
+import Layout from '../Layout'
 export default function Efrat() {
-  return <div> 
-    <Home/>
+  return <div>
+    {/* <SelectorMain /> */}
+    <Layout />
   </div>
 
 
