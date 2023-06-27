@@ -1,17 +1,14 @@
 import { useGLTF } from "@react-three/drei";
 
-
-export default function Handles({ width, height, depth, doorsNumber = 4, woodWidth = 0.1 }) {
+export default function Handles({ width, height, depth, doorsNumber = 4, woodWidth = 0.0165, scale }) {
     const { nodes, materials } = useGLTF('/assets/3dModels/ironHandle.glb')
     depth += woodWidth;
-    let isLeftDoor = 1; // is left door
+    let isLeftDoor = 1.5; // is left door
     const doorWidth = width / doorsNumber; // 1 / 4 = .25
-    const positionalRatio = doorWidth / 0.25; // Between door and handle
-    let lastXposition = 0; // start from (0, 0, 0)
-    let xPosition = 0;
-    //      .25 - 0.2 = 0.05 : 1 - .25 + 0.2 = 0.55
+    const positionalRatio = doorWidth * 0.2; // Between door and handle
+    let xPosition = doorWidth - positionalRatio;
     const yPosition = height > 1.35 ? 1.3 : height - 0.5;
-    const handlesNumbers = Array.from(Array(doorsNumber).keys());
+    const handlesNumbers = Array.from(Array(doorsNumber).keys()); // create array of handles numbers
 
     console.log([xPosition, yPosition, depth]);
     const handles = handlesNumbers.map(number => {
@@ -23,12 +20,11 @@ export default function Handles({ width, height, depth, doorsNumber = 4, woodWid
                     receiveShadow
                     geometry={nodes.handle.geometry}
                     material={materials.chrome}
-                    position={[0, yPosition, depth]}
+                    position={[xPosition, yPosition, depth]}
                 />
-                {xPosition = isLeftDoor ? lastXposition + doorWidth - positionalRatio : lastXposition + width - doorWidth + positionalRatio}
                 {isLeftDoor = (number + 1) % 2 === 0}
-                {lastXposition += xPosition}
-                {console.log(isLeftDoor, lastXposition)}
+                {xPosition = isLeftDoor ? xPosition + (doorWidth * 0.8) * 2 : xPosition + positionalRatio * 2}
+                {console.log(isLeftDoor, xPosition)}
             </>
         )
     })
