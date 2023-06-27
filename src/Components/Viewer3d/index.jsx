@@ -43,6 +43,7 @@ function Viewer3d() {
 
 
       <Structure dimensions={dimensions} material={materials.wood} />
+      <Shelf dimensions={dimensions}/>
 
 
       <OrbitControls />
