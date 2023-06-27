@@ -2,12 +2,12 @@
 
 const fakeItemData = {
   categories: [
-    { id: 21432, category: "ארון בגדים" },
-    { id: 456, category: "מיטה" },
-    { id: 7893, category: "ספריה" },
-    { id: 2768, category: "שולחן" },
-    { id: 435, category: "קונסולה" },
-    { id: 123, category: "שידות מגירות" },
+    { id: 21432, category: "ארון בגדים", isAvailable: true },
+    { id: 456, category: "מיטה", isAvailable: false },
+    { id: 7893, category: "ספריה", isAvailable: false },
+    { id: 2768, category: "שולחן", isAvailable: false },
+    { id: 435, category: "קונסולה", isAvailable: false },
+    { id: 123, category: "שידות מגירות", isAvailable: false },
   ],
   exterior: {
     handles: {
