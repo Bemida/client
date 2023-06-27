@@ -4,9 +4,10 @@ import { useEffect, useState, useContext} from "react";
 import SidebarCollapse from "../SidebarCollapse";
 import SidebarTab from "../SidebarTab";
 import { DataContext } from "../../Context/MainContext";
+import Toggle from "../Toggle";
 
 function SideBar({ title }) {
-  const tabs = Object.entries(data.items.exterior);
+  const tabs = Object.entries(data.items.interior);
   const [openTab, setOpenTab] = useState();
   // useEffect(() => {
   // },[openTab])
@@ -34,6 +35,14 @@ const  {order,setOrder} = useContext(DataContext)
               if(openTab === tab[1].name){
               return (
                 <SidebarCollapse
+                
+
+                
+        
+                
+             
+                    
+                
                     name={tab[1].name}
                     englishName={tab[0]}
                     openTab={openTab}
@@ -43,6 +52,8 @@ const  {order,setOrder} = useContext(DataContext)
                       {tab[1].list.map((childTab, index) => {
                         return <SidebarTab handlClick={handleClick} parentName={tab[0]} key={index} description={childTab.description}/>;
                       })}
+                 
+                
                   </SidebarCollapse>)
                   
 
