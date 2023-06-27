@@ -1,6 +1,6 @@
 .header {
   border-bottom: solid 2px black;
-  width: 100%;
+  width: 100vw;
   height: 95px;
   padding: 2px;
   position: relative;
