@@ -42,7 +42,7 @@ function Grid() {
 
 
       <div className={styles.c}>
-        <Button onClick={() => context.setOrder(prev => ({ ...prev, stageNo: prev.stageNo + 1 }))} text={'המשך'} color={'#C2A39A'} width={'180px'} height={'40px'} />
+        <Button className = {styles.nextButton} onClick={() => context.setOrder(prev => ({ ...prev, stageNo: prev.stageNo + 1 }))} text={'המשך'} />
         <ProgressBar context={context} />
       </div>
 
@@ -59,3 +59,4 @@ function Grid() {
 }
 
 export default Grid;
+
