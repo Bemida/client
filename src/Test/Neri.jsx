@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Neri() {
+function Neri() {
   return (
     <Select
       options={[
