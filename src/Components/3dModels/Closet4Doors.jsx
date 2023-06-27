@@ -33,7 +33,7 @@ export function Closet4Doors({
           receiveShadow
           geometry={nodes.poleLeft.geometry}
           material={materials.chrome}
-          position={calcPosition([0.426, 2.295, 0.3], scale)}
+          position={calcPosition([0.426, 2.295, 0.3], [scale.X, scale.Y, scale.Z])}
           scale={calcScale(1, [scale.X, 1, 1])}
         />
         <mesh
@@ -41,7 +41,7 @@ export function Closet4Doors({
           receiveShadow
           geometry={nodes.poleRight.geometry}
           material={materials.chrome}
-          position={calcPosition([1.226, 2.295, 0.3], scale)}
+          position={calcPosition([1.226, 2.295, 0.3], [scale.X, scale.Y, scale.Z])}
           scale={calcScale(1, [scale.X, 1, 1])}
         />
         <mesh
@@ -49,7 +49,7 @@ export function Closet4Doors({
           receiveShadow
           geometry={nodes.leftPanel.geometry}
           material={materials.wood_1}
-          position={calcPosition([0.008, 1.25, 0.3], scale)}
+          position={calcPosition([0.008, 1.25, 0.3], [scale.X, scale.Y, scale.Z])}
           scale={calcScale(1, [1, scale.Y, scale.Z])}
         />
         <mesh
@@ -57,7 +57,7 @@ export function Closet4Doors({
           receiveShadow
           geometry={nodes.backPanel.geometry}
           material={materials.wood_1}
-          position={calcPosition([0.808, 1.25, 0.002], scale)}
+          position={calcPosition([0.808, 1.25, 0.002], [scale.X, scale.Y, scale.Z])}
           scale={calcScale(1, [scale.X, scale.Y, 1])}
         />
         <mesh
@@ -67,7 +67,7 @@ export function Closet4Doors({
           material={materials.wood_1}
           position={
             snapGaps("-", 0.0165, scale,
-              calcPosition([0.808, 0.108, 0.3], scale)
+              calcPosition([0.808, 0.108, 0.3], [scale.X, scale.Y, scale.Z])
               , [0, 1, 0])
           }
           scale={calcScale(1, [scale.X, 1, scale.Z])}
@@ -77,7 +77,7 @@ export function Closet4Doors({
           receiveShadow
           geometry={nodes.rightPanel.geometry}
           material={materials.wood_1}
-          position={calcPosition([1.608, 1.25, 0.3], scale)}
+          position={calcPosition([1.608, 1.25, 0.3], [scale.X, scale.Y, scale.Z])}
           scale={calcScale(1, [1, scale.Y, scale.Z])}
         />
         <mesh
@@ -87,7 +87,7 @@ export function Closet4Doors({
           material={materials.wood_1}
           position={
             snapGaps("+", 0.0165, scale, 
-            calcPosition([0.808, 2.392, 0.3], scale)
+            calcPosition([0.808, 2.392, 0.3], [scale.X, scale.Y, scale.Z])
             , [0, 1, 0])
           }
           scale={calcScale(1, [scale.X, 1, scale.Z])}
@@ -97,7 +97,7 @@ export function Closet4Doors({
           receiveShadow
           geometry={nodes.divider.geometry}
           material={materials.wood_1}
-          position={calcPosition([0.809, 1.242, 0.3], scale)}
+          position={calcPosition([0.809, 1.242, 0.3], [scale.X, scale.Y, scale.Z])}
           scale={calcScale(1, [1, scale.Y, scale.Z])}
         />
         {withDoors &&
@@ -107,7 +107,7 @@ export function Closet4Doors({
               receiveShadow
               geometry={nodes.door1.geometry}
               material={materials.wood_1}
-              position={calcPosition([0.2, 1.25, 0.603], scale)}
+              position={calcPosition([0.2, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
               scale={calcScale(-1, [scale.X, scale.Y, 1])}
               rotation={[-Math.PI, 0, 0]}
             />
@@ -116,7 +116,7 @@ export function Closet4Doors({
               receiveShadow
               geometry={nodes.door2.geometry}
               material={materials.wood_1}
-              position={calcPosition([0.602, 1.25, 0.603], scale)}
+              position={calcPosition([0.602, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
               scale={calcScale(1, [scale.X, scale.Y, 1])}
             />
             <mesh
@@ -125,7 +125,7 @@ export function Closet4Doors({
               geometry={nodes.door3.geometry}
               material={materials.wood_1}
               rotation={[-Math.PI, 0, 0]}
-              position={calcPosition([1.015, 1.25, 0.603], scale)}
+              position={calcPosition([1.015, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
               scale={calcScale(-1, [scale.X, scale.Y, 1])}
             />
             <mesh
@@ -133,7 +133,7 @@ export function Closet4Doors({
               receiveShadow
               geometry={nodes.door4.geometry}
               material={materials.wood_1}
-              position={calcPosition([1.415, 1.25, 0.603], scale)}
+              position={calcPosition([1.415, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
               rotation={[-Math.PI, 0, 0]}
               scale={calcScale(-1, [scale.X, scale.Y, 1])}
             />
@@ -144,7 +144,7 @@ export function Closet4Doors({
           receiveShadow
           geometry={nodes.shelfLeft.geometry}
           material={materials.wood_1}
-          position={calcPosition([0.408, 1.23, 0.297], scale)}
+          position={calcPosition([0.408, 1.23, 0.297], [scale.X, scale.Y, scale.Z])}
           scale={calcScale(1, [scale.X, 1, scale.Z])}
         />
         <mesh
@@ -152,7 +152,7 @@ export function Closet4Doors({
           receiveShadow
           geometry={nodes.shelfRight.geometry}
           material={materials.wood_1}
-          position={calcPosition([1.208, 1.23, 0.297], scale)}
+          position={calcPosition([1.208, 1.23, 0.297], [scale.X, scale.Y, scale.Z])}
           scale={calcScale(1, [scale.X, 1, scale.Z])}
         />
         {withDoors &&
@@ -162,7 +162,7 @@ export function Closet4Doors({
               receiveShadow
               geometry={nodes.door1.geometry}
               material={materials.wood_1}
-              position={calcPosition([0.2, 1.25, 0.603], scale)}
+              position={calcPosition([0.2, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
               scale={calcScale(-1, [scale.X, scale.Y, 1])}
               rotation={[-Math.PI, 0, 0]}
             />
@@ -171,7 +171,7 @@ export function Closet4Doors({
               receiveShadow
               geometry={nodes.door2.geometry}
               material={materials.wood_1}
-              position={calcPosition([0.602, 1.25, 0.603], scale)}
+              position={calcPosition([0.602, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
               scale={calcScale(1, [scale.X, scale.Y, 1])}
             />
             <mesh
@@ -180,7 +180,7 @@ export function Closet4Doors({
               geometry={nodes.door3.geometry}
               material={materials.wood_1}
               rotation={[-Math.PI, 0, 0]}
-              position={calcPosition([1.015, 1.25, 0.603], scale)}
+              position={calcPosition([1.015, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
               scale={calcScale(-1, [scale.X, scale.Y, 1])}
             />
             <mesh
@@ -188,7 +188,7 @@ export function Closet4Doors({
               receiveShadow
               geometry={nodes.door4.geometry}
               material={materials.wood_1}
-              position={calcPosition([1.415, 1.25, 0.603], scale)}
+              position={calcPosition([1.415, 1.25, 0.603], [scale.X, scale.Y, scale.Z])}
               rotation={[-Math.PI, 0, 0]}
               scale={calcScale(-1, [scale.X, scale.Y, 1])}
             />
@@ -199,7 +199,7 @@ export function Closet4Doors({
           receiveShadow
           geometry={nodes.shelfLeft.geometry}
           material={materials.wood_1}
-          position={calcPosition([0.408, 1.23, 0.297], scale)}
+          position={calcPosition([0.408, 1.23, 0.297], [scale.X, scale.Y, scale.Z])}
           scale={calcScale(1, [scale.X, 1, scale.Z])}
         />
         <mesh
@@ -207,7 +207,7 @@ export function Closet4Doors({
           receiveShadow
           geometry={nodes.shelfRight.geometry}
           material={materials.wood_1}
-          position={calcPosition([1.208, 1.23, 0.297], scale)}
+          position={calcPosition([1.208, 1.23, 0.297], [scale.X, scale.Y, scale.Z])}
           scale={calcScale(1, [scale.X, 1, scale.Z])}
         />
       </group>
@@ -217,7 +217,7 @@ export function Closet4Doors({
         receiveShadow
         geometry={nodes.legBackLeft.geometry}
         material={materials["chrome.001"]}
-        position={calcPosition([0.101, 0.05, 0.052], scale)}
+        position={calcPosition([0.101, 0.05, 0.052], [scale.X, scale.Y, scale.Z])}
       // scale={calcScale(1, [scale.X, scale.Y, 1])}
       />
       <mesh
@@ -225,7 +225,7 @@ export function Closet4Doors({
         receiveShadow
         geometry={nodes.legBackRight.geometry}
         material={materials["chrome.001"]}
-        position={calcPosition([1.538, 0.05, 0.052], scale)}
+        position={calcPosition([1.538, 0.05, 0.052], [scale.X, scale.Y, scale.Z])}
       // scale={calcScale(1, [scale.X, scale.Y, 1])}
       />
       <mesh
@@ -233,7 +233,7 @@ export function Closet4Doors({
         receiveShadow
         geometry={nodes.legFrontLeft.geometry}
         material={materials["chrome.001"]}
-        position={calcPosition([0.101, 0.05, 0.512], scale)}
+        position={calcPosition([0.101, 0.05, 0.512], [scale.X, scale.Y, scale.Z])}
       // scale={calcScale(1, [scale.X, scale.Y, 1])}
       />
       <mesh
@@ -241,7 +241,7 @@ export function Closet4Doors({
         receiveShadow
         geometry={nodes.legFrontRight.geometry}
         material={materials["chrome.001"]}
-        position={calcPosition([1.538, 0.05, 0.512], scale)}
+        position={calcPosition([1.538, 0.05, 0.512], [scale.X, scale.Y, scale.Z])}
       // scale={calcScale(1, [scale.X, scale.Y, 1])}
       />
 
@@ -250,7 +250,7 @@ export function Closet4Doors({
         receiveShadow
         geometry={nodes.sokolBack.geometry}
         material={materials.wood_1}
-        position={calcPosition([0.806, 0.05, 0.008], scale)}
+        position={calcPosition([0.806, 0.05, 0.008], [scale.X, scale.Y, scale.Z])}
         scale={calcScale(1, [scale.X, 1, 1])}
       />
       <mesh
@@ -258,7 +258,7 @@ export function Closet4Doors({
         receiveShadow
         geometry={nodes.sokolFront.geometry}
         material={materials.wood_1}
-        position={calcPosition([0.806, 0.05, 0.585], scale)}
+        position={calcPosition([0.806, 0.05, 0.585], [scale.X, scale.Y, scale.Z])}
         scale={calcScale(1, [scale.X, 1, 1])}
       />
       <mesh
@@ -266,7 +266,7 @@ export function Closet4Doors({
         receiveShadow
         geometry={nodes.sokolLeft.geometry}
         material={materials.wood_1}
-        position={calcPosition([0.01, 0.05, 0.296], scale)}
+        position={calcPosition([0.01, 0.05, 0.296], [scale.X, scale.Y, scale.Z])}
         scale={calcScale(1, [1, 1, scale.Z])}
       />
       <mesh
@@ -274,7 +274,7 @@ export function Closet4Doors({
         receiveShadow
         geometry={nodes.sokolRight.geometry}
         material={materials.wood_1}
-        position={calcPosition([1.601, 0.05, 0.296], scale)}
+        position={calcPosition([1.601, 0.05, 0.296], [scale.X, scale.Y, scale.Z])}
         scale={calcScale(1, [1, 1, scale.Z])}
       />
 
