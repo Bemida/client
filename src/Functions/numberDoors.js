@@ -1,3 +1,6 @@
+// argument: wardrobe width
+// creator:Haya Aminov 
+
 export default function numberDoors(wardrobeWidth) {
     const minWidth = 20;
     const maxWidth = 55;
