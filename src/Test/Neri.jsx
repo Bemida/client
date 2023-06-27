@@ -1,6 +1,14 @@
 import Select from "../Components/Select";
 
-function Neri() {
+
+import React from 'react'
+import { DataContext } from '../Context/MainContext'
+
+export default function Neri() {
+
+  const context = useContext(DataContext)
+
+
   return (
     <Select
       options={[
@@ -11,6 +19,5 @@ function Neri() {
       ]}
     />
   );
-}
 
-export default Neri;
+}

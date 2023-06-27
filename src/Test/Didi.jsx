@@ -1,12 +1,12 @@
-import Layout from "../Layout"
+import { useContext } from 'react'
+import Layout from '../Layout'
+import { DataContext } from '../Context/MainContext'
 
-function Didi() {
-    return (
-        <div >
-            {/* Didi */}
-            <Layout />
-        </div>
-    )
+export default function Didi() {
+  const context = useContext(DataContext)
+  return (
+    <div>
+  
+    </div>
+  )
 }
-
-export default Didi
