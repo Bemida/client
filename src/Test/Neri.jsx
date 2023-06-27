@@ -1,16 +1,7 @@
-import Select from "../Components/Select";
+import Header from "../Components/Header";
 
 function Neri() {
-  return (
-    <Select
-      options={[
-        { key: "ff", value: "kkjdkj" },
-        { key: "ff", value: "kkjdkj" },
-        { key: "ff", value: "kkjdkj" },
-        { key: "ff", value: "kkjdkj" },
-      ]}
-    />
-  );
+  return <Header />;
 }
 
 export default Neri;
