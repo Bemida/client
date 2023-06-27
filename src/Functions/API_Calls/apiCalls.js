@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-//axios.defaults.baseURL = ''
+axios.defaults.baseURL = 'http://localhost:2023/api/'
 
 //This is a generic API function. Here you can make axios calls by simply writing api.post or the method of your choosing
 //Be sure to check which parameters each method requests 
