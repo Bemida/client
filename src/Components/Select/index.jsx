@@ -11,7 +11,7 @@ function Select({ options, style, name, onChange }) {
       className={styles.select}
       onChange={onChange}
     >
-      {options.map((op, i) => {
+      {options?.map((op, i) => {
         if (i === 0) {
           return (
             <option
