@@ -5,6 +5,17 @@
     padding-left: 20px;
 }
 
-Selectionlist{
+.ListTitle{
+    font-weight: bold;
+}
+/* .Selectionlist{
+    font-weight: lighter;
+} */
+
+.OderKey{
+    font-weight: bolder;
+}
+
+.OderValue{
     font-weight: lighter;
 }
