@@ -1,7 +1,11 @@
 import { createContext, useState } from "react"
 import fakeData from "../Data/fakeData"
 import data from '../Data/fakeData'
+
 import newFakeData from '../Data/fakeDataTest'
+
+import newData from '../Data/fakeDataTest'
+
 
 //This is where we'll manager any context that needs to be used across our applications. 
 //Below we've created a component that contains multiple states. We can later wrap a component with this one to give it access to all our different contexts
