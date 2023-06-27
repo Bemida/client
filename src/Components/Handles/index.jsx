@@ -24,7 +24,6 @@ export default function Handles({ width, height, depth, doorsNumber = 4, woodWid
                 />
                 {isLeftDoor = (number + 1) % 2 === 0}
                 {xPosition = isLeftDoor ? xPosition + (doorWidth * 0.8) * 2 : xPosition + positionalRatio * 2}
-                {console.log(isLeftDoor, xPosition)}
             </>
         )
     })
