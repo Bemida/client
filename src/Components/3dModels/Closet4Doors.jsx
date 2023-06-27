@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 
 import { useGLTF } from "@react-three/drei";
-import Handles from "../Handles/Handles";
+import Handles from "../Handles";
 import {
   calcPosition,
   snapGaps,
