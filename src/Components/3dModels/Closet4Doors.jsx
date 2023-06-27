@@ -1,13 +1,13 @@
 
 import { useGLTF } from "@react-three/drei";
 import { calcPosition, snapGaps, calcScale, initScale } from '../../Functions/3dCalc/calcScale';
-// import Handles from "../";
+import Handles from "../Handles/index";
 import Shelf from "../Shelf";
 
 export function Closet4Doors({
-  width = 1,
-  height = 2,
-  depth = 1,
+  width = 1.61,
+  height = 2.4,
+  depth = 0.59,
   isSokol,
   material,
   handleType,
@@ -24,7 +24,6 @@ export function Closet4Doors({
 
   const scale = initScale(defaultDimensions, [width, height, depth]);
 
-  console.log(scale);
 
   return (
     <group {...props} dispose={null}>
@@ -285,10 +284,6 @@ export function Closet4Doors({
       />
       <Shelf height={height} shelvesNumber={shelvesNumberLeft} scale={scale} depth={depth} width={width} position={nodes.shelfLeft.position} />
       <Shelf height={height} shelvesNumber={shelvesNumberRight} scale={scale} depth={depth} width={width} position={nodes.shelfRight.position} />
-      {/* <Shelf height={height} shelvesNumber={4} depth={depth} width={width} position={nodes.shelfLeft.position}  scale={scale}/> */}
-
-      {/* {console.log(nodes.shelfLeft.scale)}
-     {console.log(nodes.topPanel.scale)} */}
     </group>
   );
 }
