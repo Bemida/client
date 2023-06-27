@@ -40,7 +40,8 @@
     justify-content: space-around;
 }
 
-<<<<<<< HEAD
+
+
 
 .containerBty_ProgressBar {
     position: absolute;
@@ -69,8 +70,10 @@
     border: 0;
     /* font-weight: bold; */
     
-=======
+}
+  
 .sr {
     grid-area: sr;
->>>>>>> 24e3e4ddd32f04cb176b905af4d59ba9b86aa64c
+
+ 
 }
