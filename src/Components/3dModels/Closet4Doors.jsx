@@ -1,8 +1,7 @@
-import React, { useRef, useState } from "react";
 
 import { useGLTF } from "@react-three/drei";
 import { calcPosition, snapGaps, calcScale, initScale } from '../../Functions/3dCalc/calcScale';
-import Handles from "../Handles";
+// import Handles from "../";
 import Shelf from "../Shelf";
 
 export function Closet4Doors({
@@ -180,7 +179,7 @@ export function Closet4Doors({
               rotation={[-Math.PI, 0, 0]}
               scale={calcScale(-1, [scale.X, scale.Y, 1])}
             />
-            <Handles width={width} height={height} depth={depth} scale={scale} />
+            {/* <Handles width={width} height={height} depth={depth} scale={scale} /> */}
           </group>
         )}
       </group>
