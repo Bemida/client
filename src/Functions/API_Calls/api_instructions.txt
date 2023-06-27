@@ -27,7 +27,8 @@ GET:
 PUT: 
 1. /items/:barcode - update an item by entering it's unique barcode. Remove the ":barcode" and enter the actual barcode instead.
 
-2. /orders/:
+2. /orders/:id - update an order by entering it's unique Mongo Id. Remove the ":id" and enter the actual id instead.
+
 POST: 
 
 1. /items/additem - this is to add a new item to the database. Here is the JSON you can use for Postman:
