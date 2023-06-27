@@ -4,7 +4,7 @@ import { DataContext } from "../../Context/MainContext";
 
 // creator: Neri
 
-function ProgressBar() {
+function ProgressBar({context}) {
   // const datacontext = useContext(DataContext);
   // console.log(datacontext.fakeData.stages.stage)
 
@@ -17,7 +17,7 @@ function ProgressBar() {
   ];
 
   const datacontext = {
-    stageNow: 1,
+    stageNow: context.order.stageNo,
   };
 
   const reversArr = [...options].reverse();
@@ -26,9 +26,8 @@ function ProgressBar() {
       {reversArr.map((op, i) => (
         <li
           key={i}
-          className={`${styles.li} ${
-            datacontext.stageNow == i + 1 ? styles.stepNow : ""
-          }`}
+          className={`${styles.li} ${datacontext.stageNow == i + 1 ? styles.stepNow : ""
+            }`}
         >{`${i + 1} ${op}`}</li>
       ))}
     </ul>
