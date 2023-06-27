@@ -1,22 +1,30 @@
-import styles from './style.module.css'
+import styles from "./style.module.css";
 
-// props : 
-// creator:Haya Aminov - 
+// props : labelText,id,isRequired,type,onChange
+// creator:Haya Aminov -
 
-//validation/isRequired
 function Input(props) {
-    //debugger;
-    console.log(props.isRequired)
-
-    return (
-        // <div className={styles.name} style={style} {...props}>
-        <div>
-            <label htmlFor={props.id}>{props.label}</label>
-            {props.isRequired ? <input id={props.id} className='red' type={props.type} required /> : <input className='blue' type={props.type} id={props.id} />}
-
-            {/* <input id={props.id} className='red' type={props.type} required /> */}
-        </div>
-    )
+  return (
+    <div>
+      <label htmlFor={props.id}>{props.labelText}</label>
+      {props.isRequired ? (
+        <input
+          id={props.id}
+          className="red"
+          type={props.type}
+          required
+          onChange={props.onChange}
+        />
+      ) : (
+        <input
+          className="blue"
+          type={props.type}
+          id={props.id}
+          onChange={props.onChange}
+        />
+      )}
+    </div>
+  );
 }
 
-export default Input
+export default Input;

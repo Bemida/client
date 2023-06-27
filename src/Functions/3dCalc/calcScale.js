@@ -5,18 +5,13 @@ export function initScale(defaultDimensions, inputDimenstions) {
         Z: inputDimenstions[2] / defaultDimensions[2]
     }
     return (ratio);
-}
-
-
-export function calcPosition(initPosition, scale) {
+} export function calcPosition(initPosition, scale) {
     return [
         initPosition[0] * scale[0],
         initPosition[1] * scale[1],
         initPosition[2] * scale[2]
     ]
-}
-
-export function calcScale(initScale, scale) {
+} export function calcScale(initScale, scale) {
     return [
         initScale * scale[0],
         initScale * scale[1],
