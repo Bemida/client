@@ -1,27 +1,24 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-
-import Aviad from './Aviad'
-import David from './David'
-import Didi from './Didi'
-import Efrat from './Efrat'
-import Hadassah from './Hadassah'
-import Michael from './Michael'
-import Neri from './Neri'
-import Netanel from './Netanel'
-import Omri from './Omri'
-import Rotem from './Rotem'
-import Tzvi from './Tzvi'
-import Yehuda from './Yehuda'
-import Yonatan from './Yonatan'
-import Yosef_sh from './Yosef_sh'
-import Yosef_si from './Yosef_si'
-
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Aviad from "./Aviad";
+import David from "./David";
+import Didi from "./Didi";
+import Efrat from "./Efrat";
+import Hadassah from "./Hadassah";
+import Michael from "./Michael";
+import Neri from "./Neri";
+import Netanel from "./Netanel";
+import Omri from "./Omri";
+import Rotem from "./Rotem";
+import Tzvi from "./Tzvi";
+import Yehuda from "./Yehuda";
+import Yonatan from "./Yonatan";
+import Yosef_sh from "./Yosef_sh";
+import Yosef_si from "./Yosef_si";
 
 function MainTest() {
   return (
     <div>
-
       <Routes>
         <Route path="/didi" element={<Didi />} />
         <Route path="/aviad" element={<Aviad />} />
@@ -39,11 +36,8 @@ function MainTest() {
         <Route path="/yosef_si" element={<Yosef_si />} />
         <Route path="/yosef_sh" element={<Yosef_sh />} />
       </Routes>
-
-
-
     </div>
-  )
+  );
 }
 
-export default MainTest
+export default MainTest;

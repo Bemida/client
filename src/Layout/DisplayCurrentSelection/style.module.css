@@ -1,0 +1,10 @@
+.currentSelection{
+    direction: rtl;
+    width: 338px;
+    padding-right: 40px;
+    padding-left: 20px;
+}
+
+Selectionlist{
+    font-weight: lighter;
+}
