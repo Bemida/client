@@ -5,11 +5,18 @@
      background-color: #EEF6F5;
      border-radius: 5px;
      margin: 5px;
+     text-align: right;
+
  }
 
  .label {
      display: block;
-     text-align: left;
+     text-align: right;
+     color: black;
+ }
+
+ input:focus {
+     outline: none;
  }
 
  .invalid {
