@@ -1,6 +1,13 @@
 // argments: orderContext, array of furniture images 
 // creator: Haya
-//This function returns a string with HTML of the order (selections & )
+//This function returns a string containing HTML and CSS code about the order 
+// (selections & details about the client)
+
+//TO DO: 
+//not harded code with Michael function.
+//need to be changed using real data
+//need to be check when we send the email: text and CSS and images.
+
 export function messageTemplate(orderContext, imagesArr) {
     const msg =
         ` <head>
@@ -58,7 +65,7 @@ export function messageTemplate(orderContext, imagesArr) {
             <strong>דלתות:</strong> ${orderContext.doors} דלתות
         </p>
         <p class="orderDetails">
-            <strong>פרזול:</strong> ידית כפתור כסופה
+            <strong>פרזול:</strong> ${orderContext.handleId}
         </p>
         <p class="orderDetails">
             <strong>בסיס הארון:</strong> ${orderContext.base}
@@ -109,5 +116,5 @@ export function messageTemplate(orderContext, imagesArr) {
 
 </html>`
 
-    return msg;
+    return [orderContext.userEmail, 'אישור הזמנה', msg];
 }
