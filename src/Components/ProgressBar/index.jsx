@@ -20,10 +20,9 @@ function ProgressBar({context}) {
     stageNow: context.order.stageNo,
   };
 
-  const reversArr = [...options].reverse();
   return (
-    <ul className={styles.ul}>
-      {reversArr.map((op, i) => (
+    <ul dir="rtl" className={styles.ul}>
+      {options.map((op, i) => (
         <li
           key={i}
           className={`${styles.li} ${datacontext.stageNow == i + 1 ? styles.stepNow : ""

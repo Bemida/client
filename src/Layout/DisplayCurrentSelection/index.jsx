@@ -46,17 +46,22 @@ import SelectionRow from '../SelectionRow'
 
 
 
+
 function DisplayCurrentSelection({ ...props }) {
 
   const context = useContext(DataContext)
 
-  const selections = data.orders 
-  
-  console.log(selections)
-//  console.log(LanguageTranslater['doors']['heb']); 
+  const selections = data.orders  
 
  let currentStep = context.fakeData.order.stageNo
   let ListTitle = selections.furniture//"הארון שלי"
+
+  // const selections ={} 
+  // const selections = context.fakeData.order.order
+  const selections = context.fakeData.orders
+  let currentStep = context.fakeData.order.stageNo
+  let ListTitle = "הארון שלי"
+
 
   const keys = Object.keys(selections)
   console.log(keys);
@@ -66,6 +71,7 @@ function DisplayCurrentSelection({ ...props }) {
       <h3 className='ListTitle'>{ListTitle}</h3>
 
       <ul className='Selectionlist'>
+
         {/* TODO: add sort() after filter */}
         {keys.filter((v)=>LanguageTranslater[v]).sort((a,b)=>LanguageTranslater[a]['ordinal']<LanguageTranslater[b]['ordinal']).map((k) => 
         <li>{
@@ -73,10 +79,21 @@ function DisplayCurrentSelection({ ...props }) {
           <SelectionRow bolder= {LanguageTranslater[k]['heb']} regular={selections[k] + ' ' + LanguageTranslater[k]['postfix']}/>
           // <div className='SelectionRow'>
           
-
           // </div> 
           }
         </li>)}
+
+        {/* for (const a of context.fakeData.order.order)
+        {
+          a && <li><span className='OderKey'>{a}</span><span className='OderValue'>{Selections[a]}</span></li>
+        } */}
+
+        {/* {keys.map((k) => <li><span className='OderKey'>{k}</span><span className='OderValue'>{selections[k]}</span></li>)
+        } */}
+
+        {keys.map((k) => Object.is(selections[k]) ? "creaet a coponent tac receivs a key-Value, and returns an <li>" : <li><span className='OderKey'>{k}</span><span className='OderValue'>{selections[k]}</span></li>)
+        }
+
 
       </ul>
 
