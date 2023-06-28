@@ -60,7 +60,6 @@ function DisplayCurrentSelection({ ...props }) {
 
 
   const keys = Object.keys(selections)
-  console.log(keys);
   return (
     <div className="currentSelection">
 
