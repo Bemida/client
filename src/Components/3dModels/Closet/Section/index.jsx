@@ -2,10 +2,12 @@ import { useGLTF } from "@react-three/drei";
 import Structure from "../Structure"
 import Shelf from "../Shelf";
 import Leg from "../Leg";
+import Drawer from "../Drawer";
 
-function Section({ dimensions, position, numOfShelves = 4, withLegs = true }) {
+function Section({ dimensions, position, numOfShelves = 4,numOfDrawer = 1, withLegs = true }) {
     const { materials } = useGLTF('/assets/3dModels/Materials.glb')
     const shelvesArr = Array.from({ length: numOfShelves }, (_, i) => i);
+    const drawerArr = Array.from({ length: numOfDrawer }, (_, i) => i);
     const legGap = 0.07;
     return (
         <>
@@ -33,6 +35,27 @@ function Section({ dimensions, position, numOfShelves = 4, withLegs = true }) {
             {shelvesArr.map((i, n) => {
                 return (
                     <Shelf
+                        key={n}
+                        dimensions={dimensions}
+                        material={materials.wood}
+                        position={{
+                            X: position.X,
+                            Y: (
+                                -(dimensions.Y / 2) + //starting point
+                                (dimensions.Y / (numOfShelves + 1)) + //skip the bottom
+                                ((dimensions.Y - (dimensions.Y / (numOfShelves + 1))) //skip the top
+                                    / numOfShelves) * i //add height for each shelf in the array
+
+                            ),
+                            Z: position.Z
+                        }} />
+                )
+            })}
+            {/* creating the Drawer: */}
+
+            {drawerArr.map((i, n) => {
+                return (
+                    <Drawer
                         key={n}
                         dimensions={dimensions}
                         material={materials.wood}
