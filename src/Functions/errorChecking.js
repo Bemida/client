@@ -26,14 +26,10 @@ let validation = {
   },
 };
 
-export default function submitOfNext(context) {
-  console.log(context); //
-  console.log("ordrer: " + context.fullOrder); //
-
+export default function errorChecking(context) {
   const errorsList = [];
+  validation = validation[context.stage];
   const keys = Object.keys(validation);
-
-  validation = validation[context.stage]
 
   keys.forEach((key) => {
     const value = validation[key];
@@ -49,7 +45,7 @@ export default function submitOfNext(context) {
       }
     } else if (typeof valueFromContext === "function") {
       let msg = value();
-      if (msg) push({ key, msg });
+      if (msg) errorsList.push({ key, msg });
     } else {
     }
   });
