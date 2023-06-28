@@ -6,6 +6,7 @@ import styles from "./style.module.css";
 function Grid({Main_Section,progressBar,RightBar,LeftBar,bty,header}) {
   
   
+
   return (
     <div className={styles.containerGrid}>
       <div className={styles.h}>
