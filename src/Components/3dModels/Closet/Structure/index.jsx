@@ -1,9 +1,14 @@
+import { useGLTF } from "@react-three/drei";
+import Shelf from "../Shelf";
 
 
-function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 } }) {
+function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numOfShelves = 3 }) {
+    const { materials } = useGLTF('/assets/3dModels/Materials.glb')
     const thickness = 0.02;
     const thicknessBack = 0.003;
-    console.log(position);
+    const shelvesArr = Array.from({ length: numOfShelves }, (_, i) => i);
+
+    console.log(shelvesArr);
     return (
         <group
 
@@ -61,6 +66,31 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 } }) {
                 {/* <meshBasicMaterial color={0x0000ff} /> */}
                 <boxGeometry args={[dimensions.X, dimensions.Y, thicknessBack]} />
             </mesh >
+
+
+            {/* creating the shelves: */}
+
+            {shelvesArr.map((i, n) => {
+                return (
+                    <Shelf
+                        key={n}
+                        dimensions={dimensions}
+                        material={materials.wood}
+                        position={{
+                            X: dimensions.X / 2,
+                            Y: (
+                                -((dimensions.Y) / 2) + //starting point
+                                ((dimensions.Y) / (numOfShelves + 1)) + //skip the bottom
+                                ((dimensions.Y - (dimensions.Y / (numOfShelves + 1))) //skip the top
+                                    / numOfShelves) * i //add height for each shelf in the array
+
+                            ),
+                            Z: 0
+                        }} />
+                )
+            })}
+
+
         </group>
     )
 }

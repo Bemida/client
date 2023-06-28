@@ -7,56 +7,30 @@ function Closet({ dimensions }) {
   const
     order = useContext(DataContext).newFakeData.orders,
     doors = order.doors,
-    sections = [1, 1, 1, 1] || [order.section1, order.section2],
+    sections = [1, 1, 1, 1, 1, 1, 1, 1] || [order.section1, order.section2],
     numOfSections = sections.length
 
-  if (doors.length % 2 === 1) {
-    return (
-      sections.map((v, i) => {
-        return (
-          (doors / 2 > i) &&
-          <Section
-            key={i}
-            dimensions={{
-              X: (dimensions.X / numOfSections),
-              Y: dimensions.Y,
-              Z: dimensions.Z
-            }}
-            position={{
-              X: (i * (dimensions.X / numOfSections)),
-              Y: 0,
-              Z: 0
-            }}
-            numOfShelves={i}
-            withLegs={true}
-            oneDoor={true}
-          />
-        )
-      })
-    )
-  } else {
-    return (
-      sections.map((v, i) => {
-        return (
-          <Section
-            key={i}
-            dimensions={{
-              X: (dimensions.X / numOfSections),
-              Y: dimensions.Y,
-              Z: dimensions.Z
-            }}
-            position={{
-              X: (i * (dimensions.X / numOfSections)),
-              Y: 0,
-              Z: 0
-            }}
-            numOfShelves={i}
-            withLegs={true}
-
-          />
-        )
-      })
-    )
-  }
+  return (
+    sections.map((v, i) => {
+      return (
+        <Section
+          key={i}
+          dimensions={{
+            X: (dimensions.X / numOfSections),
+            Y: dimensions.Y,
+            Z: dimensions.Z
+          }}
+          position={{
+            X: (i * (dimensions.X / numOfSections)),
+            Y: 0,
+            Z: 0
+          }}
+          numOfShelves={i}
+          withLegs={true}
+        />
+      )
+    })
+  )
 }
+
 export default Closet
