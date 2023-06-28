@@ -1,39 +1,32 @@
-import React, { useRef, useState } from "react";
 
 import { useGLTF } from "@react-three/drei";
-import Handles from "../Handles/Handles";
-import {
-  calcPosition,
-  snapGaps,
-  calcScale,
-  initScale,
-} from "../../Functions/3dCalc/calcScale";
+import { calcPosition, snapGaps, calcScale, initScale } from '../../Functions/3dCalc/calcScale';
+import Handles from "../Handles/index";
+import Shelf from "../Shelf";
 
 export function Closet4Doors({
-  width = 1,
-  height = 1,
-  depth = 1,
+  width = 2,
+  height = 2,
+  depth = 2,
   isSokol,
   material,
   handleType,
   withDoors = true,
-  RightShelvesNumber,
-  LeftShelvesNumber,
+  shelvesNumberLeft = 2,
+  shelvesNumberRight = 5,
   isLeftPole,
   isRightPole,
   ...props
 }) {
-  const defaultDimensions = [1.61, 2.4, 0.59];
-
+  const defaultDimensions = [1.61, 2.4, 0.59]
   const { nodes, materials } = useGLTF("assets/3dModels/Closet4Doors.glb");
-
-  const scale = initScale(defaultDimensions, [width, height, depth]);
-
-  console.log(scale);
-
+  const scale = initScale(defaultDimensions, [width, height, depth])
+  console.log(nodes);
   return (
     <group {...props} dispose={null}>
-      <group position={snapGaps("-", 0.1, scale, [0, 0, 0], [0, 1, 0])}>
+      <group
+        position={snapGaps("-", 0.1, scale, [0, 0, 0], [0, 1, 0])}
+      >
         <mesh
           castShadow
           receiveShadow
@@ -87,15 +80,11 @@ export function Closet4Doors({
           receiveShadow
           geometry={nodes.bottomPanel.geometry}
           material={materials.wood_1}
-          position={snapGaps(
-            "-",
-            0.0165,
-            scale,
-
-            calcPosition([0.808, 0.108, 0.3], [scale.X, scale.Y, scale.Z]),
-
-            [0, 1, 0]
-          )}
+          position={
+            snapGaps("-", 0.0165, scale,
+              calcPosition([0.808, 0.108, 0.3], [scale.X, scale.Y, scale.Z])
+              , [0, 1, 0])
+          }
           scale={calcScale(1, [scale.X, 1, scale.Z])}
         />
 
@@ -116,13 +105,11 @@ export function Closet4Doors({
           receiveShadow
           geometry={nodes.topPanel.geometry}
           material={materials.wood_1}
-          position={snapGaps(
-            "+",
-            0.0165,
-            scale,
-            calcPosition([0.808, 2.392, 0.3], [scale.X, scale.Y, scale.Z]),
-            [0, 1, 0]
-          )}
+          position={
+            snapGaps("+", 0.0165, scale,
+              calcPosition([0.808, 2.392, 0.3], [scale.X, scale.Y, scale.Z])
+              , [0, 1, 0])
+          }
           scale={calcScale(1, [scale.X, 1, scale.Z])}
         />
 
@@ -190,32 +177,9 @@ export function Closet4Doors({
               rotation={[-Math.PI, 0, 0]}
               scale={calcScale(-1, [scale.X, scale.Y, 1])}
             />
+            <Handles width={width} height={height} depth={depth} scale={scale} />
           </group>
         )}
-
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.shelfLeft.geometry}
-          material={materials.wood_1}
-          position={calcPosition(
-            [0.408, 1.23, 0.297],
-            [scale.X, scale.Y, scale.Z]
-          )}
-          scale={calcScale(1, [scale.X, 1, scale.Z])}
-        />
-
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.shelfRight.geometry}
-          material={materials.wood_1}
-          position={calcPosition(
-            [1.208, 1.23, 0.297],
-            [scale.X, scale.Y, scale.Z]
-          )}
-          scale={calcScale(1, [scale.X, 1, scale.Z])}
-        />
       </group>
 
       <mesh
@@ -317,7 +281,8 @@ export function Closet4Doors({
         )}
         scale={calcScale(1, [1, 1, scale.Z])}
       />
-      <Handles width={width} height={height} depth={depth} scale={scale} />
+      <Shelf height={height} shelvesNumber={shelvesNumberLeft} scale={scale} depth={depth} width={width} position={nodes.shelfLeft.position} />
+      <Shelf height={height} shelvesNumber={shelvesNumberRight} scale={scale} depth={depth} width={width} position={nodes.shelfRight.position} />
     </group>
   );
 }

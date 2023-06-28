@@ -5,6 +5,25 @@
     padding-left: 20px;
 }
 
-Selectionlist{
-    font-weight: lighter;
+.ListTitle{
+    font-weight: bold;
+    font-size: large;
 }
+
+.selectionRow{
+    direction: rtl;    
+}
+
+.orderKey{
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.orderValue{
+    font-weight: light;
+    font-size: 12px;
+}
+/* .Selectionlist{
+    font-weight: lighter;
+} */
+

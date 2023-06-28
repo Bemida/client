@@ -10,7 +10,6 @@ export default function Handles({ width, height, depth, doorsNumber = 4, woodWid
     const yPosition = height > 1.35 ? 1.3 : height - 0.5;
     const handlesNumbers = Array.from(Array(doorsNumber).keys()); // create array of handles numbers
 
-    console.log([xPosition, yPosition, depth]);
     const handles = handlesNumbers.map(number => {
         return (
             <>
@@ -24,7 +23,6 @@ export default function Handles({ width, height, depth, doorsNumber = 4, woodWid
                 />
                 {isLeftDoor = (number + 1) % 2 === 0}
                 {xPosition = isLeftDoor ? xPosition + (doorWidth * 0.8) * 2 : xPosition + positionalRatio * 2}
-                {console.log(isLeftDoor, xPosition)}
             </>
         )
     })

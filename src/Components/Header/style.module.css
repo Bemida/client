@@ -1,6 +1,6 @@
 .header {
   border-bottom: solid 2px black;
-  width: 100%;
+  width: 100vw;
   height: 95px;
   padding: 2px;
   position: relative;
@@ -8,7 +8,10 @@
 
 .logo {
   position: absolute;
+  padding-top: 13px;
   left: 0;
+  padding-left: 28px;
   width: 188px;
   height: 69px;
+  
 }
