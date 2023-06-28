@@ -16,13 +16,13 @@
 .h {
     grid-area: h;
     overflow: hidden;
-  
+
 }
 
 .sl {
     grid-area: sl;
     /* overflow: hidden; */
-   
+
 }
 
 .ms {
@@ -30,27 +30,27 @@
     /* overflow: hidden; */
     height: 100%;
     width: 100%;
-  
+
     display: flex;
     flex-direction: column;
     align-items: center;
     /* justify-content: center;  */
     overflow: hidden;
-    
+
 }
 
-.ms H1{
-  display: flex;
-  justify-content: right;
-  font-size: 26px;
-  font-weight: 500;
-  
+.ms H1 {
+    display: flex;
+    justify-content: right;
+    font-size: 26px;
+    font-weight: 500;
+
 }
 
 .sr {
     grid-area: sr;
     /* overflow: hidden; */
-   
+
 }
 
 .c {
@@ -59,11 +59,11 @@
     /* justify-content: space-between; */
     /* justify-content: space-around; */
     justify-content: center;
-   
-  
+
+
 }
 
-.d{
+.d {
     grid-area: d;
     display: flex;
     justify-content: end;
@@ -84,13 +84,14 @@
     padding-left: 3%;
     gap: 15%;
 }
-.containerBty_ProgressBar button{
+
+.containerBty_ProgressBar button {
     box-shadow: 0px 3px 5px rgb(121, 121, 121);
-    
+
 }
 
 
-  
+
 .sr {
     grid-area: sr;
 }
