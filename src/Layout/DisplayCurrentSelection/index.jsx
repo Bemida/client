@@ -5,7 +5,7 @@ import { DataContext } from '../../Context/MainContext'
 import { useContext } from 'react'
 
 
-import data  from '../../Data/fakeDataTest' //.orders
+import data from '../../Data/fakeDataTest' //.orders
 import SelectionRow from '../SelectionRow'
 import CurrentSelections from '../../Components/CurrentSelections'
 
