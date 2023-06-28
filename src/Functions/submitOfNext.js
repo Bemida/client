@@ -1,11 +1,11 @@
-
 function validationList(stageNow) {
   switch (stageNow) {
     // value: null or function
+    // function : if error - do throw
     case 1:
       return {
         furniture: null,
-        example: () => alert("good")
+        example: () => alert("not-good"),
       };
     case 2:
       return {
@@ -36,33 +36,29 @@ function validationList(stageNow) {
 
 export default function submitOfNext(context) {
   console.log(context); //
+  console.log("ordrer: " + context.fullOrder); //
   try {
     const validation = validationList(context.stage);
-
     const keys = Object.keys(validation);
 
     keys.forEach((key) => {
       const value = validation[key];
       if (!value) {
-        // כאן רק לעשות throw אם יש שגיאה
-        // לבדוק אם הוא true בהזמנה
-        // context.order...[key] - תחזיר אם הוא
-
-        let valueFromContext = context.fullorder[key];
+        let valueFromContext = context.fullOrder[key];
         if (key.includes("_")) {
           const [key1, key2] = key.split("_");
-          valueFromContext = context.fullorder[key1][key2];
+          valueFromContext = context.fullOrder[key1][key2];
         }
 
-        // בדיקה על valueFromContext
-        // ואם הוא false להחזיר שגיאה
+        if (!valueFromContext) {
+          throw "MUST";
+        }
       } else {
         value();
-        // גם- עושה throw אם יש שגיאה
       }
     });
     return true;
   } catch (err) {
-    alert(err);
+    console.log(err);
   }
 }
