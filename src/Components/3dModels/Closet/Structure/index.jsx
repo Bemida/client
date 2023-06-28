@@ -3,6 +3,7 @@
 function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 } }) {
     const thickness = 0.02;
     const thicknessBack = 0.003;
+    console.log(position);
     return (
         <group
 

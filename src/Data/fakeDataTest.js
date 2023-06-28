@@ -112,18 +112,16 @@ const fakeOrderData = {
     shipping: "regular",
     furniture: "Closet",
     color: "red",
-    sections: [
-         {
-            shelves: 3,
-            hangingRod: true,
-            drawers: 4,
-        },
-         {
-            shelves: 2,
-            hangingRod: true,
-            drawers: 2,
-        }
-    ],
+    section1: {
+        shelves: 3,
+        hangingRod: true,
+        drawers: 4,
+    },
+    section2: {
+        shelves: 2,
+        hangingRod: true,
+        drawers: 2,
+    },
     material: "wood",
     height: 200,
     width: 100,
