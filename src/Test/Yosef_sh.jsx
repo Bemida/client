@@ -9,7 +9,7 @@ import { messageTemplate } from '../Data/messageTemplate';
 export default function Yosef_sh(props) {
   async function createHtmlEmail(){
     const data =messageTemplate(orders.orders)
-    console.log(orders.orders.userEmail)
+    console.log(data)
     return data
     // return {"email":orders.orders.userEmail,"title":"work!!!","html":"<h1>555 <h2>wertyuioiuytr</h2></h1>"}
   }
@@ -29,7 +29,7 @@ export default function Yosef_sh(props) {
 
 
   return (
-    <div>Yosef_sh
+    <div >Yosef_sh
       {/* <Payment/> */}
       {/* className, onClick, text, color, width, height, icon  */}
 {Button({color:"red",width:100,text:"payment",className:"send-payment",icon:"🎈" ,onClick:()=>{hendleSubmit()} })}

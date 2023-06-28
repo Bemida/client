@@ -95,9 +95,7 @@ export function messageTemplate(orderContext, imagesArr) {
     <h2>סה"כ לתשלום :${orderContext.total} ש"ח</h2>
 
     <h2>חזית הארון</h2>
-    <img src=${imagesArr[0]} alt='furniture outside' />
     <h2>פנים הארון</h2>
-    <img src=${imagesArr[0]} alt='furniture inside'/>
     <h2 class='underlined'>הפרטים שלך</h2>
     <p class="orderDetails">
         <strong>שם :</strong> ${orderContext.userName}
@@ -116,5 +114,5 @@ export function messageTemplate(orderContext, imagesArr) {
 
 </html>`
 
-    return { email: PorderContext.userEmail, title: 'אישור הזמנה', html: msg };
+    return { email: orderContext.userEmail, title: 'אישור הזמנה', html: msg };
 }
