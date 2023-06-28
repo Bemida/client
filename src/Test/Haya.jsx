@@ -5,11 +5,13 @@ import { useContext } from 'react';
 import { DataContext } from '../Context/MainContext'
 import { useState } from 'react';
 import Payment from '../Components/Payment';
-import ReactDomServer 
+import { renderToString } from 'react-dom/server'
+import DisplayCurrentSelection from '../Layout/DisplayCurrentSelection';
 
 
 export default function Haya() {
-
+    // { renderToString(<DisplayCurrentSelection />) }
+    <DisplayCurrentSelection />
     //  const contextOrder = useContext(DataContext); //.newFakeData.orders);
 
     //     function emailData(orderContext, imagesArr) {
