@@ -47,7 +47,7 @@ function CurrentSelections({style = {} , selections} ) {
         .filter((v)=>LanguageTranslater[v])
         .sort((a,b)=>Number(LanguageTranslater[a]['ordinal'])<Number(LanguageTranslater[b]['ordinal'])?1:-1)
         .map((k) => 
-          <li>{
+          <li key={k}>{
             typeof selections[k] === 'object' ? k : 
             <SelectionRow bolder= {LanguageTranslater[k]['heb']} regular={selections[k] + ' ' + LanguageTranslater[k]['postfix']}/>
 
