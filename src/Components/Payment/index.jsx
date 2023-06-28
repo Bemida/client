@@ -11,7 +11,8 @@ function Payment(props) {
 
   function setInput(e) {
     setInputsObj({ ...inputsObj, [e.target.id]: e.target.value });
-    setInputsValid({ ...inputsValid, [e.target.id]: e.target.value && e.target.value.length > 0 })
+    // setInputsValid({ ...inputsValid, [e.target.id]: e.target.value && e.target.value.length > 0 })
+    setInputsValid({ ...inputsValid, [e.target.id]: undefined || e.target.value.length > 0 })
   }
 
   function checkInput(key) {
@@ -21,7 +22,7 @@ function Payment(props) {
   // propsInput : labelText,id,type,isRequired,onChange
   return (
     <div className={styles.paymentPage} style={props.style || {}}  {...props}>
-      <Input label="שם מלא" id="#name" type="text" isRequired={true} onChange={setInput} isValid={checkInput('#name')} />
+      <Input label="שם מלא" id="#name" type="text" isRequired={true} onChange={setInput} isValid={inputsValid['#name']} />
       <Input label="מייל" id="#mail" type="mail" isRequired={true} onChange={setInput} isValid={checkInput('#mail')} />
       <Input label="טלפון נייד" id="#tel" type="number" isRequired={true} onChange={setInput} isValid={checkInput('#tel')} />
       <Input label="תעודת זהות" id="#idNumber" type="number" isRequired={true} onChange={setInput} isValid={checkInput('#idNumber')} />
