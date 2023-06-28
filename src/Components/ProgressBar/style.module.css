@@ -12,8 +12,8 @@
   line-height: 45px;
   width: 119px;
   height: 100%;
-  background-color: #eeeeee;
-  color: black;
+  background-color: var(--text-color);
+  color: var(--shadow);
   
 }
 
@@ -26,6 +26,7 @@
 }
 
 .stepNow {
-  background-color: #ac9f9f;
+  background-color: var(--pay-button);
+  color: var(--text);
 }
 
