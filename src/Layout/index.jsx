@@ -39,12 +39,10 @@ function Layout() {
   const To_LeftBar = {
     1: "",
     2: "",
-    3: "3LB",
-    // 3: <DisplayCurrentSelection />,
-    4: "4LB",
-    // 4: <DisplayCurrentSelection />,
-    5: "5LB",
-    // 5: <DisplayCurrentSelection />,
+    // 3: "3LB",
+    3: <DisplayCurrentSelection />,
+    4: <DisplayCurrentSelection />,
+    5: <DisplayCurrentSelection />,
   };
   // const Main_Section = To_Main_Section[2]
   const Main_Section = To_Main_Section[context.stage];
