@@ -16,12 +16,12 @@ const fakeItemData = {
             list: [
                 {
                     description: "ידית כפתור נרקיס",
-                    img: "🎭",
+                    img: "https://s3.img-b.com/image/private/t_base,c_lpad,f_auto,dpr_auto,w_90,h_90/product/signaturehardware/signature-hardware-462362-8796197.jpg",
                     id: 321,
                 },
                 {
                     description: "ידית זהב מוברש",
-                    img: "🥎",
+                    img: "https://s3.img-b.com/image/private/t_base,c_lpad,f_auto,dpr_auto,w_90,h_90/product/signaturehardware/signature-hardware-462362-8796197.jpg",
                     id: 54,
                 },
             ],
