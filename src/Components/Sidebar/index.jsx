@@ -13,7 +13,6 @@ function SideBar({ title }) {
   const { fullOrder, setFullOrder } = useContext(DataContext)
 
   const handleClick = (tab, description, handleId) => {
-    if(handleId) console.log(handleId);
     if (description) {
       const key = tab
       setFullOrder({
@@ -23,7 +22,6 @@ function SideBar({ title }) {
     }
     setOpenTab((prev) => (prev === tab ? null : tab));
   };
-  console.log(tabs)
   return (
     <>
       <div className={styles.outerContainer}>
