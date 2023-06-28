@@ -123,8 +123,8 @@ const fakeOrderData = {
         drawers: 2,
     },
     material: "wood",
-    height: 200,
-    width: 100,
+    height: 100,
+    width: 300,
     depth: 50,
     doors: 2,
     color: "brown",
@@ -134,7 +134,7 @@ const fakeOrderData = {
     total: 1000,
 };
 
- const emptyFakeOrderData = {
+const emptyFakeOrderData = {
 
     userName: null,
     userPhone: null,
@@ -190,5 +190,5 @@ export default {
     items: fakeItemData,
     orders: fakeOrderData,
     order,
-    emptyOrderData : emptyFakeOrderData,
+    emptyOrderData: emptyFakeOrderData,
 };
