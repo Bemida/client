@@ -59,6 +59,6 @@ export default function submitOfNext(context) {
     });
     return true;
   } catch (err) {
-    console.log(err);
+    console.log(err); //
   }
 }
