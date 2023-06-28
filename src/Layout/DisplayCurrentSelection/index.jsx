@@ -1,49 +1,43 @@
 import { interpolate } from '@react-spring/core'
-// import styles from './style.module.css'
+import styles from './style.module.css'
 
 import { DataContext } from '../../Context/MainContext'
 import { useContext } from 'react'
 
 
+import data from '../../Data/fakeDataTest' //.orders
+import SelectionRow from '../SelectionRow'
+import CurrentSelections from '../../Components/CurrentSelections'
+
 
 // props : 
 // creator: Michael Arlan
+
 function DisplayCurrentSelection({ ...props }) {
 
   const context = useContext(DataContext)
 
-  //  console.log(context.fakeData.items.categories)
+  const selections = data.orders 
+  
+  
+  // console.log(selections)
+ let currentStep = context.fakeData.order.stageNo
+  let ListTitle = selections.furniture//"הארון שלי"
 
-  // console.log(context.fakeData.order)
-
-  // const selections ={} 
-  // const selections = context.fakeData.order.order
-  const selections = context.fakeData.orders
-  let currentStep = context.fakeData.order.stageNo
-  let ListTitle = "הארון שלי"
-
-  const keys = Object.keys(selections)
+  // const keys = Object.keys(selections)
+  // console.log(keys);
   return (
-    <div className="currentSelection">
+    <div className={styles.currentSelection}>
 
-      <h3 className='ListTitle'>{ListTitle}</h3>
-
-      <ul className='Selectionlist'>
-        {/* for (const a of context.fakeData.order.order)
-        {
-          a && <li><span className='OderKey'>{a}</span><span className='OderValue'>{Selections[a]}</span></li>
-        } */}
-
-        {/* {keys.map((k) => <li><span className='OderKey'>{k}</span><span className='OderValue'>{selections[k]}</span></li>)
-        } */}
-
-        {keys.map((k) => Object.is(selections[k]) ? "creaet a coponent tac receivs a key-Value, and returns an <li>" : <li><span className='OderKey'>{k}</span><span className='OderValue'>{selections[k]}</span></li>)
-        }
-
-      </ul>
+      <h3 className={styles.ListTitle}>{ListTitle}</h3>
+      <CurrentSelections selections={selections}/>
 
     </div>
   )
+
 }
+
+
+
 
 export default DisplayCurrentSelection

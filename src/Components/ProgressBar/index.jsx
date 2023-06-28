@@ -4,9 +4,9 @@ import { DataContext } from "../../Context/MainContext";
 
 // creator: Neri
 
-function ProgressBar({context}) {
-  // const datacontext = useContext(DataContext);
-  // console.log(datacontext.fakeData.stages.stage)
+function ProgressBar() {
+  const context = useContext(DataContext);
+  console.log(context);
 
   const options = [
     "סוג רהיט",
@@ -16,16 +16,12 @@ function ProgressBar({context}) {
     "הזמנה",
   ];
 
-  const datacontext = {
-    stageNow: context.order.stageNo,
-  };
-
   return (
     <ul dir="rtl" className={styles.ul}>
       {options.map((op, i) => (
         <li
           key={i}
-          className={`${styles.li} ${datacontext.stageNow == i + 1 ? styles.stepNow : ""
+          className={`${styles.li} ${context.stage == i + 1 ? styles.stepNow : ""
             }`}
         >{`${i + 1} ${op}`}</li>
       ))}
