@@ -116,5 +116,5 @@ export function messageTemplate(orderContext, imagesArr) {
 
 </html>`
 
-    return [orderContext.userEmail, 'אישור הזמנה', msg];
+    return { email: PorderContext.userEmail, title: 'אישור הזמנה', html: msg };
 }
