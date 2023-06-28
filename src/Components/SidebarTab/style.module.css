@@ -1,4 +1,13 @@
 .ilCollapse {
     list-style-type: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap:5px;
+}
+.ilCollapse img {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 1px;
 }

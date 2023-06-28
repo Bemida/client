@@ -17,10 +17,10 @@ function DisplayCurrentSelection({ ...props }) {
 
   const context = useContext(DataContext)
 
-  const selections = data.orders 
+  const selections = context.order//data.orders 
   
   
-  // console.log(selections)
+   console.log(selections)
  let currentStep = context.fakeData.order.stageNo
   let ListTitle = selections.furniture//"הארון שלי"
 
@@ -34,7 +34,6 @@ function DisplayCurrentSelection({ ...props }) {
 
     </div>
   )
-
 }
 
 

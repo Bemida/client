@@ -16,12 +16,12 @@ const fakeItemData = {
             list: [
                 {
                     description: "ידית כפתור נרקיס",
-                    img: "🎭",
+                    img: "https://s3.img-b.com/image/private/t_base,c_lpad,f_auto,dpr_auto,w_90,h_90/product/signaturehardware/signature-hardware-462362-8796197.jpg",
                     id: 321,
                 },
                 {
                     description: "ידית זהב מוברש",
-                    img: "🥎",
+                    img: "https://s3.img-b.com/image/private/t_base,c_lpad,f_auto,dpr_auto,w_90,h_90/product/signaturehardware/signature-hardware-462362-8796197.jpg",
                     id: 54,
                 },
             ],
@@ -156,6 +156,21 @@ const emptyFakeOrderData = {
         hangingRod: true,
         drawers: 0,
     },
+    sections:[{
+        shelves: 4,
+        hangingRod: true,
+        drawers: 0,   
+    },
+    {
+        shelves: 2,
+        // hangingRod: 0,
+        drawers: 4,   
+    },
+    {
+        shelves: 1,
+        hangingRod: true,
+        drawers: 2,   
+    }],
     material: null,
     height: 0,
     width: 0,
