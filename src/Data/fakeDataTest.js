@@ -112,16 +112,18 @@ const fakeOrderData = {
     shipping: "regular",
     furniture: "Closet",
     color: "red",
-    section1: {
-        shelves: 3,
-        hangingRod: true,
-        drawers: 4,
-    },
-    section2: {
-        shelves: 2,
-        hangingRod: true,
-        drawers: 2,
-    },
+    sections: [
+         {
+            shelves: 3,
+            hangingRod: true,
+            drawers: 4,
+        },
+         {
+            shelves: 2,
+            hangingRod: true,
+            drawers: 2,
+        }
+    ],
     material: "wood",
     height: 200,
     width: 100,
@@ -134,7 +136,7 @@ const fakeOrderData = {
     total: 1000,
 };
 
- const emptyFakeOrderData = {
+const emptyFakeOrderData = {
 
     userName: null,
     userPhone: null,
@@ -175,5 +177,5 @@ export default {
     items: fakeItemData,
     orders: fakeOrderData,
     order,
-    emptyOrderData : emptyFakeOrderData,
+    emptyOrderData: emptyFakeOrderData,
 };
