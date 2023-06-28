@@ -34,7 +34,6 @@ function DisplayCurrentSelection({ ...props }) {
 
     </div>
   )
-
 }
 
 
