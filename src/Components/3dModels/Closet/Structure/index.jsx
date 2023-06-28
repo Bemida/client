@@ -1,5 +1,6 @@
 import { useGLTF } from "@react-three/drei";
 import Shelf from "../Shelf";
+import Rod from "../Rod";
 
 
 function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numOfShelves = 3 }) {
@@ -7,8 +8,6 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
     const thickness = 0.02;
     const thicknessBack = 0.003;
     const shelvesArr = Array.from({ length: numOfShelves }, (_, i) => i);
-
-    console.log(shelvesArr);
     return (
         <group
 
@@ -89,8 +88,7 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
                         }} />
                 )
             })}
-
-
+            {/* <Rod position={position} dimensions={dimensions} thickness={thickness} material={materials.chrome} /> */}
         </group>
     )
 }

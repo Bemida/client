@@ -6,7 +6,7 @@ import Drawer from "../Drawer";
 
 
 
-function Section({ dimensions, position, numOfShelves = 4, numOfDrawer = 3, withLegs = true, oneDoor = false }) {
+function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneDoor = false, numOfDrawer = 2 }) {
     const { materials } = useGLTF('/assets/3dModels/Materials.glb')
     const legGap = 0.07;
     const drawerArr = Array.from({ length: numOfDrawer }, (_, i) => i);
@@ -28,13 +28,12 @@ function Section({ dimensions, position, numOfShelves = 4, numOfDrawer = 3, with
                         Z: dimensions.Z,
                     }}
                     position={{
-                        X: position.X,
-                        Y: position.Y + 0.05,
-                        Z: position.Z
+                        X: 0,
+                        Y: 0.05,
+                        Z: 0
                     }}
                     material={materials.wood}
                 />
-
 
                 {/* creating the Drawer: */}
 

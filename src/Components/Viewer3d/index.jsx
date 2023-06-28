@@ -7,7 +7,7 @@ import Scene3d from "../Scene3d";
 
 function Viewer3d() {
   const context = useContext(DataContext)
-  console.log(context);
+  // console.log(context);
   //camera work:
   const fov = 40;
   const dimensions = {
