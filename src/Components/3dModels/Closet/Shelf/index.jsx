@@ -1,7 +1,7 @@
 //Creator : didi
-function Shelf({ dimensions, material, position }) {
+function Shelf({ dimensions, material, position={X:0,Y:0,Z:0} }) {
   const thickness = 0.02
-
+  console.log(Shelf);
   return (
 
     <mesh
