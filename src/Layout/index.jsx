@@ -17,10 +17,10 @@ import DisplayCurrentSelection from "./DisplayCurrentSelection";
 
 function Layout() {
   const context = useContext(DataContext);
-  const bty = <Button className={styles.nextButton} onClick={() => context.setOrder(prev => ({ ...prev, stageNo: prev.stageNo + 1 }))} text={'המשך'} />
+  const bty = <Button className={styles.nextButton} onClick={() => context.setStage(prev => prev !== 5 ? prev + 1 : prev)} text={'המשך'} />
   const header = <Header />;
-  const progressBar = "progressBar";
-  // const progressBar = <ProgressBar />;
+  // const progressBar = "progressBar";
+  const progressBar = <ProgressBar />;
   const To_Main_Section = {
     1: <Selector_main />,
     2: <Size />,
@@ -44,9 +44,9 @@ function Layout() {
     5: "5LB",
   };
   // const Main_Section = To_Main_Section[2]
-  const Main_Section = To_Main_Section[context.order.stageNo];
-  const RightBar = To_RightBar[context.order.stageNo];
-  const LeftBar = To_LeftBar[context.order.stageNo];
+  const Main_Section = To_Main_Section[context.stage];
+  const RightBar = To_RightBar[context.stage];
+  const LeftBar = To_LeftBar[context.stage];
   return (
     <div className={styles.containerLayout}>
       <Grid Main_Section={Main_Section} RightBar={RightBar} LeftBar={LeftBar} progressBar={progressBar} bty={bty} header={header} />
