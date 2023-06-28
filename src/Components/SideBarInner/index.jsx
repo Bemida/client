@@ -27,28 +27,29 @@ function SideBarInner({ title }) {
                         setFullOrder(prev => ({ ...prev, [tab[1].key]: ({ ...prev[tab[1].key], [option[1].key]: newVal }) }))
    
                     }
+                    console.log(tab);
                     
 
                     return (
-                        < >
+                        <div  key={tab[0]} className={styles.allTabs} >
                             <div className={styles.tabContainer}>
 
                                 {openTab === tab[1].name ? (<IoIosArrowDown />) : (<IoIosArrowBack />)}
-                                <div onClick={() => setOpenTab(openTab === tab[1].name ? null : (tab[1].name))}>{tab[1].name}</div>
+                                <div  onClick={() => setOpenTab(openTab === tab[1].name ? null : (tab[1].name))}>{tab[1].name}</div>
 
                             </div>
 
-                            <div className={styles.tab}>
                                 {openTab === tab[1].name && list.map((childTab) => {
                                     return (
+                            <div  className={styles.tab}>
                                         <SidebarInnerTab key={childTab[0]} childTab={childTab} onChange={onChange} />
+
+                            </div>
                                     )
                                 })}
 
-                            </div>
 
-
-                        </>
+                        </div>
 
                     )
                 })}
