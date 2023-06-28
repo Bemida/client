@@ -154,6 +154,21 @@ const fakeOrderData = {
         hangingRod: true,
         drawers: 0,
     },
+    sections:[{
+        shelves: 4,
+        hangingRod: true,
+        drawers: 0,   
+    },
+    {
+        shelves: 2,
+        // hangingRod: 0,
+        drawers: 4,   
+    },
+    {
+        shelves: 1,
+        hangingRod: true,
+        drawers: 2,   
+    }],
     material: null,
     height: 0,
     width: 0,

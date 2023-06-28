@@ -25,8 +25,11 @@ function SideBar({ title }) {
   return (
     <>
       <div className={styles.outerContainer}>
+        <div className={styles.top_container}></div>
         <div className={styles.sidebarContainer}>
+          <span className={styles.titleText}>בחירת הסגנון האהוב עליך</span>
           <span>{title}</span>
+        
           {/* if(tab[0] === openTab){ */}
           {tabs.map((tab, i) => {
             // if (openTab) {

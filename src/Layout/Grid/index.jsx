@@ -1,11 +1,12 @@
+import Errors from "../../Components/Errors";
 import styles from "./style.module.css";
 
 //Creator : didi - add div to className
 //Creator : didi - add context
 
-function Grid({ Main_Section, progressBar, RightBar, LeftBar, bty, header }) {
-
-
+function Grid({Main_Section,progressBar,RightBar,LeftBar,bty,header,errorsMsg}) {
+  
+  
 
   return (
     <div className={styles.containerGrid}>
@@ -19,6 +20,7 @@ function Grid({ Main_Section, progressBar, RightBar, LeftBar, bty, header }) {
         {progressBar}
       </div>
       <div className={styles.d}>
+        {errorsMsg.length > 0 && <Errors errorsMsg={errorsMsg}/>}
         {bty}
       </div>
       <div className={styles.sr}>
