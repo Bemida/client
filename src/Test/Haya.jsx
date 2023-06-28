@@ -5,7 +5,6 @@ import { useContext } from 'react';
 import { DataContext } from '../Context/MainContext'
 import { useState } from 'react';
 import Payment from '../Components/Payment';
-import ReactDomServer 
 
 
 export default function Haya() {

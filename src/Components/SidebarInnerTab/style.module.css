@@ -1,0 +1,10 @@
+.shelves{
+    display: flex;
+    gap: 16px;
+
+}
+
+.hangingRod{
+    display: flex;
+    gap: 16px; 
+}
