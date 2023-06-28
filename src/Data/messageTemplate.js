@@ -1,6 +1,6 @@
 // argments: orderContext, array of furniture images 
 // creator: Haya
-
+//This function returns a string with HTML of the order (selections & )
 export function messageTemplate(orderContext, imagesArr) {
     const msg =
         ` <head>

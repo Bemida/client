@@ -4,21 +4,14 @@ import { useState } from "react";
 // props: {}
 // creator: Neri and Haya
 
-
-function inputValid() {
-  return
-}
 function Payment(props) {
   const [inputsObj, setInputsObj] = useState({});
   const [inputsValid, setInputsValid] = useState({});
   const actualDate = new Date().toISOString().split("T")[0].substring(0, 7);
 
   function setInput(e) {
-    //debugger;
     setInputsObj({ ...inputsObj, [e.target.id]: e.target.value });
     setInputsValid({ ...inputsValid, [e.target.id]: e.target.value && e.target.value.length > 0 })
-    console.log(inputsObj);
-    console.log({ inputsValid });
   }
 
   function checkInput(key) {

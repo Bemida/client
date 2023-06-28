@@ -162,7 +162,6 @@ export default function Haya() {
 
 
     function handleOnClick() { //for click on next button==> updates the state
-        console.log(context.order)
         context.setOrder({ stageNo: context.order.stageNo, order: { ...context.order.order, ...selection[context.order.stageNo - 1] } })
     }
 
