@@ -23,7 +23,7 @@ function Grid() {
     5: <Viewer3d />,
   };
   // const Main_Section = To_Main_Section[2]
-  const Main_Section = To_Main_Section[context.order.stageNo];
+  const Main_Section = To_Main_Section[context.stage];
 
   return (
     <div className={styles.containerGrid}>
@@ -40,7 +40,7 @@ function Grid() {
         <ProgressBar context={context} />
       </div>
       <div className={styles.d}>
-      <Button className = {styles.nextButton} onClick={() => context.setOrder(prev => ({ ...prev, stageNo: prev.stageNo + 1 }))} text={'המשך'} />
+      <Button className = {styles.nextButton} onClick={() => context.setStage(prev => prev!==5 ? prev+1 : prev)} text={'המשך'} />
 
       </div>
       
