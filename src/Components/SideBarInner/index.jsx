@@ -1,74 +1,63 @@
 import styles from "./style.module.css";
-import data from "../../Data/fakeData";
-import { useEffect, useState, useContext} from "react";
-import SidebarCollapse from "../SidebarCollapse";
-import SidebarTab from "../SidebarTab";
+import data from "../../Data/fakeDataTest";
+import { useState, useContext } from "react";
 import { DataContext } from "../../Context/MainContext";
-import Toggle from "../Toggle";
+import SidebarInnerTab from "../SidebarInnerTab";
+import { IoIosArrowDown, IoIosArrowBack } from "react-icons/io"
 
-function SideBar({ title }) {
-  const tabs = Object.entries(data.items.interior);
-  const [openTab, setOpenTab] = useState();
-  // useEffect(() => {
-  // },[openTab])
-  console.log(tabs);
-const  {order,setOrder} = useContext(DataContext)  
 
-  console.log(order.exteriorStyle);
-  const handleClick = (tab, description) => {
-    if(description){
-      const key = tab
-      setOrder({...order, exteriorStyle: {
-      ...order.exteriorStyle, [key]: description}})
-      return
-    }
-    setOpenTab((prev) => (prev === tab ? null : tab));
-  };
-  return (
-    <>
-      <div className={styles.outerContainer}>
-        <div className={styles.sidebarContainer}>
-          <span>{title}</span>
-          {/* if(tab[0] === openTab){ */}
-          {tabs.map((tab, i) => {
-            // if (openTab) {
-              if(openTab === tab[1].name){
-              return (
-                <SidebarCollapse
-                
 
-                
-        
-                
-             
+function SideBarInner({ title }) {
+    const tabs = Object.entries(data.items.interior);
+   
+    const [openTab, setOpenTab] = useState();
+    
+    const { fullOrder, setFullOrder } = useContext(DataContext);
+
+
+
+    return (
+        <div className={styles.outerContainer}>
+            <div className={styles.container}>
+                <span>{title}</span>
+                {tabs.map((tab) => {
+                    if (!tab[1].name) return;
+                    const list = Object.entries(data.items.interior[tab[0]].list);
+                    const onChange = (newVal, option) => {
+                        setFullOrder(prev => ({ ...prev, [tab[1].key]: ({ ...prev[tab[1].key], [option[1].key]: newVal }) }))
+   
+                    }
                     
-                
-                    name={tab[1].name}
-                    englishName={tab[0]}
-                    openTab={openTab}
-                    handleClick={handleClick}
-                    key={i}
-                    >
-                      {tab[1].list.map((childTab, index) => {
-                        return <SidebarTab handlClick={handleClick} parentName={tab[0]} key={index} description={childTab.description}/>;
-                      })}
-                 
-                
-                  </SidebarCollapse>)
-                  
 
-                  }
-                  return (<SidebarCollapse
-                  name={tab[1].name}
-                  openTab={openTab}
-                  handleClick={handleClick}
-                  key={i}
-                  />)
-})}
+                    return (
+                        < >
+                            <div className={styles.tabContainer}>
+
+                                {openTab === tab[1].name ? (<IoIosArrowDown />) : (<IoIosArrowBack />)}
+                                <div onClick={() => setOpenTab(openTab === tab[1].name ? null : (tab[1].name))}>{tab[1].name}</div>
+
+                            </div>
+
+                            <div className={styles.tab}>
+                                {openTab === tab[1].name && list.map((childTab) => {
+                                    return (
+                                        <SidebarInnerTab key={childTab[0]} childTab={childTab} onChange={onChange} />
+                                    )
+                                })}
+
+                            </div>
+
+
+                        </>
+
+                    )
+                })}
+
+            </div>
         </div>
-      </div>
-    </>
-  );
+    )
+
+
 }
 
-export default SideBar;
+export default SideBarInner;
