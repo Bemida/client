@@ -7,15 +7,19 @@
 
 .ListTitle{
     font-weight: bold;
-}
-/* .Selectionlist{
-    font-weight: lighter;
-} */
-
-.OderKey{
-    font-weight: bolder;
+    font-size: large;
 }
 
-.OderValue{
-    font-weight: lighter;
+.selectionRow{
+    direction: rtl;    
+}
+
+.orderKey{
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.orderValue{
+    font-weight: light;
+    font-size: 12px;
 }
