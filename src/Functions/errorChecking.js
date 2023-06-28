@@ -1,4 +1,4 @@
-let validation = {
+const validation = {
   // value: null or function
   // function : if error - return "msg"
 
@@ -28,18 +28,19 @@ let validation = {
 
 export default function errorChecking(context) {
   const errorsList = [];
-  validation = validation[context.stage];
-  const keys = Object.keys(validation);
+  const valNow = validation[context.stage];
+  const keys = Object.keys(valNow);
 
+  
   keys.forEach((key) => {
-    const value = validation[key];
+    const value = valNow[key];
     if (!value) {
       let valueFromContext = context.fullOrder[key];
       if (key.includes("_")) {
         const [key1, key2] = key.split("_");
         valueFromContext = context.fullOrder[key1][key2];
       }
-
+      
       if (!valueFromContext) {
         errorsList.push({ key, msg: "--Must be entered!--" });
       }

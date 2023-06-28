@@ -22,7 +22,7 @@ function Grid({Main_Section,progressBar,RightBar,LeftBar,bty,header,errorsMsg}) 
       <div className={styles.d}>
         {errorsMsg.length > 0 && <Errors errorsMsg={errorsMsg}/>}
         {bty}
-      </div>    
+      </div>
       <div className={styles.sr}>
         {RightBar}
       </div>
