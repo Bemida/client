@@ -38,9 +38,9 @@ function Layout() {
   };
   const To_RightBar = {
     1: "",
-    2: <Sidebar />,
-    3:  <SideBarInner /> ,
-    4: "",
+    2: "",
+    3: <Sidebar />,
+    4: <SideBarInner />,
     5: "",
   };
   const To_LeftBar = {
