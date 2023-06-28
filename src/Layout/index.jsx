@@ -11,6 +11,7 @@ import Sidebar from "../Components/Sidebar";
 import Button from "../Components/Button";
 import Header from "../Components/Header";
 import DisplayCurrentSelection from "./DisplayCurrentSelection";
+import SideBarInner from "../Components/SideBarInner";
 
 //Creator : didi 
 
@@ -30,18 +31,18 @@ function Layout() {
   };
   const To_RightBar = {
     1: "",
-    2: <Sidebar />,
-    3: "3RB",
-    4: "4RB",
-    5: "5RB",
+    2: "",
+    3: <Sidebar />,
+    4: <SideBarInner />,
+    5: "",
   };
   const To_LeftBar = {
-    1: "1LB",
-    2: "2LB",
-    // 2: <DisplayCurrentSelection />,
-    3: "3LB",
-    4: "4LB",
-    5: "5LB",
+    1: "",
+    2: "",
+    // 3: "3LB",
+    3: <DisplayCurrentSelection />,
+    4: <DisplayCurrentSelection />,
+    5: <DisplayCurrentSelection />,
   };
   // const Main_Section = To_Main_Section[2]
   const Main_Section = To_Main_Section[context.stage];
