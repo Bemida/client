@@ -1,5 +1,6 @@
 .button:hover{
     opacity: 0.6;
+    cursor: pointer;
 }
 
 .button{
@@ -7,5 +8,4 @@
     align-items: center;
     gap: 5%;
     border-radius: 30px ;
- 
 }
