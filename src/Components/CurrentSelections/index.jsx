@@ -11,16 +11,11 @@ export const LanguageTranslater = {
   shipping: {heb: "שיטת משלוח", ordinal: 10, postfix: ''},// "regular",
   furniture: {heb: "סוג", ordinal: 10, postfix: ''},// "Closet",
   color: {heb: "צבע", ordinal: 10, postfix: ''},// "red",
-  section1: {
-      shelves: 3,
-      hangingRod: true,
-      drawers: 4,
-  },
-  section2: {
-      shelves: 2,
-      hangingRod: true,
-      drawers: 2,
-  },
+  
+  shelves: {heb: "מדפים", ordinal: 10, postfix: ''},
+  hangingRod: {heb: "מוט תליה", ordinal: 10, postfix: ''},
+  drawers: {heb: "מגירות", ordinal: 10, postfix: ''},
+ 
   material: {heb: "חומר", ordinal: 10, postfix: ''},// "wood",
   height: {heb: "גובה", ordinal: 1, postfix: 'ס"מ'},// 200,
   width: {heb: "רוחב", ordinal: 2, postfix: 'ס"מ'},// 100,
