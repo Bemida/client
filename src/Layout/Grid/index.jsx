@@ -20,15 +20,10 @@ function Grid() {
     2: <Size />,
     3: <Viewer3d />,
     4: <Viewer3d />,
-    5: <Viewer3d />
-  }
+    5: <Viewer3d />,
+  };
   // const Main_Section = To_Main_Section[2]
   const Main_Section = To_Main_Section[context.order.stageNo];
-
-  // creator(useEffect): Neri
-  useEffect(() => {
-    // hjkl;
-  }, []);
 
   return (
     <div className={styles.containerGrid}>

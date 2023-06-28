@@ -10,18 +10,17 @@ import newData from '../Data/fakeDataTest'
 //This is where we'll manager any context that needs to be used across our applications. 
 //Below we've created a component that contains multiple states. We can later wrap a component with this one to give it access to all our different contexts
 
-export const DataContext = createContext({})
+export const DataContext = createContext({});
 
 const ContextProvider = ({ children }) => {
-    const [stage, setStage] = useState(0)
+    const [stage, setStage] = useState(1)
     const [order, setOrder] = useState(data.order)
     const [fullOrder, setFullOrder] = useState(newFakeData.emptyOrderData)
-    const [readyToNext, setReadyToNext] = useState(true)
 
     return (
         <DataContext.Provider value={{
             fakeData: data, order, setOrder, newFakeData,
-            stage, setStage, fullOrder, setFullOrder, readyToNext, setReadyToNext
+            stage, setStage, fullOrder, setFullOrder
         }}>
             {children}
 
@@ -30,4 +29,3 @@ const ContextProvider = ({ children }) => {
 }
 
 export default ContextProvider
-
