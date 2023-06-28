@@ -7,6 +7,7 @@ import { BasicShadowMap } from "three";
 import Structure from "../3dModels/Closet/Structure";
 import Shelf from "../3dModels/Closet/Shelf";
 import Door from "../3dModels/Closet/Door";
+import Drawer from "../3dModels/Closet/Drawer";
 
 function Viewer3d() {
   const { materials } = useGLTF('/assets/3dModels/Materials.glb')
@@ -43,7 +44,8 @@ function Viewer3d() {
 
 
       <Structure dimensions={dimensions} material={materials.wood} />
-      <Shelf dimensions={dimensions}/>
+      <Shelf dimensions={dimensions} material={materials.wood}/>
+      {/* <Drawer dimensions={dimensions} material={materials.wood} /> */}
 
 
       <OrbitControls />
