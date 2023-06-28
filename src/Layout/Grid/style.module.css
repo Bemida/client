@@ -8,7 +8,7 @@
     grid-template-areas:
         "h h h"
         "sl ms sr"
-        "c c sr";
+        "d c sr";
     grid-template-columns: 250px 1fr 250px;
     grid-template-rows: 95px 1fr 150px;
 }
@@ -36,6 +36,7 @@
     align-items: center;
     /* justify-content: center;  */
     overflow: hidden;
+    
 }
 
 .ms H1{
@@ -56,8 +57,17 @@
     grid-area: c;
     display: flex;
     /* justify-content: space-between; */
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    justify-content: center;
+   
   
+}
+
+.d{
+    grid-area: d;
+    display: flex;
+    justify-content: end;
+    /* padding-left: 10px; */
 }
 
 

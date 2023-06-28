@@ -5,29 +5,28 @@ import Handles from "../Handles/index";
 import Shelf from "../Shelf";
 
 export function Closet4Doors({
-  width = 1.61,
-  height = 2.4,
-  depth = 0.59,
+  width = 2,
+  height = 2,
+  depth = 2,
   isSokol,
   material,
   handleType,
-  withDoors = false,
-  shelvesNumberLeft = 7,
+  withDoors = true,
+  shelvesNumberLeft = 2,
   shelvesNumberRight = 5,
   isLeftPole,
   isRightPole,
   ...props
 }) {
-  const defaultDimensions = [1.61, 2.4, 0.59];
-
+  const defaultDimensions = [1.61, 2.4, 0.59]
   const { nodes, materials } = useGLTF("assets/3dModels/Closet4Doors.glb");
-
-  const scale = initScale(defaultDimensions, [width, height, depth]);
-
-
+  const scale = initScale(defaultDimensions, [width, height, depth])
+  console.log(nodes);
   return (
     <group {...props} dispose={null}>
-      <group position={snapGaps("-", 0.1, scale, [0, 0, 0], [0, 1, 0])}>
+      <group
+        position={snapGaps("-", 0.1, scale, [0, 0, 0], [0, 1, 0])}
+      >
         <mesh
           castShadow
           receiveShadow
@@ -178,7 +177,7 @@ export function Closet4Doors({
               rotation={[-Math.PI, 0, 0]}
               scale={calcScale(-1, [scale.X, scale.Y, 1])}
             />
-            {/* <Handles width={width} height={height} depth={depth} scale={scale} /> */}
+            <Handles width={width} height={height} depth={depth} scale={scale} />
           </group>
         )}
       </group>
