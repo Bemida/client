@@ -31,7 +31,7 @@ function Layout() {
   };
   const To_RightBar = {
     1: "",
-    2: <Sidebar />,
+    2: <Sidebar title={"בחירת הסגנון האהוב עליך"} />,
     3:  <SideBarInner /> ,
     4: "",
     5: "",
