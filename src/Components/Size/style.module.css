@@ -8,7 +8,6 @@
     position: relative;
     display: flex;
     justify-content: end;
-    border: 2px solid blue;
 }
 
 .title_size {
@@ -19,7 +18,6 @@
     text-align: right;
     align-items: center;
     justify-content: right;
-    border: 2px solid yellow;
 }
 
 .containerSize>div {
@@ -32,10 +30,5 @@
     margin-top: 2%;
     text-align: right;
     margin-right: 2%;
-    border: 2px solid purple;
-    /*  */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
 }
 
