@@ -5,10 +5,12 @@ function Shelf({ dimensions, material }) {
   return (
 
     <mesh
-      position={[(dimensions.X / 2) - (thickness / 2), 0, 0]}
+      position={[(dimensions.X / 2), 0, -thickness/2]}
+      castShadow
+      receiveShadow
+      material={material}
     >
-      <meshBasicMaterial color={0xf0001f} />
-      <boxGeometry args={[dimensions.X-(thickness*2), thickness, dimensions.Z]} />
+      <boxGeometry args={[dimensions.X - (thickness * 2), thickness, dimensions.Z - thickness]} />
     </mesh >
   )
 }

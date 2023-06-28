@@ -37,19 +37,26 @@ function Viewer3d() {
         width: "1000px",
         height: "700px"
       }}
+      shadows
+
     >
-      <spotLight color={0xffffff} scale={1} position={[-8, 4, 5]} />
+      {/* <BasicShadowMap /> */}
+      {/* shadow={{ normalBias: 0.2 }} */}
+      <spotLight color={0xffffff} scale={1} position={[-3, 3, 4]} castShadow  />
+      
       <ambientLight intensity={0.3} />
 
 
       <Structure dimensions={dimensions} material={materials.wood} />
-      <Shelf dimensions={dimensions}/>
+      <Shelf dimensions={dimensions} material={materials.chrome} />
+      {/* <Door dimensions={dimensions} material={materials.wood} side="right"/>  */}
+      <Door dimensions={dimensions} material={materials.wood} /> 
 
 
       <OrbitControls />
       {/* <Closet4Doors width={size[0]} height={size[1]} depth={size[2]} position={[0, 0, 0]} /> */}
 
-    </Canvas>
+    </Canvas >
   )
 }
 // )enableZoom={false} enablePan={false} target={[size[0] / 2, size[1] / 2, size[2] / 2]}
