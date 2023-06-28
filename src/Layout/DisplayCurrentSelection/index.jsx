@@ -19,7 +19,6 @@ function DisplayCurrentSelection({ ...props }) {
   // const selections ={} 
   // const selections = context.fakeData.order.order
   const selections = context.fakeData.orders
-  console.log(selections)
   let currentStep = context.fakeData.order.stageNo
   let ListTitle = "הארון שלי"
 

@@ -17,8 +17,6 @@ function Payment(props) {
     //debugger;
     setInputsObj({ ...inputsObj, [e.target.id]: e.target.value });
     setInputsValid({ ...inputsValid, [e.target.id]: e.target.value && e.target.value.length > 0 })
-    console.log(inputsObj);
-    console.log({ inputsValid });
   }
 
   function checkInput(key) {
