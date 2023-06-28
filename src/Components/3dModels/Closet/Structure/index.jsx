@@ -21,7 +21,7 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 } }) {
             {/* top: */}
             <mesh
                 castShadow
-                // receiveShadow
+                receiveShadow
                 material={material}
                 position={[(dimensions.X / 2), (dimensions.Y / 2) - (thickness / 2), -thickness / 2]}
             >
@@ -40,7 +40,7 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 } }) {
             </mesh>
             {/* bottom: */}
             <mesh
-                // castShadow
+                castShadow
                 receiveShadow
                 material={material}
                 position={[(dimensions.X / 2), (-dimensions.Y / 2) + (thickness / 2), (-thickness / 2)]}
