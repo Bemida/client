@@ -3,9 +3,9 @@ import styles from "./style.module.css";
 //Creator : didi - add div to className
 //Creator : didi - add context
 
-function Grid({Main_Section,progressBar,RightBar,LeftBar,bty,header}) {
-  
-  
+function Grid({ Main_Section, progressBar, RightBar, LeftBar, bty, header }) {
+
+
 
   return (
     <div className={styles.containerGrid}>
@@ -20,7 +20,7 @@ function Grid({Main_Section,progressBar,RightBar,LeftBar,bty,header}) {
       </div>
       <div className={styles.d}>
         {bty}
-      </div>    
+      </div>
       <div className={styles.sr}>
         {RightBar}
       </div>
