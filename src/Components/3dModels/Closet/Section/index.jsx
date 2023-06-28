@@ -4,14 +4,20 @@ import Shelf from "../Shelf";
 import Leg from "../Leg";
 import Drawer from "../Drawer";
 
-function Section({ dimensions, position, numOfShelves = 4,numOfDrawer = 1, withLegs = true }) {
-    const { materials } = useGLTF('/assets/3dModels/Materials.glb')
-    const shelvesArr = Array.from({ length: numOfShelves }, (_, i) => i);
-    const drawerArr = Array.from({ length: numOfDrawer }, (_, i) => i);
-    const legGap = 0.07;
+
+    
+    function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneDoor = false }) {
+        const { materials } = useGLTF('/assets/3dModels/Materials.glb')
+        const legGap = 0.07;
+        const drawerArr = Array.from({ length: numOfDrawer }, (_, i) => i);
+
+
+
     return (
         <>
+            <group position={[position.X, position.Y, position.Z]}>
 
+                {/* creating the frame: */}
 
             {/* creating the frame: */}
 
@@ -75,51 +81,53 @@ function Section({ dimensions, position, numOfShelves = 4,numOfDrawer = 1, withL
 
 
 
-            {/* creating the legs: */}
 
-            {withLegs &&
-                <group>
-                    {/* left-back leg: */}
-                    <Leg
-                        position={{
-                            X: position.X + legGap,
-                            Y: position.Y - dimensions.Y / 2,
-                            Z: position.Z - dimensions.Z / 2 + legGap
-                        }}
-                        material={materials.chrome}
-                    />
+                {/* creating the legs: */}
 
-                    {/* right-back leg: */}
-                    <Leg
-                        position={{
-                            X: position.X + dimensions.X - legGap,
-                            Y: position.Y - dimensions.Y / 2,
-                            Z: position.Z - dimensions.Z / 2 + legGap
-                        }}
-                        material={materials.chrome}
-                    />
+                {withLegs &&
+                    <group position={[0, 0, 0]}>
+                        {/* left-back leg: */}
+                        <Leg
+                            position={{
+                                X: legGap,
+                                Y: -dimensions.Y / 2,
+                                Z: -dimensions.Z / 2 + legGap
+                            }}
+                            material={materials.chrome}
+                        />
 
-                    {/* right-front leg: */}
-                    <Leg
-                        position={{
-                            X: position.X + dimensions.X - legGap,
-                            Y: position.Y - dimensions.Y / 2,
-                            Z: position.Z + dimensions.Z / 2 - legGap
-                        }}
-                        material={materials.chrome}
-                    />
+                        {/* right-back leg: */}
+                        <Leg
+                            position={{
+                                X: dimensions.X - legGap,
+                                Y: -dimensions.Y / 2,
+                                Z: -dimensions.Z / 2 + legGap
+                            }}
+                            material={materials.chrome}
+                        />
 
-                    {/* left-front leg: */}
-                    <Leg
-                        position={{
-                            X: position.X + legGap,
-                            Y: position.Y - dimensions.Y / 2,
-                            Z: position.Z + dimensions.Z / 2 - legGap
-                        }}
-                        material={materials.chrome}
-                    />
-                </group>
-            }
+                        {/* right-front leg: */}
+                        <Leg
+                            position={{
+                                X: dimensions.X - legGap,
+                                Y: -dimensions.Y / 2,
+                                Z: dimensions.Z / 2 - legGap
+                            }}
+                            material={materials.chrome}
+                        />
+
+                        {/* left-front leg: */}
+                        <Leg
+                            position={{
+                                X: legGap,
+                                Y: -dimensions.Y / 2,
+                                Z: dimensions.Z / 2 - legGap
+                            }}
+                            material={materials.chrome}
+                        />
+                    </group>
+                }
+            </group>
         </>
     )
 }

@@ -5,7 +5,7 @@ function Shelf({ dimensions, material, position={X:0,Y:0,Z:0} }) {
   return (
 
     <mesh
-      position={[position.X + (dimensions.X / 2), position.Y, -thickness / 2]}
+      position={[position.X, position.Y, -thickness / 2]}
       castShadow
       receiveShadow
       material={material}

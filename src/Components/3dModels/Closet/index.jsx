@@ -6,9 +6,9 @@ function Closet({ dimensions }) {
 
   const
     order = useContext(DataContext).newFakeData.orders,
-    sections = order.sections,
+    doors = order.doors,
+    sections = [1, 1, 1, 1, 1, 1, 1, 1] || [order.section1, order.section2],
     numOfSections = sections.length
-
 
   return (
     sections.map((v, i) => {
@@ -26,10 +26,11 @@ function Closet({ dimensions }) {
             Z: 0
           }}
           numOfShelves={i}
-          withLegs = {true}
+          withLegs={true}
         />
       )
     })
   )
 }
+
 export default Closet
