@@ -24,10 +24,14 @@ function Layout() {
 
   const submitClick = () => {
     setErrorsMsg(errorChecking(context))
+
+    setTimeout(()=> setErrorsMsg([]),3000)
+
     console.log(context.stage);
     if (context.stage === 5) {
       navigate('payment')
     }
+
     context.setStage(prev => prev !== 5 ? prev + 1 : prev)
   }
 
