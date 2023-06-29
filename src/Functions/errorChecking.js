@@ -5,7 +5,7 @@ const message = "נא לבחור"
 const validation = {
   // value: null or function
   // function : if error - return "msg"
-
+  
   1: {
     furniture: {
       type: null,
@@ -52,6 +52,7 @@ const validation = {
     section2_hangingRod: null,
     section2_shelves: null,
   },
+  5:{}
 };
 
 export default function errorChecking(context) {

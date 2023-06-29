@@ -1,0 +1,19 @@
+.errors {
+    position: fixed;
+    margin-top: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 60px;
+    text-align: center;
+    /* display: inline-flex; */
+    /* align-items: center; */
+    background-color:rgb(255, 166, 166);
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.373);
+    font-weight: 600;
+    font-size: 20px;
+}
