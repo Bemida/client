@@ -22,12 +22,12 @@ function Layout() {
   const navigate = useNavigate();
   const [errorsMsg, setErrorsMsg] = useState([])
 
+  
   const submitClick = () => {
-    console.log(context.stage);
-    setErrorsMsg(errorChecking(context))
-
-    setTimeout(()=> setErrorsMsg([]),3000)
-
+    
+    const errors = errorChecking(context)
+    setErrorsMsg(errors)
+    if (errors.length >0) return false
     console.log(context.stage);
     if (context.stage === 5) {
       navigate('payment')
