@@ -2,7 +2,7 @@ import styles from './style.module.css'
 
 import { DataContext } from '../../Context/MainContext'
 import { useContext } from 'react'
-import { useEffect } from 'react' 
+import { useEffect } from 'react'
 import SelectionRow from '../SelectionRow'
 import CurrentSelections from '../../Components/CurrentSelections'
 import data from '../../Data/fakeDataTest'
@@ -18,16 +18,16 @@ function DisplayCurrentSelection({ ...props }) {
   //const selections = data.orders 
   const dataFull = data.orders
 
-  console.log(dataFull);
+  console.log("kkk", selections);
 
-  
+
   let ListTitle = selections.furniture//"הארון שלי"
 
   return (
     <div className={styles.currentSelection}>
 
       <h3 className={styles.ListTitle}>{ListTitle}</h3>
-      <CurrentSelections selections={dataFull}/>
+      {/* <CurrentSelections selections={sel  ections} /> */}
 
     </div>
   )
