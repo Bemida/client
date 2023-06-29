@@ -1,7 +1,7 @@
 import styles from './style.module.css'
 import Grid from './Grid'
 import { DataContext } from "../Context/MainContext";
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 import Size from "../Components/Size";
 import Viewer3d from "../Components/Viewer3d";
 import Selector_main from "../Components/Selector_main";
@@ -38,9 +38,9 @@ function Layout() {
   };
   const To_RightBar = {
     1: "",
-    2: <Sidebar title={"בחירת הסגנון האהוב עליך"} />,
-    3:  <SideBarInner /> ,
-    4: "",
+    2: "",
+    3: <Sidebar title={"בחירת הסגנון האהוב עליך"} />,
+    4: <SideBarInner />,
     5: "",
   };
   const To_LeftBar = {
@@ -57,7 +57,7 @@ function Layout() {
   const LeftBar = To_LeftBar[context.stage];
   return (
     <div className={styles.containerLayout}>
-      <Grid Main_Section={Main_Section} RightBar={RightBar} LeftBar={LeftBar} progressBar={progressBar} bty={bty} header={header} errorsMsg={errorsMsg}/>
+      <Grid Main_Section={Main_Section} RightBar={RightBar} LeftBar={LeftBar} progressBar={progressBar} bty={bty} header={header} errorsMsg={errorsMsg} />
     </div>
   )
 }

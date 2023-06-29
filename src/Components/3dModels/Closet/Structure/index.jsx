@@ -1,17 +1,23 @@
 import { useGLTF } from "@react-three/drei";
 import Shelf from "../Shelf";
+import Rod from "../Rod";
+import Door from "../Door"
+import { useContext } from "react";
+import { DataContext } from "../../../../Context/MainContext";
 
 
-function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numOfShelves = 3 }) {
-    const { materials } = useGLTF('/assets/3dModels/Materials.glb')
-    const thickness = 0.02;
-    const thicknessBack = 0.003;
-    const shelvesArr = Array.from({ length: numOfShelves }, (_, i) => i);
+function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numOfShelves = 3, oneDoor }) {
+    const materialType = useContext(DataContext).newFakeData.orders.material
+    const { materials } = useGLTF('/assets/3dModels/Materials.glb'),
+        stage = useContext(DataContext).fullOrder.stageNo,
+        thickness = 0.02,
+        thicknessBack = 0.003,
+        shelvesArr = Array.from({ length: numOfShelves }, (_, i) => i);
 
-    console.log(shelvesArr);
+    console.log(stage);
+
     return (
         <group
-
             position={[position.X, position.Y, position.Z]}
         >
             {/* left: */}
@@ -75,7 +81,7 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
                     <Shelf
                         key={n}
                         dimensions={dimensions}
-                        material={materials.wood}
+                        material={materials[materialType]}
                         position={{
                             X: dimensions.X / 2,
                             Y: (
@@ -89,9 +95,18 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
                         }} />
                 )
             })}
+            <Rod position={position} dimensions={dimensions} thickness={thickness} material={materials.chrome} />
+
+            {
+                (stage !== 4) && <Door position={position} dimensions={{ X: dimensions.X, Y: dimensions.Y, Z: dimensions.Z }} material={materials[materialType]} side={"left"} isSingular={oneDoor} />
+            }{
+                (!oneDoor) && (stage !== 4) &&
+                <Door position={position} dimensions={dimensions} material={materials[materialType]} side={"right"} />
+            }
 
 
         </group>
+
     )
 }
 export default Structure

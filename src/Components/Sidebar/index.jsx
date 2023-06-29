@@ -16,7 +16,7 @@ function SideBar({ title }) {
     if (description) {
       const key = tab
       setFullOrder({
-          ...fullOrder, [key]: description , ...(handleId && { handleId: handleId })
+        ...fullOrder, [key]: description, ...(handleId && { handleId: handleId })
       })
       return
     }
@@ -25,11 +25,10 @@ function SideBar({ title }) {
   return (
     <>
       <div className={styles.outerContainer}>
-        <div className={styles.top_container}></div>
         <div className={styles.sidebarContainer}>
           <span className={styles.titleText}>בחירת הסגנון האהוב עליך</span>
           <span>{title}</span>
-        
+
           {/* if(tab[0] === openTab){ */}
           {tabs.map((tab, i) => {
             // if (openTab) {
@@ -43,7 +42,7 @@ function SideBar({ title }) {
                   key={i}
                 >
                   {tab[1].list.map((childTab, index) => {
-                    return <SidebarTab handlClick={handleClick} parentName={tab[0]} key={index} description={childTab.description} handleId={tab[0] === "handles" ? childTab.id:undefined} imgSrc={childTab.img}/>;
+                    return <SidebarTab handlClick={handleClick} parentName={tab[0]} key={index} description={childTab.description} handleId={tab[0] === "handles" ? childTab.id : undefined} imgSrc={childTab.img} />;
                   })}
                 </SidebarCollapse>)
             }

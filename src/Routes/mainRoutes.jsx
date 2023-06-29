@@ -1,11 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 
 import React from "react";
+import Layout from "../Layout";
 
 function MainRoutes() {
   return (
     <Routes>
-      <Route path="/sample" element={<SampleElement />} />
+      <Route index element={<Layout />} />
     </Routes>
   );
 }
