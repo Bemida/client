@@ -104,7 +104,7 @@ const fakeOrderData = {
   exteriorStyle: {
     material: "wood",
     doors: { amount: 2 },
-    size: { height: 200, width: 100, depth: 50 },
+    size: { height: 100, width: 300, depth: 50 },
     color: "brown",
     handles: {
       itemNumber: 5678,
