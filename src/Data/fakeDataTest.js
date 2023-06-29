@@ -100,6 +100,23 @@ const fakeItemData = {
             }
         }
     },
+    innerData: {
+        shelves: {
+            name: 'מדפים',
+            key: 'shelves',
+            type: 'number'
+        },
+        hangingRod: {
+            name: 'מוט תליה',
+            key: 'hangingRod',
+            type: 'boolean'
+        },
+        drawers: {
+            name: 'מגרות',
+            key: 'drawers',
+            type: 'number'
+        },
+    }
 };
 
 const fakeOrderData = {
@@ -137,15 +154,15 @@ const fakeOrderData = {
         hangingRod: true,
         drawers: 2,
     }],
-    material: "wood",
+    material: "chrome",
     height: 200,
-    width: 200,
+    width: 120,
     depth: 50,
     doors: 5,
     color: "brown",
-    handleId: "5678",
+    handleId: "1234",
     stageNo: 5,
-    base: "legs",
+    base: "tzokel",
     total: 1000,
 };
 
@@ -176,14 +193,15 @@ const emptyFakeOrderData = {
     },
     {
         shelves: 2,
-        // hangingRod: 0,
+        hangingRod: false,
         drawers: 4,
     },
     {
         shelves: 1,
         hangingRod: true,
         drawers: 2,
-    }],
+    },
+    ],
     material: null,
     height: 0,
     width: 0,
