@@ -37,19 +37,20 @@ function CurrentSelections({ style = {}, selections }) {
 
   const keys = Object.keys(selections)
   let regularText = ''
+  console.log(selections)
 const listOfFlat = keys
-.filter((v) => LanguageTranslater[v] && !LanguageTranslater[v]['group'])
+.filter((v) => selections[v] && LanguageTranslater[v] && !LanguageTranslater[v]['group'])
 .sort((a, b) => Number(LanguageTranslater[a]['ordinal']) < Number(LanguageTranslater[b]['ordinal']) ? 1 : -1)
 
-console.log(listOfFlat);
+// console.log(listOfFlat);
   keys//שרשור נתוני מימדי הארון לשורה יחידה
-    .filter((v) => LanguageTranslater[v] && LanguageTranslater[v]['group'] === 'dimentions')
+    .filter((v) => selections[v] && LanguageTranslater[v] && LanguageTranslater[v]['group'] === 'dimentions')
     .sort((a, b) => Number(LanguageTranslater[a]['ordinal']) < Number(LanguageTranslater[b]['ordinal']) ? 1 : -1)
     .forEach((k) => regularText += LanguageTranslater[k]['heb'] + ' ' + selections[k] + ' ' + LanguageTranslater[k]['postfix'])
   return (
     <div className={styles.name} style={style} >
 
-      <ul className={styles.Selectionlist}>
+      <ul className={styles.Selectionlist} style={style.li} >
         {
           regularText&&<li key='dimentions'>
             <SelectionRow bolder={LanguageTranslater['dimentions']['heb']} regular={regularText} />
