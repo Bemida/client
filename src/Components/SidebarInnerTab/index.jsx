@@ -17,7 +17,7 @@ export default function SidebarInnerTab({ childTab, onChange }) {
             return (
                 <div className={styles.shelves}>
                     <span>{transObj[childTab[0]]}</span>
-                    <Counter defaultNumber={0} onChange={(value) => onChange(value, childTab[0])} />
+                    <Counter defaultNumber={0} value={childTab[1]} onChange={(value) => onChange(value, childTab[0])} />
                 </div>
             )
 
@@ -25,7 +25,7 @@ export default function SidebarInnerTab({ childTab, onChange }) {
             return (
                 <div className={styles.hangingRod}>
                     <span>{transObj[childTab[0]]}</span>
-                    {<Toggle defaultChecked={true} onChange={((checked) => onChange(checked, childTab[0]))} />}
+                    {<Toggle defaultChecked={true} checked={childTab[1]} onChange={((checked) => onChange(checked, childTab[0]))} />}
                 </div>
             )
 
