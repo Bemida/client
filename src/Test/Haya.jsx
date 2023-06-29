@@ -7,13 +7,21 @@ import { useState } from 'react';
 import Payment from '../Components/Payment';
 import { renderToString } from 'react-dom/server'
 import DisplayCurrentSelection from '../Layout/DisplayCurrentSelection';
-
+import CurrentSelections from '../Components/CurrentSelections';
+import { messageTemplate } from '../Data/messageTemplate';
 
 export default function Haya() {
+    const contextOrder = useContext(DataContext); //.newFakeData.orders);
+    // console.log(contextOrder);
     // { renderToString(<DisplayCurrentSelection />) }
-    <DisplayCurrentSelection />
-    //  const contextOrder = useContext(DataContext); //.newFakeData.orders);
-
+    // <DisplayCurrentSelection />
+    //   {contextOrder &&  <CurrentSelections selections={contextOrder.newFakeData.orders}/>}
+    // messageTemplate(contextOrder.newFakeData.orders, [])
+    // let style = { color: "#fff" }
+    // let x = renderToString(<CurrentSelections selections={contextOrder.newFakeData.orders} style1={{ x: 9 }} />)
+    // let y = x.replaceAll('li', 'li bla')
+    // console.log(x + 'bla')
+    // console.log('---------------' + y)
     //     function emailData(orderContext, imagesArr) {
     //         const msg =
     //             ` <head>
@@ -197,6 +205,8 @@ export default function Haya() {
     //     let x = !value || value >= min && value <= max;
     //     return x;
     // }
+    // let x=renderToString(<CurrentSelections selections={contextOrder.newFakeData.orders}/>) ;
+    //console.log(x+' bla')
     return (
         // <div>
         //     {/* < Button onClick={handleOnClick} text='next' color='red' width='100px' height='30px' /> */}
@@ -207,9 +217,13 @@ export default function Haya() {
         //     {/* <input type="submit" value="Submit" />  */}
         //     {/* </form> */}
         // </div>
-        <Payment />
+        // <Payment />
         //<div>
+        <CurrentSelections selections={contextOrder.newFakeData.orders} style1={{li:{ 'color':'blue','direction':'rtl' }}}/>
 
-        // </div>
+
+        //renderToString(<CurrentSelections selections={contextOrder.newFakeData.orders}/>) 
+
+        //</div>
     )
 }

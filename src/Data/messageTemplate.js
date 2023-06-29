@@ -7,7 +7,7 @@
 //not harded code with Michael function.
 //need to be changed using real data
 //need to be check when we send the email: text and CSS and images.
-
+import CurrentSelections from "../Components/CurrentSelections";
 export function messageTemplate(orderContext, imagesArr) {
     const msg =
         ` <head>
@@ -95,9 +95,9 @@ export function messageTemplate(orderContext, imagesArr) {
     <h2>סה"כ לתשלום :${orderContext.total} ש"ח</h2>
 
     <h2>חזית הארון</h2>
-    <img src=${imagesArr[0]} alt='furniture outside' />
+    <img src= alt='furniture outside' />
     <h2>פנים הארון</h2>
-    <img src=${imagesArr[0]} alt='furniture inside'/>
+    <img src= alt='furniture inside'/>
     <h2 class='underlined'>הפרטים שלך</h2>
     <p class="orderDetails">
         <strong>שם :</strong> ${orderContext.userName}
@@ -115,6 +115,7 @@ export function messageTemplate(orderContext, imagesArr) {
 </body>
 
 </html>`
-
-    return { email: PorderContext.userEmail, title: 'אישור הזמנה', html: msg };
+//let x=renderToString(<CurrentSelections selections={contextOrder.newFakeData.orders}/>) ;
+//console.log(x)
+    return { email: orderContext.userEmail, title: 'אישור הזמנה', html: msg };
 }
