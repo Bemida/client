@@ -187,6 +187,7 @@ const emptyFakeOrderData = {
         drawers: 2,
         index: 2
     },
+    ],
     material: null,
     height: 0,
     width: 0,
