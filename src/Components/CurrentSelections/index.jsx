@@ -37,17 +37,17 @@ function CurrentSelections({ style = {}, selections }) {
 
   const keys = Object.keys(selections)
   let regularText = ''
-
+debugger;
   return (
-    <div className={styles.name} style={style1} >
+    <div className={styles.name} style={style} >
 
-      <ul className={styles.Selectionlist}>
+      <ul className={styles.Selectionlist} style={style.ul}>
         {
           keys
             .filter((v) => LanguageTranslater[v] && LanguageTranslater[v]['group'] === 'dimentions')
             .forEach((k) => regularText += LanguageTranslater[k]['heb'] + ' ' + selections[k] + ' ' + LanguageTranslater[k]['postfix'])
         }
-          {regularText&&<li key='dimentions'>
+          {regularText&&<li key='dimentions' style={style.li}>
             <SelectionRow bolder={LanguageTranslater['dimentions']['heb']} regular={regularText} />
           </li>}
         

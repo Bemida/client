@@ -16,7 +16,8 @@ export function messageTemplate2(orderContext, imagesArr) {
    // <CurrentSelections selections={contextOrder.newFakeData.orders} style1={{li:{ 'color':'blue','direction':'rtl' }}}/>
 
 //debugger;
-        const msgFromObj=renderToString(<CurrentSelections selections={orderContext}/>); 
+const msgFromObj=renderToString(<CurrentSelections selections={orderContext} style={{ul:{ 'direction':'rtl','list-style-type':'none' , 'font-size': '20px', 'margin':'0px', 'padding':'0px'}}}/>);
+       // const msgFromObj=renderToString(<CurrentSelections selections={orderContext}/>); 
     const msg =
         ` 
 

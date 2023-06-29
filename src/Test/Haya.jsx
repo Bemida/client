@@ -207,6 +207,7 @@ export default function Haya() {
     // }
     // let x=renderToString(<CurrentSelections selections={contextOrder.newFakeData.orders}/>) ;
     //console.log(x+' bla')
+    console.log(contextOrder.newFakeData.orders);
     return (
         // <div>
         //     {/* < Button onClick={handleOnClick} text='next' color='red' width='100px' height='30px' /> */}
@@ -219,7 +220,8 @@ export default function Haya() {
         // </div>
        
         //<div>
-        <CurrentSelections selections={contextOrder.newFakeData.orders} style1={{li:{ 'color':'blue','direction':'rtl' }}}/>
+        <CurrentSelections selections={contextOrder.newFakeData.orders} style={{li:{ 'color':'blue','direction':'rtl','list-style-type':'none' }}}/>
+       //<CurrentSelections selections={contextOrder.newFakeData.orders} />
 
 
         //renderToString(<CurrentSelections selections={contextOrder.newFakeData.orders}/>) 
