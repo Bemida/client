@@ -1,5 +1,5 @@
 import styles from "./style.module.css";
-import data from "../../Data/fakeData";
+import data from "../../Data/fakeDataTest";
 import { useEffect, useState, useContext } from "react";
 import SidebarCollapse from "../SidebarCollapse";
 import SidebarTab from "../SidebarTab";
@@ -10,15 +10,13 @@ function SideBar({ title }) {
   const [openTab, setOpenTab] = useState();
   // useEffect(() => {
   // },[openTab])
-  const { order, setOrder } = useContext(DataContext)
+  const { fullOrder, setFullOrder } = useContext(DataContext)
 
-  const handleClick = (tab, description) => {
+  const handleClick = (tab, description, handleId) => {
     if (description) {
       const key = tab
-      setOrder({
-        ...order, exteriorStyle: {
-          ...order.exteriorStyle, [key]: description
-        }
+      setFullOrder({
+          ...fullOrder, [key]: description , ...(handleId && { handleId: handleId })
       })
       return
     }
@@ -27,8 +25,11 @@ function SideBar({ title }) {
   return (
     <>
       <div className={styles.outerContainer}>
+        <div className={styles.top_container}></div>
         <div className={styles.sidebarContainer}>
+          <span className={styles.titleText}>בחירת הסגנון האהוב עליך</span>
           <span>{title}</span>
+        
           {/* if(tab[0] === openTab){ */}
           {tabs.map((tab, i) => {
             // if (openTab) {
@@ -42,7 +43,7 @@ function SideBar({ title }) {
                   key={i}
                 >
                   {tab[1].list.map((childTab, index) => {
-                    return <SidebarTab handlClick={handleClick} parentName={tab[0]} key={index} description={childTab.description} />;
+                    return <SidebarTab handlClick={handleClick} parentName={tab[0]} key={index} description={childTab.description} handleId={tab[0] === "handles" ? childTab.id:undefined} imgSrc={childTab.img}/>;
                   })}
                 </SidebarCollapse>)
             }
