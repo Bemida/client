@@ -32,6 +32,7 @@
 
 @media (max-width: 1500px) {
     .enabled, .disabled{
-      height: 30px;
+      height: 40px;
     }
    }
+
