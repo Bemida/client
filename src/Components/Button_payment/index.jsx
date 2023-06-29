@@ -31,7 +31,7 @@ export default function Button_Payment(props) {
 
   return (
     <div >
-      {Button({ color: "red", width: 100, text: "payment", className: "send-payment", icon: "🎈", onClick: () => { hendleSubmit() } })}
+      {Button({ color: "#C2A39A", width: 100, text: "payment", className: "send-payment", icon: "🎈", onClick: () => { hendleSubmit() } })}
     </div>
   )
 }

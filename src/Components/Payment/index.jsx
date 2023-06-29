@@ -1,4 +1,6 @@
+import DisplayCurrentSelection from "../../Layout/DisplayCurrentSelection";
 import Button_Payment from "../Button_payment";
+import Header from "../Header";
 import Input from "../Input";
 import styles from "./style.module.css";
 import { useState } from "react";
@@ -9,25 +11,48 @@ function Payment(props) {
   const [inputsObj, setInputsObj] = useState({});
   const [inputsValid, setInputsValid] = useState({});
   const actualDate = new Date().toISOString().split("T")[0].substring(0, 7);
-
+  
   function setInput(e) {
     setInputsObj({ ...inputsObj, [e.target.id]: e.target.value });
     // setInputsValid({ ...inputsValid, [e.target.id]: e.target.value && e.target.value.length > 0 })
     setInputsValid({ ...inputsValid, [e.target.id]: undefined || e.target.value.length > 0 })
+    console.log(inputsObj)
+    console.log(inputsValid)
   }
 
-  return (
+// function setInputsValid(){
+//  return( isRequired={true} ,onChange={setInput} ,isValid={(inputsValid['#name'] == undefined) ? true : inputsValid["#name"])}
 
+  return (
+    <div className="all">
+<Header/> pppp
+<div className={styles.inputs}>
     < div className={styles.paymentPage} style={props.style || {}}  {...props}>
-      <Input label="שם מלא" id="#name" type="text" isRequired={true} onChange={setInput} isValid={inputsValid['#name'] == undefined ? true : inputsValid["#name"]} />
-      <Input label="מייל" id="#mail" type="mail" isRequired={true} onChange={setInput} isValid={inputsValid['#mail'] == undefined ? true : inputsValid["#mail"]} />
-      <Input label="טלפון נייד" id="#tel" type="number" isRequired={true} onChange={setInput} isValid={inputsValid['#tel'] == undefined ? true : inputsValid["#tel"]} />
-      <Input label="תעודת זהות" id="#idNumber" type="number" isRequired={true} onChange={setInput} isValid={inputsValid['#idNumber'] == undefined ? true : inputsValid["#idNumber"]} />
-      <Input label="מספר כרטיס אשראי" id="#cardNumber" type="number" isRequired={true} onChange={setInput} isValid={inputsValid['#cardNumber'] == undefined ? true : inputsValid["#cardNumber"]} />
-      <Input label="תוקף" id="#expirationDate" type="month" isRequired={true} onChange={setInput} min={actualDate} isValid={inputsValid['#expirationDate'] == undefined ? true : inputsValid["#expirationDate"]} />
-      <Input label="CVV" id="#CVV" type="number" isRequired={true} onChange={setInput} isValid={inputsValid['#CVV'] == undefined ? true : inputsValid["#CVV"]} />
+      <div className="title"> שם מלא </div>
+      <Input  id="#name" type="text" isRequired={true} onChange={setInput} isValid={inputsValid['#name'] == undefined ? true : inputsValid["#name"]} />
+      <div className="title"> מייל </div>
+      <Input id="#mail" type="mail" isRequired={true} onChange={setInput} isValid={inputsValid['#mail'] == undefined ? true : inputsValid["#mail"]} />
+      <div className="title"> טלפון נייד  </div>
+      <Input id="#tel" type="number" isRequired={true} onChange={setInput} isValid={inputsValid['#tel'] == undefined ? true : inputsValid["#tel"]} />
+     <select >
+      <option hidden="">בחר סוג משלוח </option>
+      <option hidden="">בחר סוג משלוח 1</option>
+      <option hidden="">בחר סוג משלוח 2</option>
+      <option hidden="">בחר סוג משלוח 3</option>
+     </select>
+      <div className="title"> תעודת זהות  </div>
+      <Input id="#idNumber" type="number" isRequired={true} onChange={setInput} isValid={inputsValid['#idNumber'] == undefined ? true : inputsValid["#idNumber"]} />
+      <div className="title">  מספר כרטיס אשראי </div>
+      <Input id="#cardNumber" type="number" isRequired={true} onChange={setInput} isValid={inputsValid['#cardNumber'] == undefined ? true : inputsValid["#cardNumber"]} />
+      <div className="title"> תוקף </div>
+      <Input id="#expirationDate" type="month" isRequired={true} onChange={setInput} min={actualDate} isValid={inputsValid['#expirationDate'] == undefined ? true : inputsValid["#expirationDate"]} />
+      <div className="title"> CVV </div>
+      <Input id="#CVV" type="number" isRequired={true} onChange={setInput} isValid={inputsValid['#CVV'] == undefined ? true : inputsValid["#CVV"]} />
+    </div>
+    <DisplayCurrentSelection />
+    </div>
       <Button_Payment />
-    </div >
+    </div>
   );
 }
 
