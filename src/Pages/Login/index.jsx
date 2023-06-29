@@ -9,20 +9,18 @@ function Login() {
   const [message, setMassage] = useState(false)
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const url = "/users/login"
-    const data = {
-      email,
-      password
-    }
-    const result = api.post(url, data)
+    const data = { email, password }
+    const result = await api.post(url, data)
+    console.log(result);
     if (result.token) {
       localStorage.setItem('token', result.token);
-      navigate('/')
+      navigate('/');
     } else {
-      setMassage('שם משתמש או סיסמא הינם תקינים')
+      setMassage('שם משתמש או סיסמא הינם תקינים');
       return false;
     }
   };
