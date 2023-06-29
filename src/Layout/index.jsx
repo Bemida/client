@@ -24,6 +24,7 @@ function Layout() {
 
   const submitClick = () => {
     setErrorsMsg(errorChecking(context))
+    setTimeout(()=> setErrorsMsg([]),3000)
     context.setStage(prev => prev !== 5 ? prev + 1 : prev)
   }
 
