@@ -43,14 +43,8 @@ console.log(array);
         material={materials.wood_1}
         position={[x,y,z]}
         scale={calcScale(1, [scale.X, 1, scale.Z])}
-        
-        // position={[position.x-0.16, y, position.z+0.15]}
-        // position={[0.4, y, 0.297]}
-        //         position={calcPosition([1.208, y, 0.297], [scale.X, scale.Y, scale.Z])}
-        // position={x[x] ,y ,x[z]}
-        // scale={[0.63, 1,1.6]}
         />
-        {/* {console.log(calcPosition([1.208,  y, 0.297], [scale.X, scale.Y, scale.Z]))} */}
+    
         </>
         )
 }
