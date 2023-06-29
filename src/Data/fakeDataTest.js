@@ -100,23 +100,7 @@ const fakeItemData = {
             }
         }
     },
-    innerData: {
-        shelves: {
-            name: 'מדפים',
-            key: 'shelves',
-            type: 'number'
-        },
-        hangingRod: {
-            name: 'מוט תליה',
-            key: 'hangingRod',
-            type: 'boolean'
-        },
-        drawers: {
-            name: 'מגרות',
-            key: 'drawers',
-            type: 'number'
-        },
-    }
+   
 };
 
 const fakeOrderData = {
@@ -140,7 +124,7 @@ const fakeOrderData = {
         drawers: 2,
     },
     sections: [{
-        shelves: 4,
+        shelves: 1,
         hangingRod: true,
         drawers: 0,
     },
@@ -150,11 +134,11 @@ const fakeOrderData = {
         drawers: 4,
     },
     {
-        shelves: 1,
+        shelves: 3,
         hangingRod: true,
         drawers: 2,
     }],
-    material: "chrome",
+    material: "wood",
     height: 200,
     width: 120,
     depth: 50,
@@ -176,16 +160,6 @@ const emptyFakeOrderData = {
     shipping: null,
     furniture: null,
     color: null,
-    section1: {
-        shelves: 0,
-        hangingRod: true,
-        drawers: 0,
-    },
-    section2: {
-        shelves: 0,
-        hangingRod: true,
-        drawers: 0,
-    },
     sections: [{
         shelves: 4,
         hangingRod: true,
@@ -225,3 +199,21 @@ export default {
     order,
     emptyOrderData: emptyFakeOrderData,
 };
+
+export const innerData=  [
+     {
+        name: 'מדפים',
+        key: 'shelves',
+        type: 'number'
+    },
+     {
+        name: 'מוט תליה',
+        key: 'hangingRod',
+        type: 'boolean'
+    },
+     {
+        name: 'מגרות',
+        key: 'drawers',
+        type: 'number'
+    },
+]

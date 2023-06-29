@@ -5,14 +5,21 @@ import Leg from "../Leg";
 import Drawer from "../Drawer";
 import { useContext } from "react";
 import { DataContext } from "../../../../Context/MainContext";
+import Rod from "../Rod";
+import ShelvesConstructor from "../ShelvesConstructor";
 
 
 
-function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneDoor = false, numOfDrawer = 2 }) {
+function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneDoor = false, numOfDrawers = 2, withRod = false }) {
     const materialType = useContext(DataContext).newFakeData.orders.material
     const { materials } = useGLTF('/assets/3dModels/Materials.glb')
-    const legGap = 0.07;
-    const drawerArr = Array.from({ length: numOfDrawer }, (_, i) => i);
+    const legGap = 0.07,
+        thickness = 0.02
+    const DRAWER_HEIGHT = 0.2;
+    const DRAWER_GAP = 0.01;
+    const ALL_DRAWERS_HEIGHT = (DRAWER_HEIGHT) * numOfDrawers
+    const ROD_RADIUS = 0.025
+    const rodHeight = (dimensions.Y > 1.68) ? ((-dimensions.Y / 2) + 1.68) : (dimensions.Y / 2) - 0.08;
 
 
 
@@ -37,29 +44,44 @@ function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneD
                     }}
                     material={materials[materialType]}
                     oneDoor={oneDoor}
+                    numOfShelves={numOfShelves}
+                    numOfDrawers={numOfDrawers}
+                    withRod={withRod}
                 />
 
-                {/* creating the Drawer: */}
 
-                {drawerArr.map((i, n) => {
-                    return (
-                        <Drawer
-                            key={n}
-                            dimensions={dimensions}
-                            material={materials[materialType]}
-                            position={{
-                                X: position.X,
-                                Y: (
-                                    -(dimensions.Y / 2) + //starting point
-                                    (dimensions.Y / (numOfShelves + 1)) + //skip the bottom
-                                    ((dimensions.Y - (dimensions.Y / (numOfShelves + 1))) //skip the top
-                                        / numOfShelves) * i //add height for each shelf in the array
+                {/* creating the rod: */}
 
-                                ),
-                                Z: position.Z
-                            }} />
-                    )
-                })}
+                {withRod && <Rod
+                    position={{
+                        X: dimensions.X / 2,
+                        Y: rodHeight,
+                        Z: 0
+                    }}
+                    dimensions={dimensions}
+                    thickness={thickness}
+                    material={materials.chrome}
+                />}
+
+
+
+                {/* if there is rod, create shelves above it: */}
+                {(withRod) &&
+                    < ShelvesConstructor
+                        dimensions={{
+                            X: dimensions.X,
+                            Y: dimensions.Y - 1.68,
+                            Z: dimensions.Z
+                        }}
+                        position={{
+                            X: dimensions.X / 2,
+                            Y: (-dimensions.Y / 2) + 1.68 + ROD_RADIUS + thickness,
+                            Z: position.Z
+                        }}
+                        numOfShelves={numOfShelves}
+                        withRod={withRod}
+                    />
+                }
 
 
 

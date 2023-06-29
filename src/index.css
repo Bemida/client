@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   --main-color:#223333;
@@ -7,6 +8,10 @@
   --text-color:#F5F5F5;
   --shadow:#00000040;
   --text:#000000DE;
+}
+
+body{
+  font-family: 'Assistant', sans-serif;
 }
 
 *{
