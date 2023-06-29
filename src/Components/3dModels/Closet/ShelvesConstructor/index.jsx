@@ -4,8 +4,9 @@ import { useContext } from "react";
 import { DataContext } from "../../../../Context/MainContext";
 
 function ShelvesConstructor({ position, dimensions, numOfShelves, withRod }) {
-    const materialType = useContext(DataContext).newFakeData.orders.material,
-        { materials } = useGLTF('/assets/3dModels/Materials.glb'),
+    const materialText = useContext(DataContext).fullOrder.color || "אורן"
+    const materialType = (materialText === "אורן") ? "wood" : (materialText === "לבן") ? "white" : "chrome";
+    const { materials } = useGLTF('/assets/3dModels/Materials.glb'),
         shelvesArr = Array.from({ length: numOfShelves }, (_, i) => i),
         THICKNESS = 0.02;
 
