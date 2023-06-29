@@ -9,10 +9,12 @@ import Button from '../Button';
 
 
 
-export default function Button_Payment(props) {
+export default function Button_Payment({props}) {
   const { newFakeData } = useContext(DataContext)
 
   async function createHtmlEmail() {
+    // console.log(props)
+    const allData= {...newFakeData.sorders, ...props}
     const data = { email: messageTemplate(newFakeData.orders), createorder: newFakeData.orders }
     return data
   }
