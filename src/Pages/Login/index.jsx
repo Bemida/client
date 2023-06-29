@@ -36,8 +36,6 @@ function Login() {
     api.put(url, email)
   };
 
-
-
   return (
     <div className={styles.login_container}>
       <h2>התחברות </h2>
