@@ -5,7 +5,7 @@ const message = "נא לבחור"
 const validation = {
   // value: null or function
   // function : if error - return "msg"
-  
+
   1: {
     furniture: {
       type: null,
@@ -16,7 +16,7 @@ const validation = {
     height: {
       type: null,
       message: `${message} גובה`
-    }, 
+    },
     width: {
       type: null,
       message: `${message} רוחב`
@@ -52,7 +52,7 @@ const validation = {
     // section2_hangingRod: null,
     // section2_shelves: null,
   },
-  5:{}
+  5: {}
 };
 
 export default function errorChecking(context) {
@@ -71,8 +71,8 @@ export default function errorChecking(context) {
       //   valueFromContext = context.fullOrder[key1][key2];
       // }
       if (!valueFromContext) {
-        errorsList.push({ key, msg:valNow[key]?.message});
-        console.log (errorsList)
+        errorsList.push({ key, msg: valNow[key]?.message });
+        console.log(errorsList)
       }
     } else if (typeof valueFromContext === "function") {
       let msg = value();
