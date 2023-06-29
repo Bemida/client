@@ -46,7 +46,7 @@ function Layout() {
     1: "",
     2: "",
     3: <Sidebar title={"בחירת הסגנון האהוב עליך"} />,
-    4: <SideBarInner />,
+    4: <SideBarInner title={'בחירת העיצוב פנים האהוב עליך'} />,
     5: "",
   };
   const To_LeftBar = {
