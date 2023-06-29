@@ -27,7 +27,6 @@ function SideBarInner({ title }) {
                         setFullOrder(prev => ({ ...prev, [tab[1].key]: ({ ...prev[tab[1].key], [option[1].key]: newVal }) }))
 
                     }
-                    console.log(tab);
 
 
                     return (
