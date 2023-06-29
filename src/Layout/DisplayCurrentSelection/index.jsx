@@ -1,11 +1,8 @@
-import { interpolate } from '@react-spring/core'
 import styles from './style.module.css'
 
 import { DataContext } from '../../Context/MainContext'
 import { useContext } from 'react'
 import { useEffect } from 'react' 
-
-
 import SelectionRow from '../SelectionRow'
 import CurrentSelections from '../../Components/CurrentSelections'
 
@@ -19,6 +16,7 @@ function DisplayCurrentSelection({ ...props }) {
 
   const selections = context.order//data.orders 
   //const selections = data.orders 
+
   
   let ListTitle = selections.furniture//"הארון שלי"
 
@@ -30,7 +28,6 @@ function DisplayCurrentSelection({ ...props }) {
 
     </div>
   )
-
 }
 
 export default DisplayCurrentSelection

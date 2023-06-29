@@ -28,3 +28,10 @@
     height: 62px;
     pointer-events: none;
 }
+
+
+@media (max-width: 1500px) {
+    .enabled, .disabled{
+      height: 30px;
+    }
+   }
