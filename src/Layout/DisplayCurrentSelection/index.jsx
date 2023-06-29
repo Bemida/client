@@ -2,7 +2,7 @@ import styles from './style.module.css'
 
 import { DataContext } from '../../Context/MainContext'
 import { useContext } from 'react'
-import { useEffect } from 'react' 
+import { useEffect } from 'react'
 import SelectionRow from '../SelectionRow'
 import CurrentSelections from '../../Components/CurrentSelections'
 import data from '../../Data/fakeDataTest'
@@ -19,7 +19,6 @@ function DisplayCurrentSelection({ ...props }) {
 
   // console.log(dataFull);
 
-  
   let ListTitle = selections.furniture//"הארון שלי"
 
   return (

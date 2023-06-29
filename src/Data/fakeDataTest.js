@@ -162,7 +162,7 @@ const fakeOrderData = {
     color: "brown",
     handleId: "1234",
     stageNo: 5,
-    base: "sokol",
+    base: "tzokel",
     total: 1000,
 };
 
