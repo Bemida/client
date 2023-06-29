@@ -5,6 +5,7 @@ import { useGLTF } from "@react-three/drei";
 import { useContext } from "react";
 import { DataContext } from "../../Context/MainContext";
 import Closet from "../3dModels/Closet";
+import Drawer from "../3dModels/Closet/Drawer";
 
 function Scene3d({ dimensions }) {
     const { materials } = useGLTF('/assets/3dModels/Materials.glb')
@@ -18,8 +19,8 @@ function Scene3d({ dimensions }) {
             >
                 <boxGeometry args={[dimensions.X + 2, 0.02, dimensions.Z + 2]} />
             </mesh>
-
-            <Closet dimensions={dimensions} />
+            <Drawer dimensions={dimensions} material={materials.wood}/>
+            {/* <Closet dimensions={dimensions} /> */}
 
         </>
     )
