@@ -1,0 +1,15 @@
+.warp {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #fff;
+  width: 50%;
+  height: 50%;
+  top: 50vh;
+  left: 50vw;
+  box-shadow: #000 0.5px 0px 0px;
+}
+
+input[type="password"] {
+  width: 50%;
+}
