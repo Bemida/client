@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../Components/Button'
-// import Payment from '../Components/Payment'
+import Payment from '../Components/Payment'
 import axios from 'axios';
 import orders from '../Data/fakeDataTest'
 
@@ -26,7 +26,7 @@ async function hendleSubmit(){
 
   return (
     <div>Yosef_sh
-      {/* <Payment/> */}
+      <Payment/>
       {/* className, onClick, text, color, width, height, icon  */}
 {Button({color:"red",width:100,text:"payment",className:"send-payment",icon:"🎈" ,onClick:()=>{hendleSubmit()} })}
     </div>

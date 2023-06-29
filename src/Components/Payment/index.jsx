@@ -1,6 +1,7 @@
+import axios from "axios";
 import Input from "../Input";
 import styles from "./style.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // props: {}
 // creator: Haya
 
@@ -8,6 +9,7 @@ function Payment(props) {
   const [inputsObj, setInputsObj] = useState({});
   const [inputsValid, setInputsValid] = useState({});
   const actualDate = new Date().toISOString().split("T")[0].substring(0, 7);
+
 
   function setInput(e) {
     setInputsObj({ ...inputsObj, [e.target.id]: e.target.value });

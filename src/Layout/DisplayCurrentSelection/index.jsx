@@ -18,7 +18,18 @@ function DisplayCurrentSelection({ ...props }) {
   const context = useContext(DataContext)
 
   const selections = context.order//data.orders 
-  
+   /*yonatan*/ 
+   const [finalPayment, setFinalPayment] = useState()
+  useEffect(() => {
+    // if the page is 5?
+    axios.post("")
+    .then((res) => {
+      setFinalPayment(res.data)
+      console.log(res.data)
+    })
+      .catch(err => console.log(err))
+  },[])
+   /*yonatn*/
   
    console.log(selections)
  let currentStep = context.fakeData.order.stageNo
