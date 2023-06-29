@@ -176,16 +176,6 @@ const emptyFakeOrderData = {
     shipping: null,
     furniture: null,
     color: null,
-    section1: {
-        shelves: 0,
-        hangingRod: true,
-        drawers: 0,
-    },
-    section2: {
-        shelves: 0,
-        hangingRod: true,
-        drawers: 0,
-    },
     sections: [{
         shelves: 4,
         hangingRod: true,
