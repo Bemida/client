@@ -30,11 +30,6 @@ function Register() {
             }, 15000)
         }
     }
-<<<<<<< HEAD
-    api.post(url, data)
-    navigate('/login')
-=======
->>>>>>> 317d6d739cc910cc694444b578f3fee6d4b0aacf
 
     return (
         <div className={styles.registration_container}>

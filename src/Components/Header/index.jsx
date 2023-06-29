@@ -17,11 +17,11 @@ function Header({ logoStyle }) {
         style={logoStyle}
       />
       <div className={styles.icon}>
-{!isLogin ? (
- <Link to="/login"><BiLogIn className={styles.iconlogin} onClick={()=>setisLogin(true)}/></Link> 
+{/* {!isLogin ? (
   ) : (
-              <BiLogOut className={styles.iconlogout} onClick={()=>setisLogin(false)} />
-              )}
+    <BiLogOut className={styles.iconlogout} onClick={()=>setisLogin(false)} />
+  )} */}
+  <Link to="/login"><BiUserCircle className={styles.iconlogin}/></Link> 
 
       </div>
     </div>
