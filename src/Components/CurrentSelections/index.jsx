@@ -37,19 +37,6 @@ function CurrentSelections({ style = {}, selections }) {
 
   const keys = Object.keys(selections)
   let regularText = ''
-<<<<<<< HEAD
-debugger;
-  return (
-    <div className={styles.name} style={style} >
-
-      <ul className={styles.Selectionlist} style={style.ul}>
-        {
-          keys
-            .filter((v) => LanguageTranslater[v] && LanguageTranslater[v]['group'] === 'dimentions')
-            .forEach((k) => regularText += LanguageTranslater[k]['heb'] + ' ' + selections[k] + ' ' + LanguageTranslater[k]['postfix'])
-        }
-          {regularText&&<li key='dimentions' style={style.li}>
-=======
   console.log(selections)
 const listOfFlat = keys
 .filter((v) => selections[v] && LanguageTranslater[v] && !LanguageTranslater[v]['group'])
@@ -66,7 +53,6 @@ const listOfFlat = keys
       <ul className={styles.Selectionlist} style={style.li} >
         {
           regularText&&<li key='dimentions'>
->>>>>>> 3ddb1e406d1f846fa42a147ae817c325cf5d9f15
             <SelectionRow bolder={LanguageTranslater['dimentions']['heb']} regular={regularText} />
           </li>
         }
