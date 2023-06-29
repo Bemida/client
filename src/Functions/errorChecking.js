@@ -45,12 +45,12 @@ const validation = {
     },
   },
   4: {
-    section1_drawers: null, // change to sections, go in to the split and put the key into the mniddle with __
-    section1_hangingRod: null,
-    section1_shelves: null,
-    section2_drawers: null,
-    section2_hangingRod: null,
-    section2_shelves: null,
+    // section1_drawers: null, // change to sections, go in to the split and put the key into the mniddle with __
+    // section1_hangingRod: null,
+    // section1_shelves: null,
+    // section2_drawers: null,
+    // section2_hangingRod: null,
+    // section2_shelves: null,
   },
   5:{}
 };
@@ -72,7 +72,7 @@ export default function errorChecking(context) {
       //   valueFromContext = context.fullOrder[key1][key2];
       // }
       if (!valueFromContext) {
-        errorsList.push({ key, msg:valNow[key].message});
+        errorsList.push({ key, msg:valNow[key]?.message});
         console.log (errorsList)
       }
     } else if (typeof valueFromContext === "function") {
