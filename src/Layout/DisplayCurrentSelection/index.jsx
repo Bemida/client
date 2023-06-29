@@ -1,55 +1,30 @@
-import { interpolate } from '@react-spring/core'
-// import styles from './style.module.css'
+import styles from './style.module.css'
 
 import { DataContext } from '../../Context/MainContext'
 import { useContext } from 'react'
-
+import { useEffect } from 'react' 
+import SelectionRow from '../SelectionRow'
+import CurrentSelections from '../../Components/CurrentSelections'
 
 
 // props : 
 // creator: Michael Arlan
+
 function DisplayCurrentSelection({ ...props }) {
 
   const context = useContext(DataContext)
 
-  //  console.log(context.fakeData.items.categories)
+  const selections = context.order//data.orders 
+  //const selections = data.orders 
 
-  // console.log(context.fakeData.order)
+  
+  let ListTitle = selections.furniture//"הארון שלי"
 
-  const selections = context.fakeData.order.order
-
-  // let SelectionOptions=
-  // [ 
-  //   [],
-  //   [],
-  //   ["מידות הארון","דלתות"],
-  //   ["פרזול","צבע הארון","צבע חוץ"]
-  // ]
-
-
-  // console.log(SelectionOptions);
-  // console.log('typeof(SelectionOptions)' + typeof(SelectionOptions));
-  let currentStep = context.fakeData.order.stageNo
-  let ListTitle = "הארון שלי"
-
-  const keys = Object.keys(selections)
   return (
-    <div className="currentSelection"  >
+    <div className={styles.currentSelection}>
 
-      <h3 className='ListTitle'>{ListTitle}</h3>
-
-      <ul className='Selectionlist'>
-        {/* for (const a of context.fakeData.order.order)
-        {
-          a && <li><span className='OderKey'>{a}</span><span className='OderValue'>{Selections[a]}</span></li>
-        } */}
-        {keys.map((k) => <li><span className='OderKey'>{k}</span><span className='OderValue'>{selections[k]}</span></li>)
-        }
-
-
-
-
-      </ul>
+      <h3 className={styles.ListTitle}>{ListTitle}</h3>
+      <CurrentSelections selections={selections}/>
 
     </div>
   )

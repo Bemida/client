@@ -1,35 +1,32 @@
-import React, { useRef, useState } from "react";
 
 import { useGLTF } from "@react-three/drei";
 import { calcPosition, snapGaps, calcScale, initScale } from '../../Functions/3dCalc/calcScale';
-import Handles from "../Handles";
+import Handles from "../Handles/index";
 import Shelf from "../Shelf";
 
 export function Closet4Doors({
-  width = 1,
+  width = 2,
   height = 2,
-  depth = 1,
+  depth = 2,
   isSokol,
   material,
   handleType,
-  withDoors = false,
-  shelvesNumberLeft = 7,
+  withDoors = true,
+  shelvesNumberLeft = 2,
   shelvesNumberRight = 5,
   isLeftPole,
   isRightPole,
   ...props
 }) {
-  const defaultDimensions = [1.61, 2.4, 0.59];
-
+  const defaultDimensions = [1.61, 2.4, 0.59]
   const { nodes, materials } = useGLTF("assets/3dModels/Closet4Doors.glb");
-
-  const scale = initScale(defaultDimensions, [width, height, depth]);
-
-  console.log(scale);
-
+  const scale = initScale(defaultDimensions, [width, height, depth])
+  console.log(nodes);
   return (
     <group {...props} dispose={null}>
-      <group position={snapGaps("-", 0.1, scale, [0, 0, 0], [0, 1, 0])}>
+      <group
+        position={snapGaps("-", 0.1, scale, [0, 0, 0], [0, 1, 0])}
+      >
         <mesh
           castShadow
           receiveShadow
@@ -286,10 +283,6 @@ export function Closet4Doors({
       />
       <Shelf height={height} shelvesNumber={shelvesNumberLeft} scale={scale} depth={depth} width={width} position={nodes.shelfLeft.position} />
       <Shelf height={height} shelvesNumber={shelvesNumberRight} scale={scale} depth={depth} width={width} position={nodes.shelfRight.position} />
-      {/* <Shelf height={height} shelvesNumber={4} depth={depth} width={width} position={nodes.shelfLeft.position}  scale={scale}/> */}
-
-      {/* {console.log(nodes.shelfLeft.scale)}
-     {console.log(nodes.topPanel.scale)} */}
     </group>
   );
 }

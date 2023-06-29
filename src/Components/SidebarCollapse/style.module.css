@@ -13,7 +13,7 @@
     color: grey;
     cursor: pointer;
     margin-bottom: 30px;
-    min-width: 30px;
+    /* min-width: 30px; */
     user-select: none;
     /* background-color: rgba(0, 0, 255, 0.094); */
 }
@@ -30,5 +30,8 @@
     right: 15px;
 }
 .collapseContainer > div:last-child {
-    padding-right: 15px;
+    padding-right: 8px;
+    display: flex;
+    flex-direction: column;
+    gap:7px;
 }
