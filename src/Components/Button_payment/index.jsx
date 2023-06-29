@@ -9,10 +9,12 @@ import Button from '../Button';
 
 
 
-export default function Button_Payment(props) {
+export default function Button_Payment({props}) {
   const { newFakeData } = useContext(DataContext)
 
   async function createHtmlEmail() {
+    // console.log(props)
+    const allData= {...newFakeData.sorders, ...props}
     const data = { email: messageTemplate(newFakeData.orders), createorder: newFakeData.orders }
     return data
   }
@@ -31,7 +33,7 @@ export default function Button_Payment(props) {
 
   return (
     <div >
-      {Button({ color: "red", width: 100, text: "payment", className: "send-payment", icon: "🎈", onClick: () => { hendleSubmit() } })}
+      {Button({ color: "#C2A39A", width: 100, text: "payment", className: "send-payment", icon: "🎈", onClick: () => { hendleSubmit() } })}
     </div>
   )
 }
