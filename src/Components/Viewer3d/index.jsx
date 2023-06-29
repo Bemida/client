@@ -4,16 +4,17 @@ import { useContext } from "react";
 import { DataContext } from "../../Context/MainContext";
 import Scene3d from "../Scene3d";
 
-
 function Viewer3d() {
-  const context = useContext(DataContext)
-  // console.log(context);
-  //camera work:
+  const context = useContext(DataContext).fullOrder
+
   const fov = 40;
   const dimensions = {
-    X: context.newFakeData.orders.width / 100,
-    Y: context.newFakeData.orders.height / 100,
-    Z: context.newFakeData.orders.depth / 100
+    // X: context.newFakeData.orders.width / 100,
+    // Y: context.newFakeData.orders.height / 100,
+    // Z: context.newFakeData.orders.depth / 100
+    X: context.width / 100,
+    Y: context.height / 100,
+    Z: context.depth / 100
   }
   const maxDimensions = Math.max(dimensions.X, dimensions.Y, dimensions.Z)
   const angularSize = (fov * Math.PI) / 180;
@@ -38,8 +39,8 @@ function Viewer3d() {
       <spotLight color={0xffffff} scale={1} position={[-3, 3, 4]} castShadow shadow-normalBias={0.1} shadow-mapSize={[1024, 1024]} />
       <ambientLight intensity={0.3} />
       <OrbitControls />
-      
-      <Scene3d dimensions={dimensions}/>
+
+      <Scene3d dimensions={dimensions} />
 
     </Canvas >
   )

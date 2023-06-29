@@ -14,7 +14,6 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
         thicknessBack = 0.003,
         shelvesArr = Array.from({ length: numOfShelves }, (_, i) => i);
 
-    console.log(stage);
 
     return (
         <group
