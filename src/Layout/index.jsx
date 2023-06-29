@@ -12,6 +12,8 @@ import Header from "../Components/Header";
 import DisplayCurrentSelection from "./DisplayCurrentSelection";
 import errorChecking from '../Functions/errorChecking';
 import SideBarInner from "../Components/SideBarInner";
+import CalcPayment from '../Components/CalcPayment'
+
 
 //Creator : didi 
 
@@ -24,8 +26,20 @@ function Layout() {
     setErrorsMsg(errorChecking(context))
     context.setStage(prev => prev !== 5 ? prev + 1 : prev)
   }
-
   const bty = <Button className={styles.nextButton} onClick={submitClick} text={'המשך'} />
+  const bty2 = <Button className={styles.nextButton} onClick={submitClick} />
+const btn =  {
+  1: bty,
+  2: bty,
+  3: bty,
+  4: bty,
+  5: <>
+  <CalcPayment />
+  {bty2} 
+        
+  </>,
+};
+  
   const header = <Header />;
   // const progressBar = "progressBar";
   const progressBar = <ProgressBar />;
@@ -34,7 +48,7 @@ function Layout() {
     2: <Size />,
     3: <Viewer3d />,
     4: <Viewer3d />,
-    5: <Viewer3d />,
+    5: <Viewer3d />, // TODO - new viewer
   };
   const To_RightBar = {
     1: "",
@@ -49,15 +63,18 @@ function Layout() {
     // 3: "3LB",
     3: <DisplayCurrentSelection />,
     4: <DisplayCurrentSelection />,
-    5: <DisplayCurrentSelection />,
+    5:
+     <DisplayCurrentSelection />
+     ,
   };
   // const Main_Section = To_Main_Section[2]
   const Main_Section = To_Main_Section[context.stage];
   const RightBar = To_RightBar[context.stage];
   const LeftBar = To_LeftBar[context.stage];
+  const BtnByStage = btn[context.stage];
   return (
     <div className={styles.containerLayout}>
-      <Grid Main_Section={Main_Section} RightBar={RightBar} LeftBar={LeftBar} progressBar={progressBar} bty={bty} header={header} errorsMsg={errorsMsg} />
+      <Grid Main_Section={Main_Section} RightBar={RightBar} LeftBar={LeftBar} progressBar={progressBar} bty={BtnByStage} header={header} errorsMsg={errorsMsg} />
     </div>
   )
 }
