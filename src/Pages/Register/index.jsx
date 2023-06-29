@@ -11,7 +11,7 @@ function Register() {
         [passwordVerification, setPasswordVerification] = useState(''),
         navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const url = "/users/register"
         const data = {
@@ -20,7 +20,12 @@ function Register() {
             password,
             passwordVerification
         }
-        const result = api.post(url, data)
+        try {
+            const result = await api.post(url, data)
+        }
+        catch (err) {
+            setMassage("מייל זה כבר קיים")
+        }
         if (result === "The user has been registered successfully") {
             navigate('/login');
         } else {
@@ -30,6 +35,8 @@ function Register() {
             }, 15000)
         }
     }
+    api.post(url, data)
+    navigate('/login')
 
     return (
         <div className={styles.registration_container}>
