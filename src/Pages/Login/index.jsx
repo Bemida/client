@@ -1,35 +1,37 @@
 import React, { useState } from 'react';
 import styles from "./style.module.css";
-import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom'
 import api from '../../Functions/API_Calls/apiCalls'
 function Login() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isForget, setIsForget] = useState(false)
+  const [message, setMassage] = useState(false)
   const navigate = useNavigate()
-
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const url = "/users/login"
     const data = {
-      email: email,
-      password: password
+      email,
+      password
     }
-    api.post(url, data)
-    navigate('/')
+    const result = api.post(url, data)
+    if (result.token) {
+      localStorage.setItem('token', result.token);
+      navigate('/')
+    } else {
+      setMassage('שם משתמש או סיסמא הינם תקינים')
+      return false;
+    }
   };
-
 
   const handleForgetPassword = (e) => {
     e.preventDefault();
-    setIsForget(true)
+    setMassage("📭 שלחנו לך במייל קישור לאיפוס סיסמא")
     setTimeout(() => {
-      setIsForget(false)
+      setMassage(false)
     }, 15000)
 
     const url = "/users/changepassword"
@@ -72,15 +74,9 @@ function Login() {
       <div>עדיין אין לך חשבון?
         <Link className={styles.Link} to="/Register">להרשמה</Link>
       </div>
-      <div onClick={handleForgetPassword}>שכחתי סיסמא</div>
-      {isForget &&
-        <div>
-          📭 שלחנו לך במייל קישור לאיפוס סיסמא
-        </div>
-      }
+      <div onClick={handleForgetPassword} className={styles.forgetPassword}>שכחתי סיסמא</div>
+      {message}
     </div>
-
-
   );
 };
 
