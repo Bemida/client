@@ -96,8 +96,8 @@ function Size() {
   // }
   // console.log("fullOrder",fullOrder);
   function settingInput(e) {
-    setInputText({ ...inputText, [e.target.id]: e.target.value });
-    setInputValid({ ...inputValid, [e.target.id]: e.target.value && e.target.value.length > 0 })
+    setInputText({ ...inputText, [e.target.id]: Number(e.target.value) });
+    setInputValid({ ...inputValid, [e.target.id]: Number(e.target.value) && e.target.value.length > 0 })
   }
 
   return (
