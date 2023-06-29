@@ -15,6 +15,23 @@ export default function Shelf({ height, shelvesNumber, scale, position }) {
 
   return (
     <>
+<<<<<<< HEAD
+      {array.map(floor =>{
+        
+        y += shelfHeight
+        return(<>
+      <mesh
+        key={floor}
+        castShadow
+        receiveShadow
+        geometry={nodes.shelfLeft.geometry}
+        material={materials.wood_1}
+        position={[x,y,z]}
+        scale={calcScale(1, [scale.X, 1, scale.Z])}
+        />
+    
+        </>
+=======
       {
         array.map(floor => {
           y += shelfHeight;
@@ -29,6 +46,7 @@ export default function Shelf({ height, shelvesNumber, scale, position }) {
               scale={calcScale(1, [scale.X, 1, scale.Z])} />
           )
         }
+>>>>>>> 659e1a13ba0626a1ec333e7148e474e1bde3e6e2
         )
       }
     </>
