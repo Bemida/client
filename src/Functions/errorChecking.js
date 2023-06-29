@@ -29,18 +29,18 @@ const validation = {
 export default function errorChecking(context) {
   const errorsList = [];
   const valNow = validation[context.stage];
-  const keys = Object.keys(valNow);
+  const keys = typeof valNow === 'object' ? Object.keys(valNow) : [];
 
-  
+
   keys.forEach((key) => {
     const value = valNow[key];
     if (!value) {
       let valueFromContext = context.fullOrder[key];
-      if (key.includes("_")) {
-        const [key1, key2] = key.split("_");
-        valueFromContext = context.fullOrder[key1][key2];
-      }
-      
+      // if (key.includes("_")) {
+      //   const [key1, key2] = key.split("_");
+      //   valueFromContext = context.fullOrder[key1][key2];
+      // }
+
       if (!valueFromContext) {
         errorsList.push({ key, msg: "--Must be entered!--" });
       }

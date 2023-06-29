@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Errors({errorsMsg}) {
+function Errors({ errorsMsg }) {
   return (
-    <div><ul>{errorsMsg.map((e,i)=> <li key={i}>{e.msg}</li>)}</ul></div>
+    <div><ul>{errorsMsg.map((e, i) => <li key={i}>{e.msg}</li>)}</ul></div>
   )
 }
 
