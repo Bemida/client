@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./style.module.css";
-import { BiLogIn ,BiLogOut } from "react-icons/bi";
+import { BiLogIn ,BiLogOut,BiUserCircle } from "react-icons/bi";
 import { Link } from 'react-router-dom'
 
 // props: { logoStyle }
