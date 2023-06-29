@@ -1,8 +1,7 @@
-import React from 'react'
+import { useContext } from 'react'
 import Button from '../Components/Button'
-// import Payment from '../Components/Payment'
 import axios from 'axios';
-import orders from '../Data/fakeDataTest'
+import {DataContext} from '../Context/MainContext'
 import { messageTemplate } from '../Data/messageTemplate';
 import { renderToString } from 'react-dom/server'
 import CurrentSelections from '../Components/CurrentSelections';
@@ -10,7 +9,10 @@ import { useContext } from 'react';
 import { DataContext } from '../Context/MainContext'
 import { messageTemplate2 } from '../Data/messageTemplate2';
 
+
+
 export default function Yosef_sh(props) {
+<<<<<<< HEAD
   const contextOrder = useContext(DataContext); 
 
 async function createHtmlEmail(){
@@ -24,9 +26,18 @@ async function createHtmlEmail(){
 }
 
 async function hendleSubmit(){
+=======
+  const {newFakeData}= useContext(DataContext)
+  async function createHtmlEmail(){
+    const data ={email:messageTemplate(newFakeData.orders),createorder:newFakeData.orders}
+    console.log(data)
+    return data
+  }
+  
+  async function hendleSubmit(){
+>>>>>>> 3ddb1e406d1f846fa42a147ae817c325cf5d9f15
   const data= await createHtmlEmail()
-  // const data={"email":orders.orders.userEmail,"title":"work!!!","html":"<h1>555 <h2>wertyuioiuytr</h2></h1>"}
-  axios.post('http://localhost:2023/api/others/sendemail/', data)
+  axios.post('http://localhost:2023/api/orders/addorder/', data)
   .then(response => {
     console.log(response.data);
   })
@@ -38,8 +49,6 @@ async function hendleSubmit(){
 
   return (
     <div >Yosef_sh
-      {/* <Payment/> */}
-      {/* className, onClick, text, color, width, height, icon  */}
 {Button({color:"red",width:100,text:"payment",className:"send-payment",icon:"🎈" ,onClick:()=>{hendleSubmit()} })}
     </div>
   )

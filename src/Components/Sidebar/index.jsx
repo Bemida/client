@@ -24,36 +24,33 @@ function SideBar({ title }) {
   };
   return (
     <>
-      <div className={styles.outerContainer}>
-        <div className={styles.sidebarContainer}>
-          <span className={styles.titleText}>בחירת הסגנון האהוב עליך</span>
-          <span>{title}</span>
+      <div className={styles.sidebarContainer}>
+        <span>{title}</span>
 
-          {/* if(tab[0] === openTab){ */}
-          {tabs.map((tab, i) => {
-            // if (openTab) {
-            if (openTab === tab[1].name) {
-              return (
-                <SidebarCollapse
-                  name={tab[1].name}
-                  englishName={tab[0]}
-                  openTab={openTab}
-                  handleClick={handleClick}
-                  key={i}
-                >
-                  {tab[1].list.map((childTab, index) => {
-                    return <SidebarTab handlClick={handleClick} parentName={tab[0]} key={index} description={childTab.description} handleId={tab[0] === "handles" ? childTab.id : undefined} imgSrc={childTab.img} />;
-                  })}
-                </SidebarCollapse>)
-            }
-            return (<SidebarCollapse
-              name={tab[1].name}
-              openTab={openTab}
-              handleClick={handleClick}
-              key={i}
-            />)
-          })}
-        </div>
+        {/* if(tab[0] === openTab){ */}
+        {tabs.map((tab, i) => {
+          // if (openTab) {
+          if (openTab === tab[1].name) {
+            return (
+              <SidebarCollapse
+                name={tab[1].name}
+                englishName={tab[0]}
+                openTab={openTab}
+                handleClick={handleClick}
+                key={i}
+              >
+                {tab[1].list.map((childTab, index) => {
+                  return <SidebarTab handlClick={handleClick} parentName={tab[0]} key={index} description={childTab.description} handleId={tab[0] === "handles" ? childTab.id : undefined} imgSrc={childTab.img} />;
+                })}
+              </SidebarCollapse>)
+          }
+          return (<SidebarCollapse
+            name={tab[1].name}
+            openTab={openTab}
+            handleClick={handleClick}
+            key={i}
+          />)
+        })}
       </div>
     </>
   );

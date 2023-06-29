@@ -37,6 +37,7 @@ function CurrentSelections({ style = {}, selections }) {
 
   const keys = Object.keys(selections)
   let regularText = ''
+<<<<<<< HEAD
 debugger;
   return (
     <div className={styles.name} style={style} >
@@ -48,21 +49,37 @@ debugger;
             .forEach((k) => regularText += LanguageTranslater[k]['heb'] + ' ' + selections[k] + ' ' + LanguageTranslater[k]['postfix'])
         }
           {regularText&&<li key='dimentions' style={style.li}>
-            <SelectionRow bolder={LanguageTranslater['dimentions']['heb']} regular={regularText} />
-          </li>}
-        
-        {/* TODO: add sort() after filter */}
+=======
+  console.log(selections)
+const listOfFlat = keys
+.filter((v) => selections[v] && LanguageTranslater[v] && !LanguageTranslater[v]['group'])
+.sort((a, b) => Number(LanguageTranslater[a]['ordinal']) < Number(LanguageTranslater[b]['ordinal']) ? 1 : -1)
+
+// console.log(listOfFlat);
+  keys//שרשור נתוני מימדי הארון לשורה יחידה
+    .filter((v) => selections[v] && LanguageTranslater[v] && LanguageTranslater[v]['group'] === 'dimentions')
+    .sort((a, b) => Number(LanguageTranslater[a]['ordinal']) < Number(LanguageTranslater[b]['ordinal']) ? 1 : -1)
+    .forEach((k) => regularText += LanguageTranslater[k]['heb'] + ' ' + selections[k] + ' ' + LanguageTranslater[k]['postfix'])
+  return (
+    <div className={styles.name} style={style} >
+
+      <ul className={styles.Selectionlist} style={style.li} >
         {
-        keys
-          .filter((v) => LanguageTranslater[v] && !LanguageTranslater[v]['group'])
-          .sort((a, b) => Number(LanguageTranslater[a]['ordinal']) < Number(LanguageTranslater[b]['ordinal']) ? 1 : -1)
-          .map((k) => {
+          regularText&&<li key='dimentions'>
+>>>>>>> 3ddb1e406d1f846fa42a147ae817c325cf5d9f15
+            <SelectionRow bolder={LanguageTranslater['dimentions']['heb']} regular={regularText} />
+          </li>
+        }
+        {
+       listOfFlat
+          .map((k) => 
             typeof selections[k] === 'object' ?// <li key={k}>{k}</li>:
-              Object.keys(selections[k])
+              Object.keys(selections[k])//כניסה לאובייקט
                 .map((d) =>
                   <li key={d}><SelectionRow bolder={LanguageTranslater[k]['heb']} regular={selections[k][d]} /></li>) :
+            //   //אם לא אובייקט
               <li key={k}><SelectionRow bolder={LanguageTranslater[k]['heb']} regular={selections[k] + ' ' + LanguageTranslater[k]['postfix']} /></li>
-            }
+            
           )
         }
 

@@ -21,7 +21,6 @@ export function Closet4Doors({
   const defaultDimensions = [1.61, 2.4, 0.59]
   const { nodes, materials } = useGLTF("assets/3dModels/Closet4Doors.glb");
   const scale = initScale(defaultDimensions, [width, height, depth])
-  console.log(nodes);
   return (
     <group {...props} dispose={null}>
       <group

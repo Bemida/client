@@ -12,14 +12,16 @@ import Header from "../Components/Header";
 import DisplayCurrentSelection from "./DisplayCurrentSelection";
 import errorChecking from '../Functions/errorChecking';
 import SideBarInner from "../Components/SideBarInner";
+import { useNavigate, useRoutes } from 'react-router-dom';
 
 //Creator : didi 
 
 
 function Layout() {
   const context = useContext(DataContext);
-
+  const navigate = useNavigate();
   const [errorsMsg, setErrorsMsg] = useState([])
+
   const submitClick = () => {
     setErrorsMsg(errorChecking(context))
     context.setStage(prev => prev !== 5 ? prev + 1 : prev)
