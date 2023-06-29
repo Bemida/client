@@ -21,11 +21,20 @@ function Layout() {
 
   const [errorsMsg, setErrorsMsg] = useState([])
   const submitClick = () => {
+    console.log(context.stage);
     setErrorsMsg(errorChecking(context))
     context.setStage(prev => prev !== 5 ? prev + 1 : prev)
   }
 
-  const bty = <Button className={styles.nextButton} onClick={submitClick} text={'המשך'} />
+  const submitClickback = () => {
+    console.log(context.stage);
+    setErrorsMsg(errorChecking(context))
+    context.setStage(prev => prev !== 1  ? prev - 1 :prev )
+  }
+
+  const btyforward = <Button className={styles.nextButton} onClick={submitClick} text={'המשך'} />
+  const btyBack = <Button className={styles.btyBack} onClick={submitClickback} text={'אחורה'} isLeft={false}/>
+
   const header = <Header />;
   // const progressBar = "progressBar";
   const progressBar = <ProgressBar />;
@@ -57,7 +66,7 @@ function Layout() {
   const LeftBar = To_LeftBar[context.stage];
   return (
     <div className={styles.containerLayout}>
-      <Grid Main_Section={Main_Section} RightBar={RightBar} LeftBar={LeftBar} progressBar={progressBar} bty={bty} header={header} errorsMsg={errorsMsg} />
+      <Grid Main_Section={Main_Section} RightBar={RightBar} LeftBar={LeftBar} progressBar={progressBar} btyforward={btyforward} btyBack={btyBack} header={header} errorsMsg={errorsMsg} />
     </div>
   )
 }
