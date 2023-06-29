@@ -173,17 +173,20 @@ const emptyFakeOrderData = {
         shelves: 4,
         hangingRod: true,
         drawers: 0,
+        index: 0
     },
     {
         shelves: 2,
         // hangingRod: 0,
         drawers: 4,
+        index: 1
     },
     {
         shelves: 1,
         hangingRod: true,
         drawers: 2,
-    }],
+        index: 2
+    },
     material: null,
     height: 0,
     width: 0,

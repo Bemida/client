@@ -2,7 +2,8 @@ import styles from './style.module.css'
 
 import { DataContext } from '../../Context/MainContext'
 import { useContext } from 'react'
-
+import { useEffect } from 'react' 
+import SelectionRow from '../SelectionRow'
 import CurrentSelections from '../../Components/CurrentSelections'
 
 
@@ -14,13 +15,11 @@ function DisplayCurrentSelection({ ...props }) {
   const context = useContext(DataContext)
 
   const selections = context.order//data.orders 
+  //const selections = data.orders 
+
   
-  
-   console.log(selections)
   let ListTitle = selections.furniture//"הארון שלי"
 
-  // const keys = Object.keys(selections)
-  // console.log(keys);
   return (
     <div className={styles.currentSelection}>
 
@@ -30,8 +29,5 @@ function DisplayCurrentSelection({ ...props }) {
     </div>
   )
 }
-
-
-
 
 export default DisplayCurrentSelection
