@@ -9,17 +9,17 @@ const validation = {
   1: {
     furniture: {
       type: null,
-      message: `${message} + רהיט`
+      message: `${message} רהיט`
     }
   },
   2: {
     height: {
       type: null,
-      message: `${message} + גובה`
+      message: `${message} גובה`
     }, 
     width: {
       type: null,
-      message: `${message} + רוחב`
+      message: `${message} רוחב`
     },
     depth: {
       type: null,
@@ -65,6 +65,7 @@ export default function errorChecking(context) {
   keys.forEach((key) => {
     const value = valNow.type
     if (!value) {
+      debugger
       let valueFromContext = context.fullOrder[key];
       // if (key.includes("_")) {
       //   const [key1, key2] = key.split("_");
