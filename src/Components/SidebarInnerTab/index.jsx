@@ -7,12 +7,12 @@ import Toggle from "../Toggle";
 export default function SidebarInnerTab({ childTab, onChange }) {
 
     const transObj = {
-        drawers :" עמודות",
-        hangingRod : "מוט תלוי",
-        shelves :" מגירות"
+        drawers: "מגירות",
+        hangingRod: "מוט תלוי",
+        shelves: " מדפים"
     }
 
-    switch (typeof  childTab[1]) {
+    switch (typeof childTab[1]) {
         case 'number':
             return (
                 <div className={styles.shelves}>
@@ -24,7 +24,7 @@ export default function SidebarInnerTab({ childTab, onChange }) {
         case 'boolean':
             return (
                 <div className={styles.hangingRod}>
-                    <span>{transObj [childTab[0]]}</span>
+                    <span>{transObj[childTab[0]]}</span>
                     {<Toggle defaultChecked={true} onChange={((checked) => onChange(checked, childTab[0]))} />}
                 </div>
             )
