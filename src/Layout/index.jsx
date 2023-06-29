@@ -27,6 +27,7 @@ function Layout() {
     
     const errors = errorChecking(context)
     setErrorsMsg(errors)
+    setTimeout(setErrorsMsg([]),3000)
     if (errors.length >0) return false
     console.log(context.stage);
     if (context.stage === 5) {
