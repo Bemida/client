@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { DataContext } from "../../Context/MainContext";
 import Closet from "../3dModels/Closet";
 
-function Scene3d({ dimensions }) {
+function Scene3d({ dimensions, position }) {
     const { materials } = useGLTF('/assets/3dModels/Materials.glb')
 
     return (
