@@ -11,12 +11,14 @@ import DrawersConstructor from "../DrawersConstructor";
 function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numOfShelves = 3, oneDoor, numOfDrawers, withRod }) {
     const materialType = useContext(DataContext).newFakeData.orders.material
     const { materials } = useGLTF('/assets/3dModels/Materials.glb'),
-        stage = 4 || useContext(DataContext).fullOrder.stageNo,
+        stage = useContext(DataContext).stage,
         thickness = 0.02,
         thicknessBack = 0.003
     const DRAWER_HEIGHT = 0.2;
     const DRAWER_GAP = 0.01;
     const ALL_DRAWERS_HEIGHT = (DRAWER_HEIGHT) * numOfDrawers
+
+    console.log("stage", stage);
 
 
     return (

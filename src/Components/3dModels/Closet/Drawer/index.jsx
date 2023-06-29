@@ -1,5 +1,5 @@
 import Shelf from "../Shelf";
-import Handle from "../handle";
+import Handle from "../Handle";
 
 //Creator : didi
 function Drawer({ position, dimensions, material, }) {
@@ -29,7 +29,7 @@ function Drawer({ position, dimensions, material, }) {
                 <Handle
                     position={[
                         dimensions.X / 2,
-                        (-dimensions.Y + thickness + HightDrawer) / 2,
+                        (-dimensions.Y + thickness + DRAWER_HEIGHT) / 2,
                         dimensions.Z / 2
                     ]}
                     dimensions={dimensions}

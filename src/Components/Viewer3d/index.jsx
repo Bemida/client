@@ -6,7 +6,8 @@ import Scene3d from "../Scene3d";
 
 function Viewer3d() {
   const context = useContext(DataContext).fullOrder
-
+  console.log(context);
+  //camera work:
   const fov = 40;
   const dimensions = {
     // X: context.newFakeData.orders.width / 100,
