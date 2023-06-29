@@ -6,6 +6,7 @@ export default function Counter({ defaultNumber, min, max, onChange, name, ...pr
   const [count, setCount] = useState(defaultNumber)
 
   useEffect(() => {
+
   onChange(count)
   }, [count])
   

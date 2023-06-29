@@ -9,44 +9,46 @@ import { IoIosArrowDown, IoIosArrowBack } from "react-icons/io"
 
 function SideBarInner({ title }) {
     const tabs = Object.entries(data.items.interior);
-   
     const [openTab, setOpenTab] = useState();
-    
+
     const { fullOrder, setFullOrder } = useContext(DataContext);
 
+    const section = fullOrder.sections
 
 
     return (
         <div className={styles.outerContainer}>
             <div className={styles.container}>
                 <span>{title}</span>
-                {tabs.map((tab) => {
-                    if (!tab[1].name) return;
-                    const list = Object.entries(data.items.interior[tab[0]].list);
-                    const onChange = (newVal, option) => {
-                        setFullOrder(prev => ({ ...prev, [tab[1].key]: ({ ...prev[tab[1].key], [option[1].key]: newVal }) }))
-   
-                    }
-                    console.log(tab);
-                    
+                {section.map((sec, index) => {
 
+                    const list = Object.entries(sec);
+                    const onChange = (newVal, key) => {
+
+
+                        setFullOrder(prev => ({ ...prev, sections: prev.sections.map((sec, i) => i === index ? { ...sec, [key]: newVal } : sec) }))
+
+                    }
                     return (
-                        <div  key={tab[0]} className={styles.allTabs} >
+                        <div key={index} className={styles.allTabs} >
                             <div className={styles.tabContainer}>
 
-                                {openTab === tab[1].name ? (<IoIosArrowDown />) : (<IoIosArrowBack />)}
-                                <div  onClick={() => setOpenTab(openTab === tab[1].name ? null : (tab[1].name))}>{tab[1].name}</div>
+                                {openTab === index ? (<IoIosArrowDown />) : (<IoIosArrowBack />)}
+                                <div onClick={
+                                    () => setOpenTab(openTab === index ? null : index)
+                                }>עמודה {index + 1}</div>
 
                             </div>
 
-                                {openTab === tab[1].name && list.map((childTab) => {
-                                    return (
-                            <div  className={styles.tab}>
+                            {openTab === index && list.map((childTab) => {
+                                return (
+                                    <div className={styles.tab}>
                                         <SidebarInnerTab key={childTab[0]} childTab={childTab} onChange={onChange} />
 
-                            </div>
-                                    )
-                                })}
+                                    </div>
+                                )
+                            })}
+
 
 
                         </div>
