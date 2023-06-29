@@ -8,12 +8,11 @@ import { DataContext } from "../../../../Context/MainContext";
 
 
 
-function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneDoor = false, numOfDrawer = 2 }) {
+function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneDoor = false, numOfDrawers = 2, withRod = false }) {
     const materialType = useContext(DataContext).newFakeData.orders.material
     const { materials } = useGLTF('/assets/3dModels/Materials.glb')
     const legGap = 0.07;
-    const drawerArr = Array.from({ length: numOfDrawer }, (_, i) => i);
-
+    console.log(numOfShelves);
 
 
     return (
@@ -37,29 +36,13 @@ function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneD
                     }}
                     material={materials[materialType]}
                     oneDoor={oneDoor}
+                    numOfShelves={numOfShelves}
+                    numOfDrawers={numOfDrawers}
+                    withRod={withRod}
                 />
 
-                {/* creating the Drawer: */}
 
-                {drawerArr.map((i, n) => {
-                    return (
-                        <Drawer
-                            key={n}
-                            dimensions={dimensions}
-                            material={materials[materialType]}
-                            position={{
-                                X: position.X,
-                                Y: (
-                                    -(dimensions.Y / 2) + //starting point
-                                    (dimensions.Y / (numOfShelves + 1)) + //skip the bottom
-                                    ((dimensions.Y - (dimensions.Y / (numOfShelves + 1))) //skip the top
-                                        / numOfShelves) * i //add height for each shelf in the array
 
-                                ),
-                                Z: position.Z
-                            }} />
-                    )
-                })}
 
 
 

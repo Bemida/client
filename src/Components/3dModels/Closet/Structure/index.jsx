@@ -2,19 +2,22 @@ import { useGLTF } from "@react-three/drei";
 import Shelf from "../Shelf";
 import Rod from "../Rod";
 import Door from "../Door"
+import ShelvesConstructor from "../ShelvesConstructor";
 import { useContext } from "react";
 import { DataContext } from "../../../../Context/MainContext";
+import DrawersConstructor from "../DrawersConstructor";
 
 
-function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numOfShelves = 3, oneDoor }) {
+function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numOfShelves = 3, oneDoor, numOfDrawers, withRod }) {
     const materialType = useContext(DataContext).newFakeData.orders.material
     const { materials } = useGLTF('/assets/3dModels/Materials.glb'),
-        stage = useContext(DataContext).fullOrder.stageNo,
+        stage = 4 || useContext(DataContext).fullOrder.stageNo,
         thickness = 0.02,
-        thicknessBack = 0.003,
-        shelvesArr = Array.from({ length: numOfShelves }, (_, i) => i);
+        thicknessBack = 0.003
+    const DRAWER_HEIGHT = 0.2;
+    const DRAWER_GAP = 0.01;
+    const ALL_DRAWERS_HEIGHT = (DRAWER_HEIGHT) * numOfDrawers
 
-    console.log(stage);
 
     return (
         <group
@@ -73,29 +76,22 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
                 <boxGeometry args={[dimensions.X, dimensions.Y, thicknessBack]} />
             </mesh >
 
+            <ShelvesConstructor
+                dimensions={{
+                    X: dimensions.X,
+                    Y: dimensions.Y - ALL_DRAWERS_HEIGHT,
+                    Z: dimensions.Z
+                }}
+                position={{
+                    X: dimensions.X / 2,
+                    Y: position.Y + (ALL_DRAWERS_HEIGHT / 2),
+                    Z: position.Z
+                }}
+                numOfShelves={numOfShelves}
+            />
+            <DrawersConstructor dimensions={dimensions} position={{ X: dimensions.X / 2, Y: position.Y, Z: position.Z }} numOfDrawers={numOfDrawers} />
 
-            {/* creating the shelves: */}
-
-            {shelvesArr.map((i, n) => {
-                return (
-                    <Shelf
-                        key={n}
-                        dimensions={dimensions}
-                        material={materials[materialType]}
-                        position={{
-                            X: dimensions.X / 2,
-                            Y: (
-                                -((dimensions.Y) / 2) + //starting point
-                                ((dimensions.Y) / (numOfShelves + 1)) + //skip the bottom
-                                ((dimensions.Y - (dimensions.Y / (numOfShelves + 1))) //skip the top
-                                    / numOfShelves) * i //add height for each shelf in the array
-
-                            ),
-                            Z: 0
-                        }} />
-                )
-            })}
-            <Rod position={position} dimensions={dimensions} thickness={thickness} material={materials.chrome} />
+            {withRod && <Rod position={position} dimensions={dimensions} thickness={thickness} material={materials.chrome} />}
 
             {
                 (stage !== 4) && <Door position={position} dimensions={{ X: dimensions.X, Y: dimensions.Y, Z: dimensions.Z }} material={materials[materialType]} side={"left"} isSingular={oneDoor} />

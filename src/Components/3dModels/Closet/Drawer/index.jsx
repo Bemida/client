@@ -1,30 +1,31 @@
 import Shelf from "../Shelf";
 
 //Creator : didi
-function Drawer({ dimensions, material, HightDrawer = 0.2 }) {
+function Drawer({ position, dimensions, material, }) {
+    const DRAWER_HEIGHT = 0.2
     const thickness = 0.02;
 
     return (
         <>
-
-            <mesh
-                position={[dimensions.X / 2, (-dimensions.Y + HightDrawer) / 2 + .1, dimensions.Z / 2 - thickness]}
-                material={material}
+            <group
+                position={[position.X, position.Y, position.Z]}
             >
-
-                {/* <meshBasicMaterial color={0xf0004f} /> */}
-                {/* <meshBasicMaterial color={0xf0701f} /> */}
-                <boxGeometry args={[dimensions.X - 0.004, HightDrawer - 0.002, thickness]} />
-            </mesh >
-            <Shelf
-                dimensions={dimensions}
-                position={{
-                    X: dimensions.X / 2,
-                    Y: (-dimensions.Y + thickness) / 2 + 0.1 + HightDrawer,
-                    Z: 0
-                }}
-                material={material}
-            />
+                <mesh
+                    position={[0, 0, 0]}
+                    material={material}
+                >
+                    <boxGeometry args={[dimensions.X - 0.004, DRAWER_HEIGHT, thickness]} />
+                </mesh >
+                <Shelf
+                    dimensions={dimensions}
+                    position={{
+                        X: 0,
+                        Y: DRAWER_HEIGHT / 2 - thickness / 2,
+                        Z: -dimensions.Z / 2
+                    }}
+                    material={material}
+                />
+            </group>
         </>)
 }
 export default Drawer

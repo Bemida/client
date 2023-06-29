@@ -34,6 +34,8 @@ function Closet({ dimensions }) {
               Z: 0
             }}
             numOfShelves={v.shelves}
+            numOfDrawers={v.drawers}
+            withRod = {v.hangingRod}
             withLegs={true}
             oneDoor={isSingleDoor(i)}
           />

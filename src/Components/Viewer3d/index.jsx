@@ -35,7 +35,7 @@ function Viewer3d() {
       }}
       shadows
     >
-      <spotLight color={0xffffff} scale={1} position={[-3, 3, 4]} castShadow shadow-normalBias={0.1} shadow-mapSize={[1024, 1024]} />
+      <spotLight color={0xffffff} scale={1} position={[-1, 2, 4]} castShadow shadow-normalBias={0.1} shadow-mapSize={[1024, 1024]} />
       <ambientLight intensity={0.3} />
       <OrbitControls />
       
