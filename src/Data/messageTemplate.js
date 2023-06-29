@@ -95,9 +95,7 @@ export function messageTemplate(orderContext, imagesArr) {
     <h2>סה"כ לתשלום :${orderContext.total} ש"ח</h2>
 
     <h2>חזית הארון</h2>
-    <img src= alt='furniture outside' />
     <h2>פנים הארון</h2>
-    <img src= alt='furniture inside'/>
     <h2 class='underlined'>הפרטים שלך</h2>
     <p class="orderDetails">
         <strong>שם :</strong> ${orderContext.userName}
@@ -115,11 +113,5 @@ export function messageTemplate(orderContext, imagesArr) {
 </body>
 
 </html>`
-<<<<<<< HEAD
-//let x=renderToString(<CurrentSelections selections={contextOrder.newFakeData.orders}/>) ;
-//console.log(x)
-=======
-
->>>>>>> 659e1a13ba0626a1ec333e7148e474e1bde3e6e2
     return { email: orderContext.userEmail, title: 'אישור הזמנה', html: msg };
 }
