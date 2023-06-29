@@ -91,7 +91,6 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
             />
             <DrawersConstructor dimensions={dimensions} position={{ X: dimensions.X / 2, Y: position.Y, Z: position.Z }} numOfDrawers={numOfDrawers} />
 
-            {withRod && <Rod position={position} dimensions={dimensions} thickness={thickness} material={materials.chrome} />}
 
             {
                 (stage !== 4) && <Door position={position} dimensions={{ X: dimensions.X, Y: dimensions.Y, Z: dimensions.Z }} material={materials[materialType]} side={"left"} isSingular={oneDoor} />

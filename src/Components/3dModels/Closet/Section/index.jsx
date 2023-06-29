@@ -5,15 +5,15 @@ import Leg from "../Leg";
 import Drawer from "../Drawer";
 import { useContext } from "react";
 import { DataContext } from "../../../../Context/MainContext";
+import Rod from "../Rod";
 
 
 
 function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneDoor = false, numOfDrawers = 2, withRod = false }) {
     const materialType = useContext(DataContext).newFakeData.orders.material
     const { materials } = useGLTF('/assets/3dModels/Materials.glb')
-    const legGap = 0.07;
-    console.log(numOfShelves);
-
+    const legGap = 0.07,
+        thickness = 0.02
 
     return (
         <>
@@ -42,6 +42,9 @@ function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneD
                 />
 
 
+                {/* creating the rod: */}
+
+                {withRod && <Rod position={position} dimensions={dimensions} thickness={thickness} material={materials.chrome} />}
 
 
 

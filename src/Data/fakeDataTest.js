@@ -155,7 +155,7 @@ const fakeOrderData = {
         drawers: 2,
     }],
     material: "wood",
-    height: 200,
+    height: 300,
     width: 120,
     depth: 50,
     doors: 5,
