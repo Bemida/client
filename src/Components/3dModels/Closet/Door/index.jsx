@@ -22,11 +22,11 @@ function Door({ dimensions, material, side = "left", isSingular = false }) {
         material={material}
       >
 
-        <boxGeometry args={[((dimensions.X * SingularDoor) - thickness) / 2, dimensions.Y, thickness]} />
+        <boxGeometry args={[((dimensions.X * SingularDoor- thickness/4)) / 2 , dimensions.Y, thickness]} />
       </mesh >
       <Handle
         position={[
-          (isSingular) ? -dimensions.X / 4 : (side == "right") ? -dimensions.X/8 : dimensions.X/8,
+          (isSingular) ? -dimensions.X / 4 : (side == "right") ? -dimensions.X / 8 : dimensions.X / 8,
           0,
           0
         ]}

@@ -18,7 +18,6 @@ function Scene3d({ dimensions }) {
             >
                 <boxGeometry args={[dimensions.X + 2, 0.02, dimensions.Z + 2]} />
             </mesh>
-
             <Closet dimensions={dimensions} />
 
         </>
