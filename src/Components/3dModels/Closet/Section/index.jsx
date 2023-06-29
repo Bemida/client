@@ -11,8 +11,8 @@ import ShelvesConstructor from "../ShelvesConstructor";
 
 
 function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneDoor = false, numOfDrawers = 2, withRod = false }) {
-    const materialType = useContext(DataContext).newFakeData.orders.material
-    const { materials } = useGLTF('/assets/3dModels/Materials.glb')
+    const materialText = useContext(DataContext).fullOrder.color || "אורן"
+    const materialType = (materialText === "אורן") ? "wood" : (materialText === "לבן") ? "white" : "chrome";    const { materials } = useGLTF('/assets/3dModels/Materials.glb')
     const legGap = 0.07,
         thickness = 0.02
     const DRAWER_HEIGHT = 0.2;
