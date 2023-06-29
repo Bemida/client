@@ -2,8 +2,8 @@ import { useGLTF } from "@react-three/drei";
 import { calcPosition, calcScale } from '../../Functions/3dCalc/calcScale'
 
 export default function Shelf({ height, shelvesNumber, scale, position }) {
-  const materialType = useContext(DataContext).newFakeData.orders.material
-  const { nodes, materials } = useGLTF("assets/3dModels/Closet4Doors.glb"),
+  const materialText = useContext(DataContext).fullOrder.color || "אורן"
+  const materialType = (materialText === "אורן") ? "wood" : (materialText === "לבן") ? "white" : "chrome";  const { nodes, materials } = useGLTF("assets/3dModels/Closet4Doors.glb"),
     shelfHeight = (height - 0.1) / (shelvesNumber + 1),
     calculatedPosition = calcPosition(position.toArray(), [scale.X, scale.Y, scale.Z]),
     array = Array.from({ length: shelvesNumber }, (_, i) => i + 1);

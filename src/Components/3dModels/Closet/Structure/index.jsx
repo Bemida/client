@@ -9,8 +9,8 @@ import DrawersConstructor from "../DrawersConstructor";
 
 
 function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numOfShelves = 3, oneDoor, numOfDrawers, withRod }) {
-    const materialType = useContext(DataContext).newFakeData.orders.material
-    const { materials } = useGLTF('/assets/3dModels/Materials.glb'),
+    const materialText = useContext(DataContext).fullOrder.color || "אורן"
+    const materialType = (materialText === "אורן") ? "wood" : (materialText === "לבן") ? "white" : "chrome";    const { materials } = useGLTF('/assets/3dModels/Materials.glb'),
         stage = useContext(DataContext).stage,
         thickness = 0.02,
         thicknessBack = 0.003

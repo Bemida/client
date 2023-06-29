@@ -3,10 +3,11 @@ import { useContext } from "react";
 import { DataContext } from "../../../../Context/MainContext";
 
 function FloorFrame({ dimensions }) {
-  const materialType = useContext(DataContext).newFakeData.orders.material
+  const materialText = useContext(DataContext).fullOrder.color || "אורן"
+  const materialType = (materialText === "אורן") ? "wood" : (materialText === "לבן") ? "white" : "chrome";
   const material = useGLTF('/assets/3dModels/Materials.glb').materials[materialType],
     thickness = 0.02;
-    console.log(materialType);
+  console.log(useContext(DataContext));
   return (
     <group>
       <mesh
