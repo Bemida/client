@@ -4,9 +4,9 @@ import styles from "./style.module.css";
 //Creator : didi - add div to className
 //Creator : didi - add context
 
-function Grid({Main_Section,progressBar,RightBar,LeftBar,btyforward,btyBack,header,errorsMsg}) {
-  
-  
+function Grid({ Main_Section, progressBar, RightBar, LeftBar, btyforward, btyBack, header, errorsMsg }) {
+
+
 
   return (
     <div className={styles.containerGrid}>
@@ -15,15 +15,14 @@ function Grid({Main_Section,progressBar,RightBar,LeftBar,btyforward,btyBack,head
       </div>
       <div className={styles.ms}>
         <div className={styles.errors}>
-      {errorsMsg.length > 0 && <Errors errorsMsg={errorsMsg}/>}
-      </div>
+          {errorsMsg.length > 0 && <Errors errorsMsg={errorsMsg} />}
+        </div>
         {Main_Section}
       </div>
       <div className={styles.c}>
         {progressBar}
       </div>
       <div className={styles.d}>
-        {errorsMsg.length > 0 && <Errors errorsMsg={errorsMsg}/>}
         {btyforward}
         {btyBack}
       </div>
