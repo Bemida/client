@@ -16,11 +16,7 @@ export function messageTemplate(orderContext, imagesArr) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Email</title>
 <style>
-    body {
-        direction: rtl;
-        margin: 5px;
-    }
-
+   
     .receipt {
         font-weight: 600;
         font-size: 20px;
@@ -48,15 +44,16 @@ export function messageTemplate(orderContext, imagesArr) {
 </style>
 </head>
 
-<body>
+<body style="direction:rtl;margin:5px; color:black">
 <div>
-    <p class="receipt">
+    <p style="font-weight: 600; font-size: 20px;">
         איזה כיף!
         <br>
         ההזמנה שלך התקבלה אצלנו בנגריה
     </p>
 
-    <h2 class='underlined'>הארון שלך </h2>
+    <h2>הארון שלך </h2>
+    <hr width="70%" align="right">
     <div>
         <p class="orderDetails">
             <strong>מידות הארון:</strong> רוחב ${orderContext.width} ס"ם גובה ${orderContext.height} ס"מ עומק ${orderContext.depth} ס"מ
@@ -95,8 +92,10 @@ export function messageTemplate(orderContext, imagesArr) {
     <h2>סה"כ לתשלום :${orderContext.total} ש"ח</h2>
 
     <h2>חזית הארון</h2>
+
     <h2>פנים הארון</h2>
-    <h2 class='underlined'>הפרטים שלך</h2>
+    <h2>הפרטים שלך</h2>
+    <hr width="70%" align="right"
     <p class="orderDetails">
         <strong>שם :</strong> ${orderContext.userName}
     </p>
