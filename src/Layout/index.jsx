@@ -12,17 +12,27 @@ import Header from "../Components/Header";
 import DisplayCurrentSelection from "./DisplayCurrentSelection";
 import errorChecking from '../Functions/errorChecking';
 import SideBarInner from "../Components/SideBarInner";
+import { useNavigate, useRoutes } from 'react-router-dom';
 
 //Creator : didi 
 
 
 function Layout() {
   const context = useContext(DataContext);
-
+  const navigate = useNavigate();
   const [errorsMsg, setErrorsMsg] = useState([])
+
   const submitClick = () => {
     console.log(context.stage);
     setErrorsMsg(errorChecking(context))
+
+    setTimeout(()=> setErrorsMsg([]),3000)
+
+    console.log(context.stage);
+    if (context.stage === 5) {
+      navigate('payment')
+    }
+
     context.setStage(prev => prev !== 5 ? prev + 1 : prev)
   }
 
@@ -49,7 +59,7 @@ function Layout() {
     1: "",
     2: "",
     3: <Sidebar title={"בחירת הסגנון האהוב עליך"} />,
-    4: <SideBarInner />,
+    4: <SideBarInner title={'בחירת העיצוב פנים האהוב עליך'} />,
     5: "",
   };
   const To_LeftBar = {

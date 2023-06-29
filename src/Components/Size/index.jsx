@@ -86,10 +86,7 @@ function Size() {
     }
   }, [select])
 
-  console.log(select);
 
-  console.log(fullOrder);
-  console.log(inputText);
 
   // function checkInput(key) {
   //   return inputText[key] == undefined || inputText[key].length > 0;

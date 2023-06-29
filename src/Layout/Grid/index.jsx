@@ -14,6 +14,9 @@ function Grid({Main_Section,progressBar,RightBar,LeftBar,btyforward,btyBack,head
         {header}
       </div>
       <div className={styles.ms}>
+        <div className={styles.errors}>
+      {errorsMsg.length > 0 && <Errors errorsMsg={errorsMsg}/>}
+      </div>
         {Main_Section}
       </div>
       <div className={styles.c}>
