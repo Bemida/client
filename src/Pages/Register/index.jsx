@@ -34,9 +34,9 @@ function Register() {
                 setMassage(false)
             }, 15000)
         }
+        api.post(url, data)
+        navigate('/login')
     }
-    api.post(url, data)
-    navigate('/login')
 
     return (
         <div className={styles.registration_container}>
