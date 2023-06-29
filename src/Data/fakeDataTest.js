@@ -100,6 +100,23 @@ const fakeItemData = {
             }
         }
     },
+    innerData: {
+        shelves: {
+            name: 'מדפים',
+            key: 'shelves',
+            type: 'number'
+        },
+        hangingRod: {
+            name: 'מוט תליה',
+            key: 'hangingRod',
+            type: 'boolean'
+        },
+        drawers: {
+            name: 'מגרות',
+            key: 'drawers',
+            type: 'number'
+        },
+    }
 };
 
 const fakeOrderData = {
@@ -173,19 +190,16 @@ const emptyFakeOrderData = {
         shelves: 4,
         hangingRod: true,
         drawers: 0,
-        index: 0
     },
     {
         shelves: 2,
-        // hangingRod: 0,
+        hangingRod: false,
         drawers: 4,
-        index: 1
     },
     {
         shelves: 1,
         hangingRod: true,
         drawers: 2,
-        index: 2
     },
     ],
     material: null,

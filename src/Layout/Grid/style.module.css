@@ -50,9 +50,6 @@
 .sr {
     grid-area: sr;
     overflow: hidden;
-    margin-right: 15px;
-    margin-bottom: 15px;
-
 }
 
 .c {

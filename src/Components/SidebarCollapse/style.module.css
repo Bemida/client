@@ -2,7 +2,9 @@
     max-height: 30%;
     position: relative;
     overflow-y: auto;
+    min-height: 40px;
     min-height: 20%;
+    /* padding: 0 0 30px 0; */
 }
 .heading{
     position: relative;
