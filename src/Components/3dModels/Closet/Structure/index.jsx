@@ -8,9 +8,9 @@ import { DataContext } from "../../../../Context/MainContext";
 import DrawersConstructor from "../DrawersConstructor";
 
 
-function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numOfShelves = 3, oneDoor, numOfDrawers, withRod }) {
-    const materialType = useContext(DataContext).newFakeData.orders.material
-    const { materials } = useGLTF('/assets/3dModels/Materials.glb'),
+function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numOfShelves = 3, oneDoor, numOfDrawers = 0, withRod }) {
+    const materialText = useContext(DataContext).fullOrder.color || "אורן"
+    const materialType = (materialText === "אורן") ? "wood" : (materialText === "לבן") ? "white" : "chrome"; const { materials } = useGLTF('/assets/3dModels/Materials.glb'),
         stage = useContext(DataContext).stage,
         thickness = 0.02,
         thicknessBack = 0.003
@@ -102,7 +102,19 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
                 (stage !== 4) && <Door position={position} dimensions={{ X: dimensions.X, Y: dimensions.Y, Z: dimensions.Z }} material={materials[materialType]} side={"left"} isSingular={oneDoor} />
             }{
                 (!oneDoor) && (stage !== 4) &&
-                <Door position={position} dimensions={dimensions} material={materials[materialType]} side={"right"} />
+                <Door
+                    position={{
+                        X: 0,
+                        Y: -dimensions.Y / 2 + ALL_DRAWERS_HEIGHT + ((dimensions.Y - ALL_DRAWERS_HEIGHT) / 2),
+                        Z: 0
+                    }}
+                    dimensions={{
+                        X: dimensions.X,
+                        Y: dimensions.Y - ALL_DRAWERS_HEIGHT,
+                        Z: dimensions.Z
+                    }}
+                    material={materials[materialType]}
+                    side={"right"} />
             }
 
 

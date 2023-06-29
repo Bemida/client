@@ -1,7 +1,7 @@
 import Handle from "../Handle";
 
 //Creator : didi
-function Door({ dimensions, material, side = "left", isSingular = false }) {
+function Door({ position, dimensions, material, side = "left", isSingular = false }) {
   const thickness = 0.02;
   const SingularDoor = isSingular ? 2 : 1;
   function rightPosition() {
@@ -10,19 +10,26 @@ function Door({ dimensions, material, side = "left", isSingular = false }) {
   function leftPosition() {
     return [(dimensions.X / 4) * SingularDoor, 0, (dimensions.Z / 2) - (thickness / 2)]
   }
+
+  console.log("door:", position, dimensions);
+
   return (
     <group
       position={(side == "right") ? rightPosition() : leftPosition()}
 
     >
       <mesh
-        position={[0, 0, 0]}
+        position={[
+          position.X,
+          position.Y,
+          position.Z
+        ]}
         castShadow
         receiveShadow
         material={material}
       >
 
-        <boxGeometry args={[((dimensions.X * SingularDoor- thickness/4)) / 2 , dimensions.Y, thickness]} />
+        <boxGeometry args={[((dimensions.X * SingularDoor - thickness / 4)) / 2, dimensions.Y, thickness]} />
       </mesh >
       <Handle
         position={[

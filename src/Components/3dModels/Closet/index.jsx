@@ -43,7 +43,7 @@ function Closet({ dimensions }) {
           />
         )
       })}
-      {(order.base !== "legs") && <FloorFrame dimensions={dimensions} />}
+      {(order.base !== "רגליים") && <FloorFrame dimensions={dimensions} />}
     </>
   )
 }
