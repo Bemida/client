@@ -8,8 +8,7 @@ function Closet({ dimensions }) {
   const
     order = useContext(DataContext).newFakeData.orders,
     doors = order.doors,
-    sections = order.sections,
-    numOfSections = sections.length
+    sections = order.sections
 
   function isSingleDoor(i) {
     return (i + 1 === sections.length && doors % 2 === 1)

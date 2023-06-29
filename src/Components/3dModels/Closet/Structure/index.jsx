@@ -76,19 +76,23 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
                 <boxGeometry args={[dimensions.X, dimensions.Y, thicknessBack]} />
             </mesh >
 
-            <ShelvesConstructor
-                dimensions={{
-                    X: dimensions.X,
-                    Y: dimensions.Y - ALL_DRAWERS_HEIGHT,
-                    Z: dimensions.Z
-                }}
-                position={{
-                    X: dimensions.X / 2,
-                    Y: position.Y + (ALL_DRAWERS_HEIGHT / 2),
-                    Z: position.Z
-                }}
-                numOfShelves={numOfShelves}
-            />
+            {(!withRod) &&
+                < ShelvesConstructor
+                    dimensions={{
+                        X: dimensions.X,
+                        Y: dimensions.Y - ALL_DRAWERS_HEIGHT,
+                        Z: dimensions.Z
+                    }}
+                    position={{
+                        X: dimensions.X / 2,
+                        Y: + (ALL_DRAWERS_HEIGHT / 2),
+                        Z: position.Z
+                    }}
+                    numOfShelves={numOfShelves}
+                    withRod={withRod}
+                />
+            }
+
             <DrawersConstructor dimensions={dimensions} position={{ X: dimensions.X / 2, Y: position.Y, Z: position.Z }} numOfDrawers={numOfDrawers} />
 
 

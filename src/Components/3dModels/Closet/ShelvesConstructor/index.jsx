@@ -3,17 +3,18 @@ import Shelf from "../Shelf";
 import { useContext } from "react";
 import { DataContext } from "../../../../Context/MainContext";
 
-function ShelvesConstructor({ position, dimensions, numOfShelves }) {
+function ShelvesConstructor({ position, dimensions, numOfShelves, withRod }) {
     const materialType = useContext(DataContext).newFakeData.orders.material,
         { materials } = useGLTF('/assets/3dModels/Materials.glb'),
         shelvesArr = Array.from({ length: numOfShelves }, (_, i) => i),
         THICKNESS = 0.02;
 
     const
-        gap = dimensions.Y / (numOfShelves + 1),
-        start = position.Y - (dimensions.Y / 2) + gap,
+        gap = dimensions.Y / (numOfShelves + Number(!withRod)),
+        start = position.Y + (!withRod * -dimensions.Y / 2),
         asdf = 4
 
+    console.log("shelvesTotal:", numOfShelves + withRod);
 
     /* creating the shelves: */
     return (
