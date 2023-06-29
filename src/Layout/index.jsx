@@ -22,12 +22,12 @@ function Layout() {
   const navigate = useNavigate();
   const [errorsMsg, setErrorsMsg] = useState([])
 
-  
+
   const submitClick = () => {
-    
+
     const errors = errorChecking(context)
     setErrorsMsg(errors)
-    if (errors.length >0) return false
+    if (errors.length > 0) return false
     console.log(context.stage);
     if (context.stage === 5) {
       navigate('payment')
@@ -39,11 +39,11 @@ function Layout() {
   const submitClickback = () => {
     console.log(context.stage);
     setErrorsMsg(errorChecking(context))
-    context.setStage(prev => prev !== 1  ? prev - 1 :prev )
+    context.setStage(prev => prev !== 1 ? prev - 1 : prev)
   }
 
   const btyforward = <Button className={styles.nextButton} onClick={submitClick} text={'המשך'} />
-  const btyBack = <Button className={styles.btyBack} onClick={submitClickback} text={'אחורה'} isLeft={false}/>
+  const btyBack = <Button className={styles.btyBack} onClick={submitClickback} text={'אחורה'} isLeft={false} />
 
   const header = <Header />;
   // const progressBar = "progressBar";
@@ -53,7 +53,7 @@ function Layout() {
     2: <Size />,
     3: <Viewer3d />,
     4: <Viewer3d />,
-    5: <Viewer3d />,
+    5: [<Viewer3d />, <Viewer3d withDoors= {true} />],
   };
   const To_RightBar = {
     1: "",

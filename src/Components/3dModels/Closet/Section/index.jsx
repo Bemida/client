@@ -10,7 +10,7 @@ import ShelvesConstructor from "../ShelvesConstructor";
 
 
 
-function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneDoor = false, numOfDrawers = 2, withRod = true }) {
+function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneDoor = false, numOfDrawers = 2, withRod = true , withDoors}) {
     const materialText = useContext(DataContext).fullOrder.color || "אורן"
     const materialType = (materialText === "אורן") ? "wood" : (materialText === "לבן") ? "white" : "chrome"; const { materials } = useGLTF('/assets/3dModels/Materials.glb')
     const legGap = 0.07,
@@ -47,6 +47,7 @@ function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneD
                     numOfShelves={numOfShelves}
                     numOfDrawers={numOfDrawers}
                     withRod={withRod}
+                    withDoors={withDoors}
                 />
 
 

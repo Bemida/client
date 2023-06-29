@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { DataContext } from "../../Context/MainContext";
 import Scene3d from "../Scene3d";
 
-function Viewer3d() {
+function Viewer3d({ withDoors }) {
   const context = useContext(DataContext).fullOrder
   const stage = useContext(DataContext).stage
   console.log(context);
@@ -42,10 +42,8 @@ function Viewer3d() {
       <ambientLight intensity={0.3} />
       <OrbitControls />
 
-      <Scene3d dimensions={dimensions} />
-      {(stage === 5) &&
-        <Scene3d dimensions={dimensions} position={[dimensions.X * 2, position.Y, position.Z]} />
-      }
+      <Scene3d dimensions={dimensions} position={[0, 0, 0]} withDoors={withDoors} />
+
 
     </Canvas >
   )

@@ -3,7 +3,7 @@ import Section from "./Section"
 import { DataContext } from "../../../Context/MainContext"
 import FloorFrame from "./FloorFrame"
 
-function Closet({ dimensions }) {
+function Closet({ dimensions, withDoors }) {
 
 
   const
@@ -12,7 +12,7 @@ function Closet({ dimensions }) {
     doors = order.doors,
     // doors = order.doors,
     sections = order.sections
-    // sections = order.sections,
+  // sections = order.sections,
   function isSingleDoor(i) {
     return (i + 1 === sections.length && doors % 2 === 1)
   }
@@ -37,9 +37,10 @@ function Closet({ dimensions }) {
             }}
             numOfShelves={v.shelves}
             numOfDrawers={v.drawers}
-            withRod = {v.hangingRod}
+            withRod={v.hangingRod}
             withLegs={true}
             oneDoor={isSingleDoor(i)}
+            withDoors={withDoors}
           />
         )
       })}
