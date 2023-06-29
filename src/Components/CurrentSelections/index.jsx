@@ -37,32 +37,34 @@ function CurrentSelections({ style = {}, selections }) {
 
   const keys = Object.keys(selections)
   let regularText = ''
+const listOfFlat = keys
+.filter((v) => LanguageTranslater[v] && !LanguageTranslater[v]['group'])
+.sort((a, b) => Number(LanguageTranslater[a]['ordinal']) < Number(LanguageTranslater[b]['ordinal']) ? 1 : -1)
 
+console.log(listOfFlat);
+  keys//שרשור נתוני מימדי הארון לשורה יחידה
+    .filter((v) => LanguageTranslater[v] && LanguageTranslater[v]['group'] === 'dimentions')
+    .sort((a, b) => Number(LanguageTranslater[a]['ordinal']) < Number(LanguageTranslater[b]['ordinal']) ? 1 : -1)
+    .forEach((k) => regularText += LanguageTranslater[k]['heb'] + ' ' + selections[k] + ' ' + LanguageTranslater[k]['postfix'])
   return (
     <div className={styles.name} style={style} >
 
       <ul className={styles.Selectionlist}>
         {
-          keys
-            .filter((v) => LanguageTranslater[v] && LanguageTranslater[v]['group'] === 'dimentions')
-            .forEach((k) => regularText += LanguageTranslater[k]['heb'] + ' ' + selections[k] + ' ' + LanguageTranslater[k]['postfix'])
-        }
-          {regularText&&<li key='dimentions'>
+          regularText&&<li key='dimentions'>
             <SelectionRow bolder={LanguageTranslater['dimentions']['heb']} regular={regularText} />
-          </li>}
-        
-        {/* TODO: add sort() after filter */}
+          </li>
+        }
         {
-        keys
-          .filter((v) => LanguageTranslater[v] && !LanguageTranslater[v]['group'])
-          .sort((a, b) => Number(LanguageTranslater[a]['ordinal']) < Number(LanguageTranslater[b]['ordinal']) ? 1 : -1)
-          .map((k) => {
+       listOfFlat
+          .map((k) => 
             typeof selections[k] === 'object' ?// <li key={k}>{k}</li>:
-              Object.keys(selections[k])
+              Object.keys(selections[k])//כניסה לאובייקט
                 .map((d) =>
                   <li key={d}><SelectionRow bolder={LanguageTranslater[k]['heb']} regular={selections[k][d]} /></li>) :
+            //   //אם לא אובייקט
               <li key={k}><SelectionRow bolder={LanguageTranslater[k]['heb']} regular={selections[k] + ' ' + LanguageTranslater[k]['postfix']} /></li>
-            }
+            
           )
         }
 
