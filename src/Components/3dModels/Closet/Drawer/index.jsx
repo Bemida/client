@@ -1,4 +1,5 @@
 import Shelf from "../Shelf";
+import Handle from "../handle";
 
 //Creator : didi
 function Drawer({ position, dimensions, material, }) {
@@ -24,6 +25,14 @@ function Drawer({ position, dimensions, material, }) {
                         Z: -dimensions.Z / 2
                     }}
                     material={material}
+                />
+                <Handle
+                    position={[
+                        dimensions.X / 2,
+                        (-dimensions.Y + thickness + HightDrawer) / 2,
+                        dimensions.Z / 2
+                    ]}
+                    dimensions={dimensions}
                 />
             </group>
         </>)

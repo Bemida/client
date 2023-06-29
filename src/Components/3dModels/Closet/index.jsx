@@ -5,11 +5,14 @@ import FloorFrame from "./FloorFrame"
 
 function Closet({ dimensions }) {
 
-  const
-    order = useContext(DataContext).newFakeData.orders,
-    doors = order.doors,
-    sections = order.sections
 
+  const
+    // order = useContext(DataContext).newFakeData.orders,
+    order = useContext(DataContext).fullOrder,
+    doors = order.doors,
+    // doors = order.doors,
+    sections = order.sections
+    // sections = order.sections,
   function isSingleDoor(i) {
     return (i + 1 === sections.length && doors % 2 === 1)
   }
