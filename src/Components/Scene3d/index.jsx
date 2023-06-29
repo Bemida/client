@@ -14,19 +14,13 @@ function Scene3d({ dimensions }) {
             <mesh
                 receiveShadow
                 position={[dimensions.X / 2, -dimensions.Y / 2 - 0.01, 0]}
-                material={materials.chrome}
+                material={materials.white}
             >
                 <boxGeometry args={[dimensions.X + 2, 0.02, dimensions.Z + 2]} />
             </mesh>
 
             <Closet dimensions={dimensions} />
 
-            {/* <Door dimensions={dimensions} material={materials.wood} side="right"/>  */}
-            {/* <Door dimensions={dimensions} material={materials.wood} />
-      <Door dimensions={dimensions} material={materials.wood} side="right" /> */}
-
-
-            {/* <Closet4Doors width={size[0]} height={size[1]} depth={size[2]} position={[0, 0, 0]} /> */}
         </>
     )
 }

@@ -3,10 +3,13 @@ import Structure from "../Structure"
 import Shelf from "../Shelf";
 import Leg from "../Leg";
 import Drawer from "../Drawer";
+import { useContext } from "react";
+import { DataContext } from "../../../../Context/MainContext";
 
 
 
 function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneDoor = false, numOfDrawer = 2 }) {
+    const materialType = useContext(DataContext).newFakeData.orders.material
     const { materials } = useGLTF('/assets/3dModels/Materials.glb')
     const legGap = 0.07;
     const drawerArr = Array.from({ length: numOfDrawer }, (_, i) => i);
@@ -32,7 +35,8 @@ function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneD
                         Y: 0.05,
                         Z: 0
                     }}
-                    material={materials.wood}
+                    material={materials[materialType]}
+                    oneDoor={oneDoor}
                 />
 
                 {/* creating the Drawer: */}
@@ -42,7 +46,7 @@ function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneD
                         <Drawer
                             key={n}
                             dimensions={dimensions}
-                            material={materials.wood}
+                            material={materials[materialType]}
                             position={{
                                 X: position.X,
                                 Y: (
