@@ -24,10 +24,14 @@ function Layout() {
 
   const submitClick = () => {
     setErrorsMsg(errorChecking(context))
+
+    setTimeout(()=> setErrorsMsg([]),3000)
+
     console.log(context.stage);
     if (context.stage === 5) {
       navigate('payment')
     }
+
     context.setStage(prev => prev !== 5 ? prev + 1 : prev)
   }
 
@@ -46,7 +50,7 @@ function Layout() {
     1: "",
     2: "",
     3: <Sidebar title={"בחירת הסגנון האהוב עליך"} />,
-    4: <SideBarInner />,
+    4: <SideBarInner title={'בחירת העיצוב פנים האהוב עליך'} />,
     5: "",
   };
   const To_LeftBar = {
