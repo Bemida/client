@@ -5,6 +5,7 @@ import Layout from "../Layout";
 import ChangePassword from "../Pages/ChangePassword";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import Payment from "../Components/Payment";
 
 function MainRoutes() {
   return (
@@ -13,6 +14,7 @@ function MainRoutes() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/changepassword" element={<ChangePassword />} />
+      <Route path="/payment" element={<Payment />} />
     </Routes>
   );
 }

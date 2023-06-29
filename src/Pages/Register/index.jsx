@@ -21,7 +21,7 @@ const handleSubmit = (e) => {
         passwordVerification:confirmpassword
     }
     api.post(url, data)
-    navigate('/users/login')
+    navigate('/login')
 
 }
 

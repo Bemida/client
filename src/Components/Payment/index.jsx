@@ -1,3 +1,4 @@
+import Button_Payment from "../Button_payment";
 import Input from "../Input";
 import styles from "./style.module.css";
 import { useState } from "react";
@@ -25,7 +26,7 @@ function Payment(props) {
       <Input label="מספר כרטיס אשראי" id="#cardNumber" type="number" isRequired={true} onChange={setInput} isValid={inputsValid['#cardNumber'] == undefined ? true : inputsValid["#cardNumber"]} />
       <Input label="תוקף" id="#expirationDate" type="month" isRequired={true} onChange={setInput} min={actualDate} isValid={inputsValid['#expirationDate'] == undefined ? true : inputsValid["#expirationDate"]} />
       <Input label="CVV" id="#CVV" type="number" isRequired={true} onChange={setInput} isValid={inputsValid['#CVV'] == undefined ? true : inputsValid["#CVV"]} />
-
+      <Button_Payment />
     </div >
   );
 }
