@@ -74,19 +74,19 @@ export function messageTemplate(orderContext, imagesArr) {
             <strong>חלק 1:</strong>
         </p>
         <p class="orderDetails">
-            <strong>מדפים :</strong> ${orderContext.section1.shelves}
+            <strong>מדפים :</strong> ${orderContext.sections[0].shelves}
         </p>
         <p class="orderDetails">
-            <strong>תליה :</strong> ${orderContext.section1.hangingRod ? 'עם תליה' : 'ללא תליה'}
+            <strong>תליה :</strong> ${orderContext.sections[0].hangingRod ? 'עם תליה' : 'ללא תליה'}
         </p>
         <p class="orderDetails">
             <strong>חלק 2:</strong>
         </p>
         <p class="orderDetails">
-            <strong>מדפים :</strong> ${orderContext.section2.shelves}
+            <strong>מדפים :</strong> ${orderContext.sections[1].shelves}
         </p>
         <p class="orderDetails">
-            <strong>תליה :</strong> ${orderContext.section2.hangingRod ? 'yes' : 'no'}
+            <strong>תליה :</strong> ${orderContext.sections[1].hangingRod ? 'yes' : 'no'}
         </p>
     </div>
     <h2>סה"כ לתשלום :${orderContext.total} ש"ח</h2>

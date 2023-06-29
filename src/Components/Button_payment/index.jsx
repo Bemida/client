@@ -9,13 +9,12 @@ import Button from '../Button';
 
 
 
-export default function Button_Payment({props}) {
-  const { newFakeData } = useContext(DataContext)
+export default function Button_Payment(props) {
+  const { fullOrder } = useContext(DataContext)
 
   async function createHtmlEmail() {
-    // console.log(props)
-    const allData= {...newFakeData.sorders, ...props}
-    const data = { email: messageTemplate(newFakeData.orders), createorder: newFakeData.orders }
+    const allData= {...fullOrder, userPhone:props.value.userPhone,userEmail:props.value.userEmail,userName:props.value.userName}
+    const data = { email: messageTemplate(allData), createorder: allData }
     return data
   }
 

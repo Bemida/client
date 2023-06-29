@@ -51,7 +51,7 @@ function Payment(props) {
     <DisplayCurrentSelection />
     </div>
 
-      <Button_Payment props={formData}/>
+      <Button_Payment value={formData}/>
     </div></form>
   );
 }
