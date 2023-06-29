@@ -112,7 +112,7 @@ const fakeItemData = {
             type: 'boolean'
         },
         drawers: {
-            name: 'מדפים',
+            name: 'מגרות',
             key: 'drawers',
             type: 'number'
         },
