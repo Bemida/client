@@ -4,7 +4,7 @@ import styles from "./style.module.css";
 //Creator : didi - add div to className
 //Creator : didi - add context
 
-function Grid({Main_Section,progressBar,RightBar,LeftBar,bty,header,errorsMsg}) {
+function Grid({Main_Section,progressBar,RightBar,LeftBar,btyforward,btyBack,header,errorsMsg}) {
   
   
 
@@ -23,8 +23,9 @@ function Grid({Main_Section,progressBar,RightBar,LeftBar,bty,header,errorsMsg}) 
         {progressBar}
       </div>
       <div className={styles.d}>
-       
-        {bty}
+        {errorsMsg.length > 0 && <Errors errorsMsg={errorsMsg}/>}
+        {btyforward}
+        {btyBack}
       </div>
       <div className={styles.sr}>
         {RightBar}

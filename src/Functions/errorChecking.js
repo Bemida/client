@@ -1,7 +1,7 @@
 const validation = {
   // value: null or function
   // function : if error - return "msg"
-
+  
   1: {
     furniture: null,
   },
@@ -24,6 +24,7 @@ const validation = {
     section2_hangingRod: null,
     section2_shelves: null,
   },
+  5:{}
 };
 
 export default function errorChecking(context) {
