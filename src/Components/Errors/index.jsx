@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Errors({errorsMsg}) {
+import styles from './style.module.css'
+
+function Errors({ errorsMsg }) {
   return (
-    <div><ul>{errorsMsg.map((e,i)=> <li key={i}>{e.msg}</li>)}</ul></div>
+    <div className={styles.errors}><ul>{errorsMsg.map((e, i) => <li key={i}>{e.msg}</li>)}</ul></div>
   )
 }
 

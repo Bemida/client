@@ -12,34 +12,30 @@ import Header from "../Components/Header";
 import DisplayCurrentSelection from "./DisplayCurrentSelection";
 import errorChecking from '../Functions/errorChecking';
 import SideBarInner from "../Components/SideBarInner";
-import CalcPayment from '../Components/CalcPayment'
-
 
 //Creator : didi 
 
 
 function Layout() {
   const context = useContext(DataContext);
-
+  const navigate = useNavigate();
   const [errorsMsg, setErrorsMsg] = useState([])
+
   const submitClick = () => {
+    console.log(context.stage);
     setErrorsMsg(errorChecking(context))
+
+    setTimeout(()=> setErrorsMsg([]),3000)
+
+    console.log(context.stage);
+    if (context.stage === 5) {
+      navigate('payment')
+    }
+
     context.setStage(prev => prev !== 5 ? prev + 1 : prev)
   }
+
   const bty = <Button className={styles.nextButton} onClick={submitClick} text={'המשך'} />
-  const bty2 = <Button className={styles.nextButton} onClick={submitClick} />
-const btn =  {
-  1: bty,
-  2: bty,
-  3: bty,
-  4: bty,
-  5: <>
-  <CalcPayment />
-  {bty2} 
-        
-  </>,
-};
-  
   const header = <Header />;
   // const progressBar = "progressBar";
   const progressBar = <ProgressBar />;
@@ -54,7 +50,7 @@ const btn =  {
     1: "",
     2: "",
     3: <Sidebar title={"בחירת הסגנון האהוב עליך"} />,
-    4: <SideBarInner />,
+    4: <SideBarInner title={'בחירת העיצוב פנים האהוב עליך'} />,
     5: "",
   };
   const To_LeftBar = {
@@ -74,7 +70,7 @@ const btn =  {
   const BtnByStage = btn[context.stage];
   return (
     <div className={styles.containerLayout}>
-      <Grid Main_Section={Main_Section} RightBar={RightBar} LeftBar={LeftBar} progressBar={progressBar} bty={BtnByStage} header={header} errorsMsg={errorsMsg} />
+      <Grid Main_Section={Main_Section} RightBar={RightBar} LeftBar={LeftBar} progressBar={progressBar} bty={bty} header={header} errorsMsg={errorsMsg} />
     </div>
   )
 }
