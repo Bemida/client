@@ -161,8 +161,8 @@ const fakeOrderData = {
     doors: 5,
     color: "brown",
     handleId: "1234",
-    stageNo: 4,
-    base: "sokol",
+    stageNo: 5,
+    base: "tzokel",
     total: 1000,
 };
 
