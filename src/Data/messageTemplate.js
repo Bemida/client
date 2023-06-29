@@ -115,7 +115,11 @@ export function messageTemplate(orderContext, imagesArr) {
 </body>
 
 </html>`
+<<<<<<< HEAD
 //let x=renderToString(<CurrentSelections selections={contextOrder.newFakeData.orders}/>) ;
 //console.log(x)
+=======
+
+>>>>>>> 659e1a13ba0626a1ec333e7148e474e1bde3e6e2
     return { email: orderContext.userEmail, title: 'אישור הזמנה', html: msg };
 }

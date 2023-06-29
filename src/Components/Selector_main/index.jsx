@@ -6,7 +6,7 @@ import { DataContext } from '../../Context/MainContext'
 export default function SelectorMain() {
     const [isSelect, setIsSelect] = useState("")
     const context = useContext(DataContext)
-    const listCategories = context.fakeData.items.categories
+    const listCategories = context.newFakeData.items.categories
     const select = (c) => {
         setIsSelect(c.category)
     }

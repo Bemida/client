@@ -6,7 +6,6 @@ import { DataContext } from "../../Context/MainContext";
 
 function ProgressBar() {
   const context = useContext(DataContext);
-  console.log(context);
 
   const options = [
     "סוג רהיט",
