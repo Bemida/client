@@ -1,8 +1,8 @@
-import React from 'react'
 import styles from './style.module.css'
 import { useState } from 'react'
 import api from '../../Functions/API_Calls/apiCalls'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useEffect } from 'react'
 
 
 export default function ChangePassword() {
@@ -21,13 +21,18 @@ export default function ChangePassword() {
     }
 
     const handelSubmit = (e) => {
-        if (password === passwordVerification && api.put(password, passwordVerification, localStorage.token) !== "Password changed successfully") {
+        if (password === passwordVerification && api.post("/users/detectingpasswordchange", { password, passwordVerification, token: localStorage.token }) !== "Password changed successfully") {
             setIsEqual(true);
         }
         else {
             navigate("/")
         }
     }
+
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        localStorage.setItem('token', useParams.token);
+    }, []);
 
     return (
         <div className={styles.warp}>
