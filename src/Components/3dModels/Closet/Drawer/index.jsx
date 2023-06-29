@@ -28,11 +28,10 @@ function Drawer({ position, dimensions, material, }) {
                 />
                 <Handle
                     position={[
-                        dimensions.X / 2,
-                        (-dimensions.Y + thickness + DRAWER_HEIGHT) / 2,
-                        dimensions.Z / 2
+                        0, 0, 0
                     ]}
                     dimensions={dimensions}
+                    rotate={true}
                 />
             </group>
         </>)
