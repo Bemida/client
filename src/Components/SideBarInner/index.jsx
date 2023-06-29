@@ -24,8 +24,6 @@ function SideBarInner({ title }) {
 
                     const list = Object.entries(sec);
                     const onChange = (newVal, key) => {
-
-
                         setFullOrder(prev => ({ ...prev, sections: prev.sections.map((sec, i) => i === index ? { ...sec, [key]: newVal } : sec) }))
 
                     }
