@@ -16,8 +16,10 @@ function DisplayCurrentSelection({ ...props }) {
 
   const selections = context.fullOrder//data.orders 
   //const selections = data.orders 
+  const dataFull = data.orders
 
-  // console.log(dataFull);
+  console.log("kkk", selections);
+
 
   let ListTitle = selections.furniture//"הארון שלי"
 
@@ -25,7 +27,7 @@ function DisplayCurrentSelection({ ...props }) {
     <div className={styles.currentSelection}>
 
       <h3 className={styles.ListTitle}>{ListTitle}</h3>
-      <CurrentSelections selections={selections}/>
+      <CurrentSelections selections={selections} />
 
     </div>
   )

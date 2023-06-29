@@ -1,13 +1,16 @@
+import { DataContext } from "../../Context/MainContext";
 import DisplayCurrentSelection from "../../Layout/DisplayCurrentSelection";
 import Button_Payment from "../Button_payment";
 import Header from "../Header";
 import Input from "../Input";
 import styles from "./style.module.css";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 // props: {}
 // creator: Haya
 
 function Payment(props) {
+
+  const {fullOrder, setFullOrder}= useContext(DataContext)
   const [inputsObj, setInputsObj] = useState({});
   const [inputsValid, setInputsValid] = useState({});
   const actualDate = new Date().toISOString().split("T")[0].substring(0, 7);
@@ -16,16 +19,17 @@ function Payment(props) {
     setInputsObj({ ...inputsObj, [e.target.id]: e.target.value });
     // setInputsValid({ ...inputsValid, [e.target.id]: e.target.value && e.target.value.length > 0 })
     setInputsValid({ ...inputsValid, [e.target.id]: undefined || e.target.value.length > 0 })
-    console.log(inputsObj)
-    console.log(inputsValid)
+    setFullOrder({...fullOrder,userEmail: e.target.value})
+   
   }
+  useEffect(()=>{console.log(fullOrder)},[fullOrder])
 
 // function setInputsValid(){
 //  return( isRequired={true} ,onChange={setInput} ,isValid={(inputsValid['#name'] == undefined) ? true : inputsValid["#name"])}
 
   return (
     <div className="all">
-<Header/> pppp
+<Header/> <h4>payment</h4>
 <div className={styles.inputs}>
     < div className={styles.paymentPage} style={props.style || {}}  {...props}>
       <div className="title"> שם מלא </div>
@@ -34,14 +38,8 @@ function Payment(props) {
       <Input id="#mail" type="mail" isRequired={true} onChange={setInput} isValid={inputsValid['#mail'] == undefined ? true : inputsValid["#mail"]} />
       <div className="title"> טלפון נייד  </div>
       <Input id="#tel" type="number" isRequired={true} onChange={setInput} isValid={inputsValid['#tel'] == undefined ? true : inputsValid["#tel"]} />
-     <select >
-      <option hidden="">בחר סוג משלוח </option>
-      <option hidden="">בחר סוג משלוח 1</option>
-      <option hidden="">בחר סוג משלוח 2</option>
-      <option hidden="">בחר סוג משלוח 3</option>
-     </select>
       <div className="title"> תעודת זהות  </div>
-      <Input id="#idNumber" type="number" isRequired={true} onChange={setInput} isValid={inputsValid['#idNumber'] == undefined ? true : inputsValid["#idNumber"]} />
+      <Input id="#idNumber" type="number" isRequired={true} onChange={setInput}  isValid={inputsValid['#idNumber'] == undefined ? true : inputsValid["#idNumber"]} />
       <div className="title">  מספר כרטיס אשראי </div>
       <Input id="#cardNumber" type="number" isRequired={true} onChange={setInput} isValid={inputsValid['#cardNumber'] == undefined ? true : inputsValid["#cardNumber"]} />
       <div className="title"> תוקף </div>
