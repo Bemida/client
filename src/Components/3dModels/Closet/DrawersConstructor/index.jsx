@@ -4,8 +4,8 @@ import { useContext } from "react";
 import { DataContext } from "../../../../Context/MainContext";
 
 function DrawersConstructor({ dimensions, position, numOfDrawers }) {
-    const materialType = useContext(DataContext).newFakeData.orders.material
-    const { materials } = useGLTF('/assets/3dModels/Materials.glb')
+    const materialText = useContext(DataContext).fullOrder.color || "אורן"
+    const materialType = (materialText === "אורן") ? "wood" : (materialText === "לבן") ? "white" : "chrome";    const { materials } = useGLTF('/assets/3dModels/Materials.glb')
     const drawersArr = Array.from({ length: numOfDrawers }, (_, i) => i);
     const DRAWER_HEIGHT = 0.2;
     const THICKNESS = 0.02;
