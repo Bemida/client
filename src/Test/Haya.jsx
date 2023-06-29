@@ -217,11 +217,7 @@ export default function Haya() {
         //     {/* <input type="submit" value="Submit" />  */}
         //     {/* </form> */}
         // </div>
-<<<<<<< HEAD
-        // <Payment />
-=======
-        <CurrentSelections selections={contextOrder.newFakeData.orders} style={{li:{'color':"blue",'direction':'rtls'}}} />
->>>>>>> 659e1a13ba0626a1ec333e7148e474e1bde3e6e2
+       
         //<div>
         <CurrentSelections selections={contextOrder.newFakeData.orders} style1={{li:{ 'color':'blue','direction':'rtl' }}}/>
 
