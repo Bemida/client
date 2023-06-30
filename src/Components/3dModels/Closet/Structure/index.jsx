@@ -87,7 +87,7 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
                     }}
                     position={{
                         X: dimensions.X / 2,
-                        Y: + (ALL_DRAWERS_HEIGHT / 2),
+                        Y: (ALL_DRAWERS_HEIGHT / 2) + ((dimensions.Y - ALL_DRAWERS_HEIGHT) / (numOfShelves + 1)),
                         Z: position.Z
                     }}
                     numOfShelves={numOfShelves}
