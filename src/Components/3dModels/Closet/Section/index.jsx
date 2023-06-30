@@ -39,7 +39,7 @@ function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneD
                     }}
                     position={{
                         X: 0,
-                        Y: 0,
+                        Y: 0.05,
                         Z: 0
                     }}
                     material={materials[materialType]}

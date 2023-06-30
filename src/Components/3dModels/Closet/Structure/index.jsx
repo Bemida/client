@@ -98,26 +98,44 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
             <DrawersConstructor dimensions={dimensions} position={{ X: dimensions.X / 2, Y: position.Y, Z: position.Z }} numOfDrawers={numOfDrawers} />
 
 
-            {
-                (stage !== 4 && withDoors) && <Door position={position} dimensions={{ X: dimensions.X, Y: dimensions.Y, Z: dimensions.Z }} material={materials[materialType]} side={"left"} isSingular={oneDoor} />
-            }{
-                (!oneDoor) && (stage !== 4 && withDoors) &&
-                <Door
-                    position={{
-                        X: 0,
-                        Y: -dimensions.Y / 2 + ALL_DRAWERS_HEIGHT + ((dimensions.Y - ALL_DRAWERS_HEIGHT) / 2),
-                        Z: 0
-                    }}
-                    dimensions={{
-                        X: dimensions.X,
-                        Y: dimensions.Y - ALL_DRAWERS_HEIGHT,
-                        Z: dimensions.Z
-                    }}
-                    material={materials[materialType]}
-                    side={"right"} />
+            {/* rendering the doors: */}
+
+            {(withDoors) &&
+                <group>
+                    <Door
+                        position={{
+                            X: position.X,
+                            Y: -dimensions.Y / 2 + ALL_DRAWERS_HEIGHT + ((dimensions.Y - ALL_DRAWERS_HEIGHT) / 2),
+                            Z: position.Z
+                        }}
+                        dimensions={{
+                            X: dimensions.X,
+                            Y: dimensions.Y - ALL_DRAWERS_HEIGHT,
+                            Z: dimensions.Z
+                        }}
+                        material={materials[materialType]}
+                        side={"left"}
+                        isSingular={oneDoor}
+                    />
+                    {
+                        (!oneDoor) &&
+                        <Door
+                            position={{
+                                X: 0,
+                                Y: -dimensions.Y / 2 + ALL_DRAWERS_HEIGHT + ((dimensions.Y - ALL_DRAWERS_HEIGHT) / 2),
+                                Z: 0
+                            }}
+                            dimensions={{
+                                X: dimensions.X,
+                                Y: dimensions.Y - ALL_DRAWERS_HEIGHT,
+                                Z: dimensions.Z
+                            }}
+                            material={materials[materialType]}
+                            side={"right"}
+                        />
+                    }
+                </group>
             }
-
-
         </group>
 
     )
