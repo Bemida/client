@@ -105,12 +105,12 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
                     <Door
                         position={{
                             X: position.X,
-                            Y: -dimensions.Y / 2 + ALL_DRAWERS_HEIGHT + ((dimensions.Y - ALL_DRAWERS_HEIGHT) / 2),
+                            Y: -dimensions.Y / 2 + ALL_DRAWERS_HEIGHT + ((dimensions.Y - ALL_DRAWERS_HEIGHT) / 2) + ((DRAWER_GAP * numOfDrawers) / 2),
                             Z: position.Z
                         }}
                         dimensions={{
                             X: dimensions.X,
-                            Y: dimensions.Y - ALL_DRAWERS_HEIGHT,
+                            Y: dimensions.Y - ALL_DRAWERS_HEIGHT - (DRAWER_GAP * numOfDrawers),
                             Z: dimensions.Z
                         }}
                         material={materials[materialType]}
@@ -122,12 +122,12 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
                         <Door
                             position={{
                                 X: 0,
-                                Y: -dimensions.Y / 2 + ALL_DRAWERS_HEIGHT + ((dimensions.Y - ALL_DRAWERS_HEIGHT) / 2),
+                                Y: -dimensions.Y / 2 + ALL_DRAWERS_HEIGHT + ((dimensions.Y - ALL_DRAWERS_HEIGHT) / 2) + ((DRAWER_GAP * numOfDrawers) / 2),
                                 Z: 0
                             }}
                             dimensions={{
                                 X: dimensions.X,
-                                Y: dimensions.Y - ALL_DRAWERS_HEIGHT,
+                                Y: dimensions.Y - ALL_DRAWERS_HEIGHT - (DRAWER_GAP * numOfDrawers),
                                 Z: dimensions.Z
                             }}
                             material={materials[materialType]}
