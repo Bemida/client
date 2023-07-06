@@ -1,11 +1,5 @@
 import React from 'react'
-import Button from '../Components/Button'
-import Counter from '../Components/Counter'
-import Toggle from '../Components/Toggle'
-import {IoIosArrowDown, IoIosArrowBack} from "react-icons/io"
-import SidebarCollapse from '../Components/SidebarCollapse'
-import SidebarTab from '../Components/SidebarTab'
-import SideBarInner from '../Components/SidebarInner'
+import SideBarInner from '../Components/SideBarInner'
 
 export default function Hadassah() {
   return (
