@@ -2,6 +2,9 @@ import axios from "axios";
 import Input from "../Input";
 import styles from "./style.module.css";
 import { useEffect, useState } from "react";
+import Header from "../Header";
+import DisplayCurrentSelection from "../../Layout/DisplayCurrentSelection";
+import Button_Payment from "../Button_payment";
 // props: {}
 // creator: Haya
 

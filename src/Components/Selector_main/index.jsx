@@ -14,12 +14,12 @@ export default function SelectorMain() {
         setFullOrder({...fullOrder, furniture:c.category })
         
     }
-    return <>
+    return <div style={{flexDirection:'column'}}>
         <div className={styles.innerText}> <h1>?מה מעצבים היום</h1></div>
         <div className={styles.body}>
 
             {listCategories.map(c => <div key={c.id} >
                 <SelectButton text={c.category} style={isSelect === c.category ? { border: "3px solid black" } : {}} isAvailable={c.isAvailable} onClick={() =>{ select(c)}} /> </div>)}
         </div>
-    </>
+    </div>
 }
