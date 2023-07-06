@@ -8,7 +8,7 @@ import { DataContext } from "../../../../Context/MainContext";
 import DrawersConstructor from "../DrawersConstructor";
 
 
-function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numOfShelves = 3, oneDoor, numOfDrawers = 0, withRod }) {
+function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numOfShelves = 3, oneDoor, numOfDrawers = 0, withRod, withDoors }) {
     const materialText = useContext(DataContext).fullOrder.color || "אורן"
     const materialType = (materialText === "אורן") ? "wood" : (materialText === "לבן") ? "white" : "chrome"; const { materials } = useGLTF('/assets/3dModels/Materials.glb'),
         stage = useContext(DataContext).stage,
@@ -87,7 +87,7 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
                     }}
                     position={{
                         X: dimensions.X / 2,
-                        Y: + (ALL_DRAWERS_HEIGHT / 2),
+                        Y: (ALL_DRAWERS_HEIGHT / 2) + ((dimensions.Y - ALL_DRAWERS_HEIGHT) / (numOfShelves + 1)),
                         Z: position.Z
                     }}
                     numOfShelves={numOfShelves}
@@ -98,26 +98,44 @@ function Structure({ dimensions, material, position = { X: 0, Y: 0, Z: 0 }, numO
             <DrawersConstructor dimensions={dimensions} position={{ X: dimensions.X / 2, Y: position.Y, Z: position.Z }} numOfDrawers={numOfDrawers} />
 
 
-            {
-                (stage !== 4) && <Door position={position} dimensions={{ X: dimensions.X, Y: dimensions.Y, Z: dimensions.Z }} material={materials[materialType]} side={"left"} isSingular={oneDoor} />
-            }{
-                (!oneDoor) && (stage !== 4) &&
-                <Door
-                    position={{
-                        X: 0,
-                        Y: -dimensions.Y / 2 + ALL_DRAWERS_HEIGHT + ((dimensions.Y - ALL_DRAWERS_HEIGHT) / 2),
-                        Z: 0
-                    }}
-                    dimensions={{
-                        X: dimensions.X,
-                        Y: dimensions.Y - ALL_DRAWERS_HEIGHT,
-                        Z: dimensions.Z
-                    }}
-                    material={materials[materialType]}
-                    side={"right"} />
+            {/* rendering the doors: */}
+
+            {(withDoors) &&
+                <group>
+                    <Door
+                        position={{
+                            X: position.X,
+                            Y: -dimensions.Y / 2 + ALL_DRAWERS_HEIGHT + ((dimensions.Y - ALL_DRAWERS_HEIGHT) / 2) + ((DRAWER_GAP * numOfDrawers) / 2),
+                            Z: position.Z
+                        }}
+                        dimensions={{
+                            X: dimensions.X,
+                            Y: dimensions.Y - ALL_DRAWERS_HEIGHT - (DRAWER_GAP * numOfDrawers),
+                            Z: dimensions.Z
+                        }}
+                        material={materials[materialType]}
+                        side={"left"}
+                        isSingular={oneDoor}
+                    />
+                    {
+                        (!oneDoor) &&
+                        <Door
+                            position={{
+                                X: 0,
+                                Y: -dimensions.Y / 2 + ALL_DRAWERS_HEIGHT + ((dimensions.Y - ALL_DRAWERS_HEIGHT) / 2) + ((DRAWER_GAP * numOfDrawers) / 2),
+                                Z: 0
+                            }}
+                            dimensions={{
+                                X: dimensions.X,
+                                Y: dimensions.Y - ALL_DRAWERS_HEIGHT - (DRAWER_GAP * numOfDrawers),
+                                Z: dimensions.Z
+                            }}
+                            material={materials[materialType]}
+                            side={"right"}
+                        />
+                    }
+                </group>
             }
-
-
         </group>
 
     )

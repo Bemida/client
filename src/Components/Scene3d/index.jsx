@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { DataContext } from "../../Context/MainContext";
 import Closet from "../3dModels/Closet";
 
-function Scene3d({ dimensions }) {
+function Scene3d({ dimensions, position, withDoors }) {
     const { materials } = useGLTF('/assets/3dModels/Materials.glb')
 
     return (
@@ -18,7 +18,7 @@ function Scene3d({ dimensions }) {
             >
                 <boxGeometry args={[dimensions.X + 2, 0.02, dimensions.Z + 2]} />
             </mesh>
-            <Closet dimensions={dimensions} />
+            <Closet dimensions={dimensions} withDoors={withDoors} />
 
         </>
     )

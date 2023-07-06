@@ -10,9 +10,9 @@ import ShelvesConstructor from "../ShelvesConstructor";
 
 
 
-function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneDoor = false, numOfDrawers = 2, withRod = true }) {
+function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneDoor = false, numOfDrawers = 2, withRod = true , withDoors}) {
     const materialText = useContext(DataContext).fullOrder.color || "אורן"
-    const materialType = (materialText === "אורן") ? "wood" : (materialText === "לבן") ? "white" : "chrome";    const { materials } = useGLTF('/assets/3dModels/Materials.glb')
+    const materialType = (materialText === "אורן") ? "wood" : (materialText === "לבן") ? "white" : "chrome"; const { materials } = useGLTF('/assets/3dModels/Materials.glb')
     const legGap = 0.07,
         thickness = 0.02
     const DRAWER_HEIGHT = 0.2;
@@ -39,7 +39,7 @@ function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneD
                     }}
                     position={{
                         X: 0,
-                        Y: 0,
+                        Y: 0.05,
                         Z: 0
                     }}
                     material={materials[materialType]}
@@ -47,6 +47,7 @@ function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneD
                     numOfShelves={numOfShelves}
                     numOfDrawers={numOfDrawers}
                     withRod={withRod}
+                    withDoors={withDoors}
                 />
 
 
@@ -66,7 +67,7 @@ function Section({ dimensions, position, numOfShelves = 4, withLegs = true, oneD
 
 
                 {/* if there is rod, create shelves above it: */}
-                {(withRod) &&
+                {(withRod && dimensions.Y > 1.68) &&
                     < ShelvesConstructor
                         dimensions={{
                             X: dimensions.X,
