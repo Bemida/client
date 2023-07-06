@@ -52,9 +52,9 @@ function Layout() {
   const To_Main_Section = {
     1: <Selector_main />,
     2: <Size />,
-    3: <Viewer3d />,
-    4: <Viewer3d />,
-    5: <Viewer3d />,
+    3: <Viewer3d withDoors={true} />,
+    4: <Viewer3d withDoors={false} />,
+    5: [<Viewer3d withDoors={false} />, <Viewer3d withDoors={true} />],
   };
   const To_RightBar = {
     1: "",

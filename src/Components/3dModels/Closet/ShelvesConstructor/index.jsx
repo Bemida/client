@@ -12,10 +12,9 @@ function ShelvesConstructor({ position, dimensions, numOfShelves, withRod }) {
 
     const
         gap = dimensions.Y / (numOfShelves + Number(!withRod)),
-        start = position.Y + (!withRod * -dimensions.Y / 2),
-        asdf = 4
+        start = position.Y + (!withRod * -dimensions.Y / 2)
 
-    console.log("shelvesTotal:", numOfShelves + withRod);
+    console.log();
 
     /* creating the shelves: */
     return (
