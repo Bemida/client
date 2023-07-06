@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import Button from '../Components/Button'
+import Payment from '../Components/Payment'
 import axios from 'axios';
 import {DataContext} from '../Context/MainContext'
 import { messageTemplate } from '../Data/messageTemplate';
@@ -28,7 +29,9 @@ export default function Yosef_sh(props) {
 
 
   return (
-    <div >Yosef_sh
+    <div>Yosef_sh
+      <Payment/>
+      {/* className, onClick, text, color, width, height, icon  */}
 {Button({color:"red",width:100,text:"payment",className:"send-payment",icon:"🎈" ,onClick:()=>{hendleSubmit()} })}
     </div>
   )

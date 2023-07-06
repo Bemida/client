@@ -1,10 +1,7 @@
-import { DataContext } from "../../Context/MainContext";
-import DisplayCurrentSelection from "../../Layout/DisplayCurrentSelection";
-import Button_Payment from "../Button_payment";
-import Header from "../Header";
+import axios from "axios";
 import Input from "../Input";
 import styles from "./style.module.css";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 // props: {}
 // creator: Haya
 
@@ -15,7 +12,8 @@ function Payment(props) {
   const [inputsValid, setInputsValid] = useState({});
   const [formData,setFormData  ] = useState({});
   const actualDate = new Date().toISOString().split("T")[0].substring(0, 7);
-  
+
+
   function setInput(e) {
     setInputsObj({ ...inputsObj, [e.target.id]: e.target.value });
     // setInputsValid({ ...inputsValid, [e.target.id]: e.target.value && e.target.value.length > 0 })
