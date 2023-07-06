@@ -10,9 +10,9 @@ function DisplayCurrentSelection({ ...props }) {
 
   const context = useContext(DataContext)
 
-  const selections = context.order//data.orders 
+  const selections = context.fullOrder//data.orders 
 
-  console.log(selections)
+  // console.log({ selections })
   let ListTitle = selections.furniture//"הארון שלי"
 
   return (

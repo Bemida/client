@@ -98,8 +98,8 @@ function Size() {
   }
 
   return (
-    <>
-      <div className={styles.title_size}><h1>בחירת מידות ארון</h1></div>
+    <div className={styles.container}>
+      <h1 className={styles.title_size}>בחירת מידות ארון</h1>
       <div className={styles.containerSize}>
         <div>
           <p>גובה בס"מ</p>
@@ -111,7 +111,7 @@ function Size() {
           {isShowSelect && <Select options={selectOption} onChange={((e) => { setSelect(e.target.value) })} />}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -8,11 +8,14 @@
 
 .li {
   direction: rtl;
-  line-height: 45px;
+  /* line-height: 45px; */
   width: 119px;
   height: 100%;
   background-color: #eeeeee;
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .li:first-child {

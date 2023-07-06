@@ -1,8 +1,13 @@
 /* Creator : didi */
 
+.container {
+    width: 100%;
+}
+
 .containerSize {
     width: 80%;
     height: 70%;
+    margin: auto;
     background-color: #F2F2F2;
     box-shadow: 0px 3px 5px rgb(160, 160, 160);
     position: relative;
@@ -12,7 +17,7 @@
 
 .title_size {
     height: 100px;
-    width: 80%;
+    width: 90%;
     display: flex;
     color: black;
     text-align: right;
@@ -31,4 +36,3 @@
     text-align: right;
     margin-right: 2%;
 }
-
